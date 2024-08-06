@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ancient History Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost" data-tag="font">
+    <link rel="stylesheet" href="/css/style.css">
+    <!--    <link rel="stylesheet" href="/css/bootstrap.min.css"/>-->
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/reset-css.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <script src="/js/jquery-3.5.1.slim.min.js"></script>
+    <!--    <script src="/js/bootstrap.min.js"></script>-->
+</head>
+
+<body>
+<div>
+    <div class="home-container">
+        <div class="home-navbar">
+            <header th:fragment="nav" data-role="Header" id="navbar"
+                    class="home-header max-width-container">
+                <div class="logged-user"><br>
+                    <a th:text="#{nav_bar_welcome}">Welcome,</a>
+                    <th:block sec:authentication="name"></th:block>
+                    !
+                </div>
+                <div class="navbar-logo-title">
+                    <div class="home-container01">
+                        <hr class="border-bottom w-50">
+                        <div style="border-radius: 4px"
+                             class="mt-5 col-sm-12 my-auto align-self-center">
+                            <input id="searchInput" class="form-control mr-sm-2 w-50" type="search"
+                                   placeholder="Enter article name" aria-label="Search">
+                        </div>
+
+                        <div style="  margin-top: -1rem;  margin-left: 1.2rem" class="nav-item">
+                            <form th:method="get">
+                                <label class="text-white" style="font-size: small"
+                                       for="lang" th:text="#{nav_bar_language}">Language</label>
+                                <select style="background-color: #e4f0f4;
+                                            border-color: #4e555b"
+                                        id="lang"
+                                        name="lang"
+                                        onchange="this.form.submit()">
+                                    <option value="en_US" th:selected="${#locale.toString()} == 'en_US'">English
+                                    </option>
+                                    <option value="bg_BG" th:selected="${#locale.toString()} == 'bg_BG'">Български
+                                    </option>
+                                </select>
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <a th:href="@{/}" style="font-weight: bold;margin-left: 8rem"
+                       id="logo"
+                       class="navbar-logo-title">&copy;ANCIENT HISTORY PORTAL</a>
+                    <a th:href="@{/}" style="font-weight: bold;"
+                       class="navbar-logo-title"></a>
+                    <br/>
+                    <span style="font-size: small;margin-left:-2rem;text-align: center">LEARN ABOUT THE WORLD OF ANTIQUITY</span>
+                </div>
+                <div class="home-navbar1" id="home">
+                    <div class="home-middle">
+                        <div class="home-left" id="left">
+                                <form class="navbar-link" >
+                                    <button class="navbar-link">
+                                        <a th:href="@{/}"
+                                                th:text="#{nav_bar_home}">HOME</a>
+                                    </button>
+                                </form>
+
+                            <th:block sec:authorize="!isAuthenticated()">
+                                    <form  class="navbar-link active">
+                                        <button class="navbar-link">
+                                            <a th:href="@{/users/login}"
+                                                    th:text="#{nav_bar_login}">LOGIN</a>
+                                        </button>
+                                    </form>
+
+                                    <form class="navbar-link active-table-tab">
+                                        <button class="navbar-link">
+                                            <a th:text="#{nav_bar_subscribe}"
+                                                    th:href="@{/users/subscribe}">SUBSCRIBE</a>
+                                        </button>
+                                    </form>
+                            </th:block>
+
+                        </div>
+                    </div>
+
+                    <th:block sec:authorize="isAuthenticated()">
+                        <div class="home-middle">
+                            <div class=" home-left">
+                                    <form class="navbar-link">
+                                        <button class="navbar-link">
+                                            <a th:href="@{/users/profile}"
+                                                    th:text="#{nav_bar_profile}">PROFILE</a>
+                                        </button>
+                                    </form>
+
+                                    <form class=" navbar-link"
+                                            th:action="@{/users/logout}" method="post">
+                                        <button
+                                                type="submit" class="navbar-link">
+                                            <a th:text="#{nav_bar_logout}">LOGOUT</a>
+                                        </button>
+                                    </form>
+
+                                    <form class="navbar-link">
+                                    <button class="navbar-link">
+                                      <a th:href="@{/articles/add}"
+                                              th:text="#{nav_bar_add_articles}">ADD ARTICLE</a>
+                                    </button>
+                                </form>
+                                <br>
+                            </div>
+                        </div>
+                    </th:block>
+                    <div class="home-right">
+                        <div class="dropdown about">
+                            <nav class="main-nav">
+                                <ul>
+                                    <li>
+                                        <a th:text="#{nav_bar_about2}">ABOUT:</a>
+                                        <ul>
+                                            <li>
+                                            <li><a th:href="@{/about}" th:text="#{nav_bar_about}">About</a></li>
+                                            <li><a th:text="#{nav_bar_ourTeam}" th:href="@{/our-team}">Our Team</a></li>
+                                            <li><a th:text="#{nav_bar_annualReports}">Annual Reports</a></li>
+                                            <li><a th:text="#{nav_bar_memberships}" th:href="@{/membership}">Memberships</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="dropdown education">
+                            <nav class="main-nav">
+                                <ul>
+                                    <li>
+                                        <a th:text="#{nav_bar_education}">EDUCATION:</a>
+                                        <ul>
+                                            <li>
+                                            <li><a th:text="#{nav_bar_materials}" th:href="@{/teachingMaterials}">Teaching
+                                                Materials</a></li>
+                                            <li><a th:text="#{nav_bar_art_video}" th:href="@{/video}">Video</a></li>
+                                            <li><a th:text="#{nav_bar_subscriptions}" th:href="@{/school-subscriptions}">School Subscriptions</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="dropdown encyclopedia">
+                            <nav class="main-nav">
+                                <ul>
+                                    <li>
+                                        <a th:text="#{nav_bar_encyclopedia}">ENCYCLOPEDIA:</a>
+                                        <ul>
+                                            <li>
+                                            <li><a th:text="#{nav_bar_home}" th:href="@{/}">Index</a></li>
+                                            <li><a th:text="#{nav_bar_maps}" th:href="@{/maps}">Maps</a></li>
+                                            <li><a th:href="@{/time-line}"
+                                                   th:text="#{nav_bar_add_timeline}">Timeline</a></li>
+                                            <li><a th:href="@{/translations}" th:text="#{nav_bar_add_translations}">Translations</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div id="admin" sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown">
+                    <nav class="main-nav">
+                        <ul>
+                            <li>
+                                <a href="/">Admin Panel</a>
+                                <ul>
+                                    <li>
+
+                                    <li><a th:text="#{nav_bar_statistics}"
+                                           th:href="@{/statistic}">Statistics</a></li>
+                                    <li><a th:text="#{nav_bar_add_articles}"
+                                           th:href="@{/articles/add}">Add article</a></li>
+                                    <li><a th:text="#{nav_bar_all_articles}"
+                                           th:href="@{/articles/all}">All Articles</a></li>
+
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+
+                </div>
+
+                <script>
+                    // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+                    window.onscroll = function () {
+                        scrollFunction()
+                    };
+
+                    function scrollFunction() {
+                        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                            document.getElementById("navbar").style.padding = "10px 5px";
+                            document.getElementById("logo").style.fontSize = "10px";
+                            document.getElementById("home").style.fontSize = "10px";
+                            document.getElementById("left").style.fontSize = "10px";
+                        } else {
+                            document.getElementById("navbar").style.padding = "20px 6px";
+                            document.getElementById("logo").style.fontSize = "13px";
+                            document.getElementById("home").style.fontSize = "12px";
+                            document.getElementById("left").style.fontSize = "12px";
+                        }
+                    }
+                </script>
+            </header>
+
+
+            <footer th:fragment="footer" class="home-footer1">
+
+                <div class="home-container09">
+                    <div
+                            class="mission center">
+                        <h1>Our Mission</h1><br>
+                        Our mission is to engage people with cultural heritage and to improve history education
+                        worldwide.
+                    </div>
+                    <h3 class="home-text32 Heading-3">ANCIENT WORLD</h3>
+                    <span class="home-text33">
+                <span>5000 VELIKO TARNOVO</span>
+                <br/>
+                <span>BULGARIA</span>
+              </span>
+                    <span class="home-text36">(359) 899 199 149</span>
+                    <span class="home-text37">contact@AHISTORY.com</span>
+                </div>
+                <div class="home-links-container">
+                    <div class="home-container10">
+                        <span class="home-text38">Categories</span>
+                        <a href="#" class="home-text39">Collections</a>
+                        <a th:href="@{/articles/all}" class="home-text41">Articles</a>
+
+
+                    </div>
+                    <div class="home-container11">
+                        <span class="home-text45">Company</span>
+                        <a th:href="@{/about}" class="home-text49">About</a>
+                        <a href="#" class="home-text50">Newsletter</a>
+                    </div>
+                    <div class="home-container12">
+                        <span class="home-text51">Resources</span>
+                        <a href="#" class="home-text52">Contact us</a>
+                        <a href="#" class="home-text42">Time Periods</a>
+
+                    </div>
+
+                </div>
+                <a style="margin-top: 20%;margin-bottom:-5rem;position: relative;bottom: 18px;left: -60rem"> &copy;Kamenov
+                    Spring Team 2024. All rights reserved.</a>
+            </footer>
+            <script th:src="@{resources/static/js/search-bar.js}"></script>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>

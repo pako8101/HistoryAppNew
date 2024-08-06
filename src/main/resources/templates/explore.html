@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/commons::head">
+</head>
+<link rel="stylesheet" href="/css/reset-css.css">
+<link rel="stylesheet" href="/css/explore.css">
+<body>
+<header th:replace="fragments/commons::nav">
+</header>
+<div class="home-main">
+    <div class="home-hero section-container">
+        <div class="home-max-width max-width-container">
+            <div class="home-hero1">
+                <div class="home-container03">
+                    <div class="home-info">
+                  <span class="home-text12">
+                    <span>Featured </span>
+                    <br/>
+                    <span>Articles - 2024</span>
+                  </span>
+                    </div>
+                    <h1 class="home-text16 Heading-1">THE ANCIENT WORLD</h1>
+                    <div class="home-container04">
+                        <span class="home-text17">The modern world</span> <br>
+                        <span class="home-text18">may look very different from the world that existed in the time of ancient civilizations,
+                                    but our modern-day life continues to show the influence of cultures, traditions,
+                                    ideas, and innovations from hundreds of years ago.
+                                    Learn more about important historical civilizations, sites, people, and events.</span>
+                    </div>
+                    <h1 class="explore-title">Our Work</h1>
+                    <a class="explore">
+                        We want to make history engaging and compelling, inspiring our users and visitors to learn more.
+                        We reach the digital generation by sharing an array of historical topics and narratives through text,
+                        video, interactive features, and social media.
+                        Every submission to the encyclopedia is carefully reviewed by our editorial team in accordance with our editorial policy,
+                        making sure only the highest quality content is published to our site. Our publication follows academic standards,
+                        but it is written in an easy-to-read manner with students and the general public in mind.
+                    </a>
+                    <h1 class="explore-title">Our Story</h1>
+                    <a class="explore">
+                        Ancient History portal was founded in 2023 by Plamen Kamenov.
+                        He realized that the internet was missing a reliable and comprehensive resource for ancient history,
+                        which is why the website was called History site until it changed its name to Ancient History portal in 2024.
+                        What was available online was either scattered across various websites,
+                        illegible due to poor presentations or tainted with a distinct nationalist agenda.
+                        Plamen also had the idea that history was not linear (as it is taught in most school coursebooks),
+                        but rather a very parallel type of story, where everything is interlinked.
+                        After much programming on a netbook during daily train rides from London to Horsham in the United Kingdom,
+                        the site was launched to the public in December 2023. Since then,
+                        it has grown from a small history website to the largest and most popular history encyclopedia on the internet.
+                    </a>
+                    <div class="home-btn-group">
+                        <a class="button" th:href="@{/}"  >
+                            <button  class="button">Back</button>
+                        </a>
+
+                    </div>
+                </div>
+                <img alt="image23271449" src="/images/greek.jpg" class="home-image5"/>
+            </div>
+        </div>
+    </div>
+    <div class="section-container column">
+        <div class="max-width-container">
+            <div class="section-heading-section-heading">
+                <h1 class="section-heading-text Heading-2">
+                    <span>Featured Articles</span>
+                </h1>
+                <span class="section-heading-text1">
+                <span>
+                  Start read over based on the categories you are interested in
+                </span>
+              </span>
+            </div>
+            <div class="home-cards-container">
+                <div class="category-card-category-card">
+                    <img alt="image" src="/images/egypt.jpg" class="category-card-image"/>
+                    <span class="category-card-text"><span>Egypt</span></span>
+                </div>
+                <div class="category-card-category-card">
+                    <img alt="image" src="/images/greek.jpg" class="category-card-image"/>
+                    <span class="category-card-text"><span>Ancient Greece</span></span>
+                </div>
+                <div class="category-card-category-card">
+                    <img alt="image" src="/images/rome.jpg" class="category-card-image"/>
+                    <span class="category-card-text"><span>Rome Empire</span></span>
+                </div>
+                <div class="category-card-category-card">
+                    <img alt="image" src="/images/Mesopotamian-innovations.jpg" class="category-card-image"/>
+                    <span class="category-card-text"><span>Mesopotamia</span></span>
+                </div>
+                <div class="category-card-category-card">
+                    <img alt="image" src="/images/incas.jpg" class="category-card-image"/>
+                    <span class="category-card-text"><span>Central America</span></span>
+                </div>
+                <div class="category-card-category-card">
+                    <img alt="image" src="/images/atzetecs.jpg" class="category-card-image"/>
+                    <span class="category-card-text">
+                  <span>Andean Region</span>
+                </span>
+                </div>
+                <div class="category-card-category-card">
+                    <img alt="image" src="./images/pic8.jpg" class="category-card-image"/>
+                    <span class="category-card-text">
+                  <span>Stone Age</span>
+                </span>
+                </div>
+            </div>
+        </div>
+        <div class="home-banner">
+            <div class="home-container05">
+                <h3 class="home-text19 Heading-3">Ancient World</h3>
+                <span class="home-text20">
+                <span></span> <br>
+                <a class="article" th:href="@{/articles}">articles</a>
+              </span>
+            </div>
+        </div>
+        <div class="home-container06 max-width-container">
+            <div class="home-container07">
+              <span class="home-text23">
+                <span>
+                  Ancient History Portal are unique publisher of ancient history articles,
+                  user-made,
+                </span>
+                <br/>
+                <span>history articles, since 1999.</span>
+                <br/>
+                <span>
+                    Studying history helps us gain a more nuanced understanding of the world we live in today.
+                    Our knowledge and interpretation of history shape how we define ourselves as nations and as cultures,
+                    and it influences how we see and interact with other cultures. We help people across the globe gain a deeper,
+                    fundamental knowledge of our interconnected human past in order to create curious,
+                    open-minded, and tolerant societies in the future.
+                  Our legacy guarantees exceptional article quality, unique
+                  content and special topics for all of our article line-up.
+
+                </span>
+              </span>
+                <button class="button">Read more</button>
+            </div>
+        </div>
+    </div>
+    <div class="home-full-width-banner section-container">
+        <div class="home-left4">
+            <div class="home-content">
+                <span class="home-text29">Our Mission</span>
+                <span class="home-text30">
+                Our mission is to engage people with cultural heritage and to improve history education worldwide.
+              </span>
+            </div>
+            <div class="home-btn button">
+                <span class="home-text31">Explore now</span>
+            </div>
+        </div>
+        <img alt="Rectangle13271410" src="/images/aswan.jpg" class="home-image6"/>
+    </div>
+    <div class="section-container">
+        <div class="max-width-container">
+            <div class="section-heading-section-heading section-heading-root-class-name">
+                <h1 class="section-heading-text Heading-2">
+                    <span>Our blog</span>
+                </h1>
+                <span class="section-heading-text1">
+                <span>
+                  Read the latest news and history related articles
+                </span>
+              </span>
+            </div>
+            <div class="home-container08">
+                <div class="blog-post-card-blog-post-card blog-post-card-root-class-name">
+                    <img alt="image" src="./images/tobaco.jpg" class="blog-post-card-image"/>
+                    <div class="blog-post-card-container">
+                  <span class="blog-post-card-text">
+                    <span>A Brief History of Tobacco in the Americas</span>
+                  </span>
+                        <span class="blog-post-card-text1">
+                    <span>
+                     The history of tobacco use in the Americas goes back over 1,000 years when natives of the region chewed or smoked the leaves of the plant now known as Nicotiana rustica (primarily in the north) and Nicotiana tabacum (mostly in the south). After European colonization,
+                        tobacco would become the most profitable crop exported from the Americas.
+This plant grew wild but came to be cultivated by the natives for use in religious rituals and hunting parties as it was thought
+                        to expand the mind and heighten one's sensations overall.
+                        <span id="dots1">...</span>
+                            <span id="more1">
+                        After 1492 CE,
+                        European colonization of the West Indies and South and Central America shifted the focus of tobacco to
+                        recreational use. By the mid-1500s CE,
+                        tobacco had become the most profitable export from the Spanish and Portuguese colonies of the Americas,
+                        primarily Nicotiana tabacum.
+                    </span>
+                        </span>
+                  </span>
+                        <button onclick="myFunction1()" id="myBtn1" class="button">
+                            Read more
+                        </button>
+                        <script>
+                            function myFunction1() {
+                                const dots = document.getElementById("dots1");
+                                const moreText = document.getElementById("more1");
+                                const btnText = document.getElementById("myBtn1");
+
+                                if (dots.style.display === "none") {
+                                    dots.style.display = "inline";
+                                    btnText.innerHTML = "Read more";
+                                    moreText.style.display = "none";
+                                } else {
+                                    dots.style.display = "none";
+                                    btnText.innerHTML = "Read less";
+                                    moreText.style.display = "inline";
+                                }
+                            }
+                        </script>
+                        <!--                                <a href="#" class="button">-->
+                        <!--                                    Read more-->
+                        <!--                                </a>-->
+                    </div>
+                </div>
+                <div class="blog-post-card-blog-post-card">
+                    <img alt="image" src="./images/olympicanime.jpg" class="blog-post-card-image"/>
+                    <div class="blog-post-card-container">
+                  <span class="blog-post-card-text">
+                    <span> Ancient Olympic Games</span>
+                  </span>
+                        <span class="blog-post-card-text1">
+                    <span>
+                      The Olympic Games began in Olympia, in 776 BC and took place every
+                        four years until AD 393.They were held in honor of Zeus. At the first
+                        Games, athletes competed in only one running event held on a single day. However, over the
+                        years other events were added, and the Games eventually were expanded to five days.
+                    <span id="dots">...</span>
+                            <span id="more"> <br>
+                                <a> Discus
+In the discus event the athletes threw a disk-shaped object for distance. The discus itself was made of stone or, later, iron, lead, or bronze.
+                                </a>
+                                <br>
+<a> Long jump
+To increase their distance, the athletes held weights.
+                                They swung them above their heads on takeoff and threw them behind them before landing.
+</a>
+                                <a>
+                                    <br>
+Javelin
+The javelin was a wooden rod with one end sharpened.
+                                The athletes held a leather strap placed around the rod that helped them to throw the javelin farther.
+                            </a>
+                                <br>
+                                <a>
+                                    Equestrian events
+Two- and four-horse chariot races as well as horse riding races made up the equestrian events. The owners of the chariots or horses, not the participants, won.
+</a>
+                                <a> <br>
+Running events
+There were four running events, all of which consisted of a predetermined number of laps in the stadium. In one race the athletes wore armor and carried a shield.
+                                </a> <br>
+                                <a>
+Boxing
+The athletes wrapped their hands and wrists in leather. Later they added metal on their knuckles. An athlete won when his opponent was knocked out or gave up.
+</a>
+                                <br>
+                                <a>
+    Wrestling
+The athletes fought with bare hands while standing up. An athlete won after he forced his opponent’s hip, shoulder, or back to the ground three times.
+</a>
+                            </span>
+
+                    </span>
+                  </span>
+                        <button onclick="myFunction()" id="myBtn" class="button">
+                            Read more
+                        </button>
+                        <script>
+                            function myFunction() {
+                                const dots = document.getElementById("dots");
+                                const moreText = document.getElementById("more");
+                                const btnText = document.getElementById("myBtn");
+
+                                if (dots.style.display === "none") {
+                                    dots.style.display = "inline";
+                                    btnText.innerHTML = "Read more";
+                                    moreText.style.display = "none";
+                                } else {
+                                    dots.style.display = "none";
+                                    btnText.innerHTML = "Read less";
+                                    moreText.style.display = "inline";
+                                }
+                            }
+                        </script>
+                    </div>
+                </div>
+                <div class="blog-post-card-blog-post-card">
+                    <img alt="image" src="./images/romemore.jpg" class="blog-post-card-image"/>
+                    <div class="blog-post-card-container">
+                  <span class="blog-post-card-text">
+                    <span>Ancient Rome</span>
+                  </span>
+                        <span class="blog-post-card-text1">
+                    <span>
+                      According to legend, Ancient Rome was founded by the two brothers,
+                        and demigods, Romulus and Remus, on 21 April 753 BCE.
+                        The legend claims that in an argument over who would rule the city
+                        (or, in another version, where the city would be located) Romulus killed Remus and named the city after himself.
+                        This story of the founding of Rome is the best known but it is not the only one.
+
+                        <span id="dots2">...</span>
+                            <span id="more2">
+                                Other legends claim the city was named after a woman, Roma,
+                                who traveled with Aeneas and the other survivors from Troy after that city fell.
+                                Upon landing on the banks of the Tiber River,
+                                Roma and the other women objected when the men wanted to move on.
+                                She led the women in the burning of the Trojan ships and so effectively stranded the Trojan survivors at the site
+                                which would eventually become Rome. Aeneas of Troy is featured in this legend and also, famously, in Virgil's Aeneid,
+                                as a founder of Rome and the ancestor of Romulus and Remus, thus linking Rome with the grandeur and might which was once Troy.
+
+Still other theories concerning the name of the famous city suggest it came from Rumon, the ancient name for the Tiber River,
+                                and was simply a place name given to the small trading center established on its banks or that the name
+                                derived from an Etruscan word which could have designated one of their settlements.
+                               <a style="font-weight: bold">Early Rome</a> <br>
+Originally a small town on the banks of the Tiber, Rome grew in size and strength, early on, through trade. The location of the city provided merchants with an easily navigable waterway on which to traffic their goods. The city was ruled by seven kings, from Romulus to Tarquin, as it grew in size and power.
+                                Greek culture and civilization, which came to Rome via Greek colonies to the south,
+                                provided the early Romans with a model on which to build their own culture.
+                                From the Greeks they borrowed literacy and religion as well as the fundamentals of architecture.
+The Etruscans, to the north, provided a model for trade and urban luxury.
+                                Etruria was also well situated for trade and the early Romans either learned the skills of trade from Etruscan example or were taught directly by the Etruscans who made incursions into the area around Rome sometime between 650 and 600 BCE (although their influence was felt much earlier).
+                                The extent of the role the Etruscan civilization
+                                played in the development of Roman culture and society is debated but there seems little doubt they had a significant impact at an early stage.
+From the start, the Romans showed a talent for borrowing and improving upon the skills and concepts of other cultures.
+                                The Kingdom of Rome grew rapidly from a trading town to a prosperous city between the 8th and 6th centuries
+                                BCE. When the last of the seven kings of Rome, Tarquin the Proud, was deposed in 509 BCE, his rival for power,
+                                Lucius Junius Brutus, reformed the system of government and established the Roman Republic.
+                                <a style="font-weight: bold">War & Expansion</a> <br>
+Though the city owed its prosperity to trade in the early years, it was the Roman warfare which would make it a powerful force in the ancient world. The wars with the North African city of Carthage
+                                (known as the Punic Wars, 264-146 BCE) consolidated Rome's power and helped the city grow in wealth and prestige. Rome and Carthage were rivals in trade in the Western Mediterranean and, with Carthage defeated,
+                                Rome held almost absolute dominance over the region; though there were still incursions by pirates which prevented complete Roman control of the sea.
+As the Republic of Rome grew in power and prestige, the city of Rome began to suffer from the effects of corruption, greed and the over-reliance on foreign slave labor.
+                                Gangs of unemployed Romans, put out of work by the influx of slaves brought in through territorial conquests, hired themselves out as thugs to do the bidding of whatever wealthy senator would pay them.
+                                The wealthy elite of the city, the patricians, became ever richer at the expense of the working lower class, the plebeians.
+
+                        </span>
+                    </span>
+                  </span>
+                        <button onclick="myFunction2()" id="myBtn2" class="button">
+                            Read more
+                        </button>
+                        <script>
+                            function myFunction2() {
+                                const dots = document.getElementById("dots2");
+                                const moreText = document.getElementById("more2");
+                                const btnText = document.getElementById("myBtn2");
+
+                                if (dots.style.display === "none") {
+                                    dots.style.display = "inline";
+                                    btnText.innerHTML = "Read more";
+                                    moreText.style.display = "none";
+                                } else {
+                                    dots.style.display = "none";
+                                    btnText.innerHTML = "Read less";
+                                    moreText.style.display = "inline";
+                                }
+                            }
+                        </script>
+                        <!--                                <a href="#" class="button">-->
+                        <!--                                    Read more-->
+                        <!--                                </a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="home-footer">
+    <div class="max-width-container">
+        <footer th:replace="fragments/commons::footer"></footer>
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+<head th:replace="fragments/commons::head">
+
+<!--    <script src='https://www.google.com/recaptcha/api.js' ></script>-->
+</head>
+
+<link rel="stylesheet" href="/css/subscribe.css">
+<link rel="stylesheet" href="/css/reset-css.css">
+<!-- Navigation -->
+<body>
+<header th:replace="fragments/commons::nav"></header><br>
+<div class="main">
+    <h1>ANCIENT HISTORY PORTAL</h1>
+    <h3>Enter your subscription details please</h3><br>
+<!--    <h2>Subscription Form</h2>-->
+
+    <form  id="registration-form"
+            th:object="${userSubscribeBindingModel}"
+          th:action="@{/users/subscribe}"
+          th:method="POST"
+           >
+        <label for="username"
+               th:text="#{nav_bar_login_username}">Username:</label>
+        <input
+                th:field="*{username}"
+                th:errorclass="'is-invalid alert-danger'"
+                required minlength="3" maxlength="20"
+                type="text"
+                id="username"
+                placeholder="Username"
+                name="username"/>
+        <small th:if="${userExistsError}" id="usernameUniqueError"
+               class=" bg-danger rounded">Username is already occupied</small>
+        <small th:each="e :${#fields.errors('username')}" th:text="${e}"
+               id="usernameError"
+               class="invalid-feedback bg-danger rounded">Username length must be more than 3 characters</small>
+
+
+
+        <label for="inputFullName"
+               th:text="#{nav_bar_fullName}">Full Name:</label>
+        <input
+                th:field="*{fullName}"
+                th:errorclass="'is-invalid alert-danger'"
+                required minlength="3" maxlength="20"
+                type="text"
+                id="inputFullName"
+                placeholder="Your full name"
+                name="fullName"/>
+        <small th:each="e :${#fields.errors('fullName')}" th:text="${e}"
+                id="fullNameError" class="invalid-feedback
+        form-text bg-danger rounded">Full name length must be more than 3 characters</small>
+
+        <label for="email"
+               th:text="#{nav_bar_email}">Email:</label>
+        <input
+                th:field="*{email}"
+                th:errorclass="'is-invalid alert-danger'"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your email"
+                required/>
+        <small th:each="e :${#fields.errors('email')}" th:text="${e}"
+                id="emailError" class="invalid-feedback  form-text bg-danger
+            rounded">Must be valid email</small>
+
+        <label for="password"
+               th:text="#{nav_bar_login_password}">Password:</label>
+        <input th:field="*{password}"
+               th:errorclass="'is-invalid alert-danger'"
+               required minlength="3" maxlength="20"
+               type="password"
+               id="password"
+               name="password"
+               placeholder="Password" />
+<!--               pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{8,}$"-->
+<!--               title="Password must contain at least one number,-->
+<!--                          one alphabet, one symbol, and be at-->
+<!--                          least 5 characters long"/>-->
+        <label for="show-password" class="field__toggle">
+            <input type="checkbox" id="show-password"
+                   class="field__toggle-input" th:text="#{nav_bar_showPass}"/>
+        </label><br>
+        <small th:each="e :${#fields.errors('password')}" th:text="${e}"
+                id="passwordError" class="invalid-feedback  form-text bg-danger rounded">
+            Password length must be between 3 and 20 characters and passwords should match.</small>
+        <label for="confirmPassword"
+               th:text="#{nav_bar_confirmPass}">Re-type Password:</label>
+        <input th:field="*{confirmPassword}"
+               required minlength="3" maxlength="20"
+               th:errorclass="'is-invalid alert-danger'"
+               type="password"
+               id="confirmPassword"
+               name="confirmPassword"
+               placeholder="Confirm password"
+        />
+
+        <small th:each="e :${#fields.errors('password')}" th:text="${e}"
+                id="confirmPasswordError" class="invalid-feedback  form-text bg-danger rounded">
+            Password length must be between 3 and 20 characters and passwords should match.</small>
+        <label for="age"
+               th:text="#{nav_bar_age}">Age:</label>
+        <input th:field="*{age}"
+               min="18" max="90"
+               th:errorclass="'is-invalid alert-danger'"
+               type="number"
+               id="age"
+               name="age"
+               required/><br>
+        <small th:each="e :${#fields.errors('age')}" th:text="${e}"
+                class="invalid-feedback text-danger">Age is invalid!</small>
+<!--        <form><div class="g-recaptcha"-->
+<!--                   th:attr="data-sitekey=${@captchaSettings.getSite()}"></div></form>-->
+         <label for="gender"
+               th:text="#{nav_bar_gender}">Gender:</label>
+        <select
+                id="gender"
+                name="gender"
+                required>
+            <option value="male">
+                Male
+            </option>
+            <option value="female">
+                Female
+            </option>
+            <option value="other">
+                Other
+            </option>
+        </select>
+
+        <div class="form-group row">
+            <div class="col-sm-12">
+                <div class="col-sm-12">
+                    <input type="checkbox" name="personal_info_agreement" value="1">
+                    <span style="font-size: 12px;">
+                                        &nbsp;<b>By submitting this form, I accept that the information entered may be
+                        processed by Ancient HP within corporate purposes only and be kept for 3 years for future articles.</b>
+                                    </span>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-md-4">
+                <div class="button-holder d-flex">
+                    <button class="g-recaptcha btn btn-info btn-lg"
+                            th:attr="data-sitekey=${@captchaSettings.getSite()}"
+                            data-callback='onSubmit'
+                            data-action='submit'
+                            type="submit"
+                            id="onSubmit"
+                    >Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- EO: Registration form end-->
+</div>
+
+<!-- ReCaptcha -->
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+    function onSubmit(token) {
+        document.getElementById("registration-form").submit();
+    }
+</script>
+
+
+<!--        <button  class="g-recaptcha btn btn-info btn-lg"-->
+<!--                 th:attr="data-sitekey=${@recaptchaSiteKey}"-->
+<!--                 data-callback='onSubmit'-->
+<!--                 data-action='submit'-->
+<!--                type="submit"-->
+<!--                id="onSubmit"-->
+<!--                th:text="#{nav_bar_submit}">-->
+<!--            Submit-->
+<!--        </button>-->
+
+<!--        &lt;!&ndash;        recaptcha&ndash;&gt;-->
+
+
+<!--    </form>-->
+
+<!--</div>-->
+<!--<script src="https://www.google.com/recaptcha/api.js"></script>-->
+<!--<script>-->
+<!--    function onSubmit(token) {-->
+<!--        document.getElementById("registration-form").submit();-->
+<!--    }-->
+<!--</script>-->
+
+<footer th:replace="fragments/commons::footer">
+
+</footer>
+
+
+<script type="text/javascript">
+
+
+    var username = document.querySelector( "#username" );
+    var password = document.querySelector( "#password" );
+    var toggle = document.querySelector( "#show-password" );
+
+
+
+    username.value = "";
+    password.value = "";
+
+    toggle.addEventListener( "click", handleToggleClick, false );
+
+    function handleToggleClick( event ) {
+
+        if ( this.checked ) {
+
+            console.warn( "Change input 'type' to: text" );
+            password.type = "text";
+
+        } else {
+
+            console.warn( "Change input 'type' to: password" );
+            password.type = "password";
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
+
+

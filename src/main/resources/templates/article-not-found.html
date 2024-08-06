@@ -1,0 +1,30 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/commons::head">
+
+</head>
+<link rel="stylesheet" href="/css/about.css">
+<link rel="stylesheet" href="/css/reset-css.css">
+<body>
+<header th:replace="fragments/commons::nav">
+</header>
+
+<div class="info">
+
+    <div class="container-fluid">
+        <h5 class="text-center text-white mt-5">Excuse us! Article was not found!</h5>
+    </div>
+
+    <div class="text-center text-white mt-5">We are sorry! Please navigate to <a th:href="@{/}">home page</a>...</div>
+
+
+</div>
+
+
+<!-- Wrapper Ends -->
+</body>
+<footer th:replace="fragments/commons::footer">
+
+</footer>
+</html>

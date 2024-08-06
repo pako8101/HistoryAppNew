@@ -1,0 +1,75 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/commons::head">
+</head>
+<link rel="stylesheet" href="/css/articles.css">
+<link rel="stylesheet" href="/css/reset-css.css">
+
+<!-- Navigation -->
+<body>
+
+
+    <header th:replace="fragments/commons::nav"></header><br>
+    <div class="wrap">
+    <div class="content bordered" id="articlesList">
+<!--        picture-->
+
+
+            <div class="ar-16x9">
+                <img src="https://images.unsplash.com/photo-1670352689935-54e6e34135fa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                     alt="Article image">
+            </div><br>
+
+            <h3 style="color: #0c5460;border-bottom: #491217;font-size: x-large">Search articles</h3><br>
+            <div style="border-radius: 4px;border: solid #040505;margin-left: 10rem;margin-right: 10rem"
+                 class="mt-5 col-sm-12 my-auto align-self-center">
+                <input id="searchInput" class="form-control mr-sm-2 w-50" type="search"
+                       placeholder="Enter article name" aria-label="Search">
+            </div>
+        </div>
+        <!--        article main-->
+        <div class="wrapper">
+        <h3 class="mySticky bg-gray text-dark rounded">
+            <span style="font-size: x-large" th:text="#{nav_bar_articles_count}">Articles count:</span>
+            <span style="font-size: x-large" th:text="${articles.size()}"></span></h3><br><br>
+       <th:block th:each="a: ${articles}">
+           <img class="article-image" th:src="${a.pictureUrl}" alt="Title image"><br><br>
+
+        <header class="site-header">
+            <h3  class="site-title">
+                <a th:text="${a.title}" ></a>
+            </h3>
+        </header>
+
+        <main class="site-content">
+
+            <article class="post">
+                <header class="post-header">
+                    <h2 > <span th:text="#{nav_bar_articles_period}">Ancient Period:</span>  <span th:text="${a.period}"></span></h2><br>
+                    <h2 > <span >Category:</span>  <span th:text="${a.category}"></span></h2>
+                </header><br>
+                <section class="post-content">
+                    <p><span th:text="${a.content}"></span></p><br><br>
+                    <a th:href="@{/articles/details/{id}(id=${a.id})}" class="button">Learn More</a><br>
+                </section> <br>
+                <footer class="post-footer">
+                    <p>Published by, <span th:text="${a.author}"></span></p><br><br>
+                </footer>
+            </article>
+
+        </main>
+
+        <aside class="sidebar">
+
+        </aside>
+       </th:block>
+
+    </div>
+
+    </div>
+</body>
+<footer th:replace="fragments/commons::footer">
+    <script th:src="@{resources/static/js/search-bar.js}"></script>
+</footer>
+</html>

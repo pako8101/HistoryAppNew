@@ -1,0 +1,38 @@
+.info{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+    font-family: "Times New Roman";
+    font-style: italic;
+    margin: 3rem 2.5rem 1.5rem 2.5rem;
+
+    color: black;
+    font-weight: bolder;
+
+
+}
+body{
+    background-image: url("https://cdn.britannica.com/10/152510-050-02269E0A/statues-Easter-Island-topknots.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.top-2{
+    text-underline: #0e3f70;
+}
+.title{
+    margin-top: 1rem;
+
+}
+.about-language{
+    padding: 2rem 4rem 2rem 4rem;
+
+}
+.wrapper{
+
+    border-radius: 8px;
+    border: #555555;
+
+}

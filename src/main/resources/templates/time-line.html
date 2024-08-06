@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/commons::head"></head>
+
+<link rel="stylesheet" href="/css/reset-css.css">
+<link rel="stylesheet" href="/css/timeLine.css">
+<body>
+<div class="container">
+    <!-- Navigation -->
+    <header th:replace="fragments/commons::nav"></header>
+
+
+    <main  class="left_3_column">
+        <h1 id="page_title_text">Timeline</h1>
+        <div id="timeline_search_form">
+            <h2>Timeline Search</h2>
+            <p>Search through the entire ancient history timeline. Specify between which dates you want to search, and what keywords you are looking for.</p>
+            <form accept-charset="utf-8" name="form_timeline_search" class="searchform" id="form_timeline_search" action="/timeline/" method="get" enctype="multipart/form-data" title="Timeline Search">
+                <input type="hidden" name="timeline_search" value="timeline_search" autocomplete="off">
+                <div class="timeline_search_section">
+                    <div class="form_field_label">From</div>
+                    <input type="text" name="tl_date_from" id="tl_date_from" size="5" value="" autocomplete="off">
+                    <select name="tl_date_from_bc_ad" id="tl_date_from_bc_ad" autocomplete="off">
+                        <option value="BC">BCE</option>
+                        <option value="AD">CE</option>
+                    </select>
+                    <div class="form_field_label">To</div>
+                    <input type="text" name="tl_date_to" id="tl_date_to" size="5" value="" autocomplete="off">
+                    <select name="tl_date_to_bc_ad" id="tl_date_to_bc_ad" autocomplete="off">
+                        <option value="BC">BCE</option>
+                        <option value="AD">CE</option>
+                    </select>
+                    <div class="form_field_label">Keywords</div>
+                    <input type="text" name="tl_keywords" id="tl_keywords" size="20" value="" required="" autocomplete="off">
+                    <p>
+                        <input type="submit" id="txt_book_search_submit" value="Search" alt="Search" class="content_button_narrow" autocomplete="off">
+                    </p>
+                </div>
+                <div class="timeline_search_section">
+                    <p class="timeline_types_wrapper">
+                        <b>Categories:</b><br>
+                        <input type="hidden" id="timeline_types_input" name="timeline_types" value="9,5,10,11,12,7,13,1,4" autocomplete="off">
+                        <span class="tl_cat__9 tt_category_wrapper"><input class="chk_timeline_types" type="checkbox" id="tt_checkbox__9" value="9" checked="" autocomplete="off"><label for="tt_checkbox__9">Arts &amp; Culture</label></span>
+                        <span class="tl_cat__5 tt_category_wrapper"><input class="chk_timeline_types" type="checkbox" id="tt_checkbox__5" value="5" checked="" autocomplete="off"><label for="tt_checkbox__5">Cities &amp; Buildings</label></span>
+                        <span class="tl_cat__10 tt_category_wrapper"><input class="chk_timeline_types" type="checkbox" id="tt_checkbox__10" value="10" checked="" autocomplete="off"><label for="tt_checkbox__10">Civilization &amp; Science</label></span>
+                        <span class="tl_cat__11 tt_category_wrapper"><input class="chk_timeline_types" type="checkbox" id="tt_checkbox__11" value="11" checked="" autocomplete="off"><label for="tt_checkbox__11">Migration &amp; Trade</label></span>
+                        <span class="tl_cat__12 tt_category_wrapper"><input class="chk_timeline_types" type="checkbox" id="tt_checkbox__12" value="12" checked="" autocomplete="off"><label for="tt_checkbox__12">Nature &amp; Climate</label></span>
+                        <span class="tl_cat__7 tt_category_wrapper"><input class="chk_timeline_types" type="checkbox" id="tt_checkbox__7" value="7" checked="" autocomplete="off"><label for="tt_checkbox__7">Philosophy &amp; Religion</label></span>
+                        <span class="tl_cat__13 tt_category_wrapper"><input class="chk_timeline_types" type="checkbox" id="tt_checkbox__13" value="13" checked="" autocomplete="off"><label for="tt_checkbox__13">Rulers &amp; Politics</label></span>
+                        <span class="tl_cat__1 tt_category_wrapper"><input class="chk_timeline_types" type="checkbox" id="tt_checkbox__1" value="1" checked="" autocomplete="off"><label for="tt_checkbox__1">States &amp; Territories</label></span>
+                        <span class="tl_cat__4 tt_category_wrapper"><input class="chk_timeline_types" type="checkbox" id="tt_checkbox__4" value="4" checked="" autocomplete="off"><label for="tt_checkbox__4">War(fare) &amp; Battles</label></span>
+                        <script>
+                            jsQueue(()=>{
+                                tl_categories_checked();
+                                $('.chk_timeline_types').change(function() {
+                                    tl_categories_checked();
+                                });
+                            });
+                            function tl_categories_checked() {
+                                var timelineTypesChecked = [];
+                                $('.chk_timeline_types:checked').each(function(elem) {
+                                    timelineTypesChecked.push(this.value);
+                                });
+                                $('#timeline_types_input').attr('value',timelineTypesChecked.join(','));
+                            }
+                        </script>
+                        Select: <span class="tl_categories_select_all link_style">all</span> / <span class="tl_categories_select_none link_style">none</span><br>
+                    </p>
+                </div>
+            </form>
+        </div> </main>
+
+
+
+</div>
+</body>
+<div>
+    <footer th:replace="fragments/commons::footer"></footer>
+</div>
+
+</html>
+
+
+
+
+
+
+
+

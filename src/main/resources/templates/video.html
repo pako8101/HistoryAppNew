@@ -1,0 +1,38 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/commons::head">
+
+</head>
+<link rel="stylesheet" href="/css/video.css">
+<link rel="stylesheet" href="/css/reset-css.css">
+<body>
+<header th:replace="fragments/commons::nav">
+</header>
+
+<div  class="info">
+    <div></div>
+    <div class="wrapper">
+        <h2 class="title">Ancient History Chanel</h2>
+        <p class="about-language">
+            Interesting videos of History Researches
+        </p>
+<!--        src="https://www.youtube.com/embed/{videoId}"-->
+        <h1>Watch our YouTube channel</h1><br>
+        <div class="main-video" >
+            <iframe class="video" width="560" height="315"  th:src="'https://www.youtube.com/embed/' + ${videoId}"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>
+
+<!-- Wrapper Ends -->
+</body>
+<footer th:replace="fragments/commons::footer">
+
+</footer>
+</html>

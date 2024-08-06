@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/commons::head"></head>
+<link rel="stylesheet" href="/css/reset-css.css">
+<link rel="stylesheet" href="/css/translations.css">
+
+<body>
+<div class="container">
+    <!-- Navigation -->
+    <header th:replace="fragments/commons::nav"></header>
+
+
+    <main class="left_3_column">
+        <div class="box_wrapper v_spacing">
+        <h1 id="page_title_text" class="trans">Translations</h1>
+    </div>
+        <h2>Available Languages</h2>
+        <p>We have got <strong>8,588</strong> article translations available in the following languages:</p>
+        <ul class="languages_overview">
+            <li class="lang"><a href="/trans/af/" title="Afrikaans">Afrikaans</a> <span class="trans_count">(81)</span></li>
+            <li class="lang"><a href="/trans/sq/" title="Albanian">Albanian</a> <span class="trans_count">(7)</span></li>
+            <li class="lang"><a href="/trans/ar/" title="Arabic">Arabic</a> <span class="trans_count">(204)</span></li>
+            <li class="lang"><a href="/trans/az/" title="Azerbaijani">Azerbaijani</a> <span class="trans_count">(2)</span></li>
+            <li class="lang"><a href="/trans/be/" title="Belarusian">Belarusian</a> <span class="trans_count">(2)</span></li>
+            <li class="lang"><a href="/trans/bn/" title="Bengali">Bengali</a> <span class="trans_count">(6)</span></li>
+            <li class="lang"><a href="/trans/bs/" title="Bosnian">Bosnian</a> <span class="trans_count">(25)</span></li>
+            <li class="lang"><a href="/trans/bg/" title="Bulgarian">Bulgarian</a> <span class="trans_count">(5)</span></li>
+            <li class="lang"><a href="/trans/ca/" title="Catalan">Catalan</a> <span class="trans_count">(17)</span></li>
+            <li class="lang"><a href="/trans/zh/" title="Chinese">Chinese</a> <span class="trans_count">(173)</span></li>
+            <li class="lang"><a href="/trans/hr/" title="Croatian">Croatian</a> <span class="trans_count">(5)</span></li>
+            <li class="lang"><a href="/trans/cs/" title="Czech">Czech</a> <span class="trans_count">(7)</span></li>
+            <li class="lang"><a href="/trans/nl/" title="Dutch">Dutch</a> <span class="trans_count">(103)</span></li>
+            <li class="lang"><a href="/trans/eo/" title="Esperanto">Esperanto</a> <span class="trans_count">(4)</span></li>
+            <li class="lang"><a href="/trans/fr/" title="French">French</a> <span class="trans_count">(3102)</span></li>
+            <li class="lang"><a href="/trans/de/" title="German">German</a> <span class="trans_count">(135)</span></li>
+            <li class="lang"><a href="/trans/el/" title="Greek">Greek</a> <span class="trans_count">(196)</span></li>
+            <li class="lang"><a href="/trans/gu/" title="Gujarati">Gujarati</a> <span class="trans_count">(2)</span></li>
+            <li class="lang"><a href="/trans/hi/" title="Hindi">Hindi</a> <span class="trans_count">(5)</span></li>
+            <li class="lang"><a href="/trans/hu/" title="Hungarian">Hungarian</a> <span class="trans_count">(10)</span></li>
+            <li class="lang"><a href="/trans/id/" title="Indonesian">Indonesian</a> <span class="trans_count">(78)</span></li>
+            <li class="lang"><a href="/trans/it/" title="Italian">Italian</a> <span class="trans_count">(455)</span></li>
+            <li class="lang"><a href="/trans/ja/" title="Japanese">Japanese</a> <span class="trans_count">(4)</span></li>
+            <li class="lang"><a href="/trans/kn/" title="Kannada">Kannada</a> <span class="trans_count">(1)</span></li>
+            <li class="lang"><a href="/trans/ko/" title="Korean">Korean</a> <span class="trans_count">(8)</span></li>
+            <li class="lang"><a href="/trans/ku/" title="Kurdish">Kurdish</a> <span class="trans_count">(1)</span></li>
+            <li class="lang"><a href="/trans/ms/" title="Malay">Malay</a> <span class="trans_count">(60)</span></li>
+            <li class="lang"><a href="/trans/nb/" title="Norwegian Bokmål">Norwegian Bokmål</a> <span class="trans_count">(1)</span></li>
+            <li class="lang"><a href="/trans/fa/" title="Persian">Persian</a> <span class="trans_count">(179)</span></li>
+            <li class="lang"><a href="/trans/pl/" title="Polish">Polish</a> <span class="trans_count">(33)</span></li>
+            <li class="lang"><a href="/trans/pt/" title="Portuguese">Portuguese</a> <span class="trans_count">(762)</span></li>
+            <li class="lang"><a href="/trans/ro/" title="Romanian">Romanian</a> <span class="trans_count">(3)</span></li>
+            <li class="lang"><a href="/trans/ru/" title="Russian">Russian</a> <span class="trans_count">(42)</span></li>
+            <li class="lang"><a href="/trans/sr/" title="Serbian">Serbian</a> <span class="trans_count">(56)</span></li>
+            <li class="lang"><a href="/trans/es/" title="Spanish">Spanish</a> <span class="trans_count">(2042)</span></li>
+            <li class="lang"><a href="/trans/sv/" title="Swedish">Swedish</a> <span class="trans_count">(15)</span></li>
+            <li class="lang"><a href="/trans/tl/" title="Tagalog">Tagalog</a> <span class="trans_count">(1)</span></li>
+            <li class="lang"><a href="/trans/te/" title="Telugu">Telugu</a> <span class="trans_count">(1)</span></li>
+            <li class="lang"><a href="/trans/tr/" title="Turkish">Turkish</a> <span class="trans_count">(689)</span></li>
+            <li class="lang"><a href="/trans/uk/" title="Ukrainian">Ukrainian</a> <span class="trans_count">(50)</span></li>
+            <li class="lang"><a href="/trans/ur/" title="Urdu">Urdu</a> <span class="trans_count">(16)</span></li>
+        </ul>
+
+        <aside class="right_1_column">
+            <h2>Translate</h2>
+            <p>You can help us translate World History Encyclopedia: Join our global non-profit organization as a <a href="https://www.worldhistory.foundation/job-translator">volunteer translator</a>!</p>
+            <a href="https://www.worldhistory.foundation/job-translator"><img src="https://mcusercontent.com/c3168e59d8bfba7986977db46/images/68bff1c9-2d33-4da4-ae92-22d3c89a42e7.jpg" class="shadow_image" style="max-width:100%;height:auto;"></a>
+        </aside>
+    </main>
+
+
+
+</div>
+</body>
+<div>
+    <footer th:replace="fragments/commons::footer"></footer>
+</div>
+
+</html>
+
+
+
+

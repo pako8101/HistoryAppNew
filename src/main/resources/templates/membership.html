@@ -1,0 +1,185 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/commons::head">
+
+</head>
+<link rel="stylesheet" href="/css/membership.css">
+<link rel="stylesheet" href="/css/reset-css.css">
+<body>
+<header th:replace="fragments/commons::nav">
+</header>
+
+<div  class="info">
+    <div></div>
+    <div class="wrapper">
+        <div id="title_bar">
+            <div class="box_wrapper v_spacing">
+                <h1 id="page_title_text" class="trans">Membership</h1>
+            </div>
+        </div>
+
+        <div id="content_main" class="content_main_full_width" style="text-align:center;">
+            <p class="subtext">
+                We're the world's most read history encyclopedia. Become a member to support our <b>non-profit</b>
+                organisation – we'll give you an <b>ad-free</b> version of this site and much more to say thanks!
+            </p>
+            <a href="#plans" id="subscribe_btn_bottom" class="content_button membership subscribe_button animate_scroll">
+                <em>Become a Member</em></a>
+            <h2 style="padding-bottom:0;">Our Mission</h2>
+            <p class="subtext">
+                Our mission is to engage people with cultural heritage and to improve history education worldwide.
+            </p>
+            <p>&nbsp;</p>
+            <div class="reasons_list" style="border-bottom:none !important;">
+                <div class="reason">
+                    <img src="/template/images/membership/education.jpg?v=1" width="200" height="200" alt="Education">
+                    <div class="headline">Education</div>
+                    <div class="text">We help teachers, students and schools by providing them with reliable, easy-to-read and high quality educational history resources entirely for free.</div>
+                </div>
+                <div class="reason">
+                    <img src="/template/images/membership/general_public.jpg?v=1" width="200" height="200" alt="General Public">
+                    <div class="headline">General Public</div>
+                    <div class="text">By creating an engaging and exciting encyclopedia, we have inspired millions to learn more about other cultures and our shared human past.</div>
+                </div>
+                <div class="reason">
+                    <img src="/template/images/membership/preservation.jpg?v=1" width="200" height="200" alt="Preservation">
+                    <div class="headline">Cultural Heritage</div>
+                    <div class="text">Ancient History is the basis upon which we build our cultural and national identity. With historical understanding we become more open and tolerant towards other cultures.</div>
+                </div>
+            </div>
+            <center class="subscribe_button_container" id="membership_signup_form">
+                <img src="/template/images/membership_arrow_down.png" alt="arrow" class="arrow-down">
+                <h2 id="plans-heading" style="margin-top: 0 !important;">Join 2821 other members who support us each month</h2>
+                <div id="plans">
+                    <div class="membership_option MEM-MONTHLY" data-code="MEM-MONTHLY" data-name="Monthly Membership" data-currency="EUR" data-amount="4">
+                        <div class="mem_headline"><h3>Monthly</h3></div>
+                        <div class="mem_desc">Roughly the price of a Big Mac</div>
+                        <div data-href="/membership/subscribe/?priceId=price_1Lbl7t2UunIs5vtkE9eS0s1w&amp;language=en&amp;utm_campaign=membership&amp;utm_medium=sidetab_heart_en&amp;utm_source=whe" class="content_button membership subscribe_button membership-subscribe-button">
+                            <em>Support our work</em><br>only €4 / month
+                        </div>
+                        <div class="mem_paypal">
+                            — or —<br>
+                            <img src="/images/paypal-mark-color.svg" width="16" height="16" alt="Paypal Logo">
+                            <span class="mem_paypal_button">Subscribe with Paypal</span>
+                        </div>
+                    </div>
+                    <div class="membership_option MEM-ANNUAL" data-code="MEM-ANNUAL" data-name="Annual Membership" data-currency="EUR" data-amount="40">
+                        <div class="mem_headline"><h3>Annual</h3></div>
+                        <div class="mem_desc">Two months free</div>
+                        <div data-href="/membership/subscribe/?priceId=price_1Lbl7u2UunIs5vtkaWNWJlaJ&amp;language=en&amp;utm_campaign=membership&amp;utm_medium=sidetab_heart_en&amp;utm_source=whe" class="content_button membership subscribe_button membership-subscribe-button secondary">
+                            <em>Support our work</em><br>for €40 / year
+                        </div>
+                        <div class="mem_paypal">
+                            — or —<br>
+                            <img src="/images/paypal-mark-color.svg" width="16" height="16" alt="Paypal Logo">
+                            <span class="mem_paypal_button">Subscribe with Paypal</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="mssg-paypal">
+                    Prices in Euros.<br>
+                    This is an automatically renewing subscription.<br>
+                    Pay securely and cancel at any time. No questions asked.
+                </p>
+                <div class="additional-benefits">
+                    <h3>Perks of membership</h3>
+                    <ul><li><span class="checkmark">✓</span> No ads</li><li><span class="checkmark">✓</span> Support a non-profit</li><li><span class="checkmark">✓</span> Exclusive magazine</li><li><span class="checkmark">✓</span> Text statistics</li></ul>
+                </div>
+            </center>
+
+            <script>
+                pageReady.then(()=>{
+                    $('.membership-subscribe-button').click(function(e) {
+                        var targetUrl = this.getAttribute('data-href');
+                        console.log("Link clicked: " + targetUrl);
+                        analyticsEvent('membership-subscribe-button','click / ' + AHE.ab,targetUrl,function() {
+                            console.log('Analytics event logged');
+                            window.location.href = targetUrl;
+                        });
+                    });
+                });
+                jsQueue(()=>{
+                    human_verify();
+                });
+            </script>
+            <h2>Your membership pays for</h2>
+            <div class="reasons_list">
+                <div class="reason">
+                    <div class="headline">More Content</div>
+                    <div class="text">Each article requires around $50 in history books. We could produce so much more with your membership, completing World History Encyclopedia and even moving to other time periods. We could also achieve our vision of translating our articles into other key languages.</div>
+                </div>
+                <div class="reason">
+                    <div class="headline">Video &amp; 3D Content</div>
+                    <div class="text">Studies show that younger people prefer videos over text, especially when learning about topics they can’t engage with physically. Your membership would help us produce engaging video and 3D content to reach future generations of students and get them excited about ancient history.</div>
+                </div>
+                <div class="reason">
+                    <div class="headline">Infrastructure</div>
+                    <div class="text">Our articles are viewed millions of times each month, so we need several web services to make sure we can deal with this. Your membership helps us deliver a fast, secure website and service worldwide. It will also help us expand our mobile content and fund further app development.</div>
+                </div>
+                <div class="carbon_removal">
+                    <a href="https://climate.stripe.com/quaOUE" target="_blank"><img src="/images/partners/stripe-climate-badge.svg" width="30" height="30"></a> We will contribute 1.5% of your subscription to <a href="https://climate.stripe.com/quaOUE" target="_blank">remove CO<sub>2</sub></a> from the atmosphere.
+                </div>
+            </div>
+            <div class="progress">
+                <h2>What our members have helped produce</h2>
+                <div class="progress-box greece">
+                    <div class="progress-image">
+                        <img src="/template/images/progress/greece.png?v2" alt="greece">
+                        <div class="progress-overlay"><img src="/template/images/progress/greece_completed.png?v2" alt="greece"></div>
+                    </div>
+                    <h3>Greco-Roman<small>90% Complete</small></h3>
+                    <p>We've written <em>330 articles</em> about the birthplace of democracy, the world's greatest empire, and the cradle of Europe.</p>
+                </div>
+                <div class="progress-box mesoamerica">
+                    <div class="progress-image">
+                        <img src="/template/images/progress/mesoamerica.png?v2" alt="mesoamerica">
+                        <div class="progress-overlay"><img src="/template/images/progress/mesoamerica_completed.png?v2" alt="mesoamerica"></div>
+                    </div>
+                    <h3>Mesoamerica <small>75% Complete</small></h3>
+                    <p>We've written around <em>60 articles</em> about steaming jungles, pyramids, human sacrifice, and winged snakes.</p>
+                </div>
+                <div class="progress-box neareast">
+                    <div class="progress-image">
+                        <img src="/template/images/progress/neareast.png?v2" alt="neareast">
+                        <div class="progress-overlay"><img src="/template/images/progress/neareast_completed.png?v2" alt="neareast"></div>
+                    </div>
+                    <h3>Near East <small>65% Complete</small></h3>
+                    <p>Around <em>200 articles</em> now cover the cradle of civilization, home of the first empires, and the world's oldest cities.</p>
+                </div>
+                <div class="progress-box india">
+                    <div class="progress-image">
+                        <img src="/template/images/progress/india.png?v2" alt="india">
+                        <div class="progress-overlay"><img src="/template/images/progress/india_completed.png?v2" alt="india"></div>
+                    </div>
+                    <h3>India <small>35% Complete</small></h3>
+                    <p>We've written around <em>35 articles</em> on India's millennia-old heritage of architecture, mythology, and key historical figures.</p>
+                </div>
+                <div class="progress-box china">
+                    <div class="progress-image">
+                        <img src="/template/images/progress/china.png?v2" alt="china">
+                        <div class="progress-overlay"><img src="/template/images/progress/china_completed.png?v2" alt="china"></div>
+                    </div>
+                    <h3>China <small>10% Complete</small></h3>
+                    <p>We have just <em>begun writing</em> about one of the world's oldest civilizations and plan to focus on this next.</p>
+                </div>
+            </div>
+            <div id="testimonials">
+                <h2>What our users say</h2>
+                <img src="/template/images/testimonials.png?v=3" alt="testimonials">
+                <a href="#plans" id="subscribe_btn" class="content_button membership subscribe_button animate_scroll"><em>Support our mission</em></a>
+            </div>
+        </div>
+
+    </div>
+    <div>
+
+    </div>
+</div>
+
+<!-- Wrapper Ends -->
+</body>
+<footer th:replace="fragments/commons::footer">
+
+</footer>
+</html>

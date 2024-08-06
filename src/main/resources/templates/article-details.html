@@ -1,0 +1,116 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/commons::head">
+
+</head>
+<link rel="stylesheet" href="/css/reset-css.css">
+<link rel="stylesheet" href="/css/article-details.css">
+<!--    <script src="/js/bootstrap.min.js"></script>-->
+
+<body>
+<header th:replace="fragments/commons::nav"></header>
+<!--<div class="wrapper">-->
+    <!-- Navigation -->
+    <div class="container">
+
+        <div class="section-services">
+
+            <header class="section-header">
+                <h2 style="font-size: 28px">Ancient <span>History</span></h2><br>
+                <p style="font-size: 24px">Author's Articles</p>
+            </header>
+            <div class="section-content">
+                <article>
+                    <div class="media">
+<!--                        <img th:src="static/images/tutmos.jpg" alt="Title image">-->
+<!--                        <img  th:src="${article.pictures}" alt="">-->
+
+                    </div>
+                    <div class="entry-content">
+                        <h3  style="font-family: 'Franklin Gothic Book'; color: #dc3545; font-size: x-large" >
+                            Article title: <span th:text="${article.title}"></span></h3>
+                        <p>Content: <span th:text="${article.content}"  ></span></p>
+                        <h3 style="color: #0c5460" >Period: <span th:text="${article.period}"  ></span></h3><br>
+                        <h2 style="color: #16a085" > <span >Category:</span>  <span th:text="${article.category}"></span></h2>
+                        <p  style="color: #856404" >Author name: <span th:text="${article.author}" ></span></p><br>
+                        <a style="margin-bottom: 1rem" class="button"
+                              th:action="@{/articles/{id}(id=${article.getId()})}"
+                              th:method="DELETE"
+                        >Remove
+<!--                            <button type="submit" class="ml-3 text-danger" >Remove</button>-->
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+<!--old art-->
+<!--    <div  class="details-header2" >-->
+<!--        -->
+<!--        <section  class="route-info text-center">-->
+<!--            <h2 class="site-title" id="article-name">Article title: <span th:text="${article.title}"></span></h2><br>-->
+<!--            <img class="image-details2" th:src="${article.pictures}" alt="Title image"><br>-->
+<!--            <p>Author name: <span th:text="${article.author}" id="authorName"></span></p><br>-->
+<!--            <p>Content: <span th:text="${article.content}"  id="content"></span></p>-->
+<!--            <h3 class="period" >Period: <span th:text="${article.period}"  ></span></h3><br>-->
+<!--            <h2 class="category"> <span >Category:</span>  <span th:text="${article.category}"></span></h2><br><br>-->
+<!--          </section>-->
+<!--        <section th:unless="${#lists.size(article.pictures) == 0}" class="gallery">-->
+<!--            <img class="rounded"-->
+<!--                 th:each="picture : ${article.pictures}"-->
+<!--                 th:src="${#strings.contains(picture.src, 'cloudinary') ? picture.src : '\images\' + picture.src}"-->
+<!--                 th:alt="${picture.getAlt()}"-->
+<!--                 height="50%">-->
+<!--        </section>-->
+
+<!--            </div>-->
+
+
+<!--</div>-->
+
+</body>
+<div class="row rounded mb-5 mt-3">
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center row ">
+            <div class="col-md-8">
+                <div class="d-flex flex-column comment-section ">
+                    <div class="bg-blur text-light p-2 rounded">
+                        <div class="d-flex flex-row user-info">
+                            <img class="rounded-circle"
+                                 width="40">
+                            <div class="d-flex flex-column justify-content-start ml-2">
+                                <span class="d-block font-weight-bold name"></span>
+                                <span> Comment added on date and time </span></div>
+                        </div>
+                        <div class="mt-2">
+                            <p class="comment-text">Comment text</p>
+                        </div>
+                    </div>
+                    <div class="bg-blur text-light rounded ">
+                        <div class="d-flex flex-row fs-12 float-right">
+                            <div class="like p-2 cursor"><i class="fa fa-thumbs-o-up"></i><span
+                                    class="ml-1">Like</span></div>
+                            <div class="like p-2 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1">Comment</span>
+                            </div>
+                            <div class="like p-2 cursor"><i class="fa fa-share"></i><span class="ml-1">Share</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-blur text-light p-2 rounded">
+                        <input type="hidden" name="albumId" >
+                        <div class="mt-2 text-right">
+                            <button class="btn btn-primary btn-sm shadow-none" type="submit">Post comment
+                            </button>
+                            <button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="button">Cancel
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="fragments/commons::footer"></footer>
+</html>

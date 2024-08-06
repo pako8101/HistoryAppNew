@@ -1,0 +1,70 @@
+spring:
+#  datasource:
+#    driverClassName: com.mysql.cj.jdbc.Driver
+#    url: "jdbc:mysql://localhost:3306/history_gradle_security_new?useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC"
+#    username: ${username}
+#    password: ${password}
+#  sql:
+#    init:
+#      mode: never
+  jpa:
+    # Choose either MySQL 8 or MySQL 5 below
+    # For MySQL 8
+    #database-platform: org.hibernate.dialect.MySQL8Dialect
+    #For MySQL 5
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+    defer-datasource-initialization: true
+  mvc:
+    hidden-method:
+      filter:
+        enabled: true
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+      enabled: true
+  mail:
+    host: smtp.gmail.com
+    port: 578
+    username: ${email_username}
+    password: ${password_email}
+    test-connection: true
+
+    properties:
+      mail:
+        smtp:
+          auth=true:
+
+            properties:
+              mail:
+                smtp:
+                  starttls:
+                    enable=true:
+
+
+
+HistoryAppNew:
+    default.admin.pass: ${default.admin.pass}
+    remember.me.key: ${remember.me.key}
+server:
+  port: 1032
+logging:
+  level:
+    org:
+      springframework:
+        security=DEBUG:
+    org.springframework.security: TRACE
+
+shift:
+  ancient_images: greek.jpeg, changeImage1.png, changeImage2.jpg, sphinks2.jpg
+  refresh-cron: "0 */10 * * * *"
+
+
+

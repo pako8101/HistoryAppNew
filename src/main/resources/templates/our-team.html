@@ -1,0 +1,563 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/commons::head">
+
+</head>
+<link rel="stylesheet" href="/css/our-team.css">
+<link rel="stylesheet" href="/css/reset-css.css">
+<body>
+<header th:replace="fragments/commons::nav">
+</header>
+
+<div  class="info">
+    <div></div>
+    <div class="wrapper">
+        <div id="page">
+            <div id="content_wrapper">
+                <div id="content" class="team_page">
+
+                    <script>
+                        function darkMode() {
+                            let css = document.createElement("link");
+                            css.id  = 'darkCSS';
+                            css.setAttribute("rel", "stylesheet")
+                            css.setAttribute("type", "text/css")
+                            css.setAttribute("media","screen");
+                            css.setAttribute("href", "/template/css/exclude/dark.css?v=1722342081");
+                            document.getElementsByTagName("head")[0].appendChild(css)
+                            document.querySelector('#header_ahe_logo').innerHTML = '<img src="/template/images/header/whe-logo-white-r.svg">';
+                        }
+                        function lightMode() {
+                            document.getElementById('darkCSS').remove();
+                            document.querySelector('#header_ahe_logo').innerHTML = '<img src="/template/images/header/whe-logo-r.svg">';
+                        }
+                        if (localStorage.getItem('darkMode') == 'dark') {
+                            darkMode();
+                        }
+                    </script>
+                    <div id="title_bar">
+                        <div class="box_wrapper v_spacing">
+                            <h1 id="page_title_text" class="trans">Team</h1>
+                        </div>
+                    </div>
+                    <div id="content_main" class="content_main_full_width">
+                        <ul class="tab-links three">
+                            <li><a href="#section-directors" id="link-directors" class="active">Our Team</a></li>
+                            <li><a href="#section-advisors" id="link-members">Board of Advisors</a></li>
+                            <li><a href="#section-contributors" id="link-contributors">Contributors</a></li>
+
+                            <div class="clr"></div>
+                        </ul>
+
+                        <div class="section-team initial-on" id="section-directors">
+                            <h3>Board of Directors</h3>
+                            <div class="grid three_col">
+                                <div class="tm-director tm-grid-item">
+                                    <div class="item-wrapper equal-height-directors">
+                                        <div class="tm-header">
+                                            <a href="/user/jvdc/"><img src="/uploads/profile_photos/150-jvdc.jpg" alt="Jan van der Crabben"></a>
+                                            <div class="tm-info">
+                                                <span class="tm-name">Sisu Motiov</span>
+                                                <span class="tm-position">Chief Executive Officer</span>
+                                                <p class="tm-studies">MA War Studies, King's College London <br>BA Journalism, University of East London</p>
+                                            </div>
+                                            <div class="clr"></div>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="tm-description tm-summary">
+                                            <p>Sisu is the Founder and CEO of World History Encyclopedia. He holds an MA War Studies from King's College, and he has worked in the field of history-related digital media since 2006.</p>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+                                <div class="tm-director tm-grid-item">
+                                    <div class="item-wrapper equal-height-directors">
+                                        <div class="tm-header">
+                                            <a href="/user/JPryst/"><img src="/uploads/profile_photos/150-JPryst.JPG" alt="Joshua J. Mark"></a>
+                                            <div class="tm-info">
+                                                <span class="tm-name">Jeni Moka</span>
+                                                <span class="tm-position">Content Director</span>
+                                                <p class="tm-studies">MA English, SUNY College New Paltz <br>BA English/Philosophy, SUNY College New Paltz</p>
+                                            </div>
+                                            <div class="clr"></div>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="tm-description tm-summary">
+                                            <p>Jeni Mark is World History Encyclopedia's co-founder and Content Director. He was previously a professor at Marist College (NY) where he taught history, philosophy, literature, and writing. He has traveled extensively and lived in Greece and Germany.</p>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+                                <div class="tm-director tm-grid-item">
+                                    <div class="item-wrapper equal-height-directors">
+                                        <div class="tm-header">
+                                            <a href="/user/markzcartwright/"><img src="/uploads/profile_photos/150-markzcartwright.JPG" alt="Mark Cartwright"></a>
+                                            <div class="tm-info">
+                                                <span class="tm-name">Milcho Boev</span>
+                                                <span class="tm-position">Publishing Director</span>
+                                                <p class="tm-studies">MA Political Philosophy, University of York <br>BA Politics (1st), University of Teesside</p>
+                                            </div>
+                                            <div class="clr"></div>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="tm-description tm-summary">
+                                            <p>Milcho is a full-time writer, researcher, historian, and editor. Special interests include art, architecture, and discovering the ideas that all civilizations share. He holds an MA in Political Philosophy and is the WHE Publishing Director.</p>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+                            </div>
+                            <div class="clr"></div>
+                            <h3>Team Members</h3>
+                            <div class="grid four_col">
+
+                                <div class="tm-member tm-grid-item">
+                                    <div class="item-wrapper equal-height-directors">
+                                        <div class="tm-header">
+                                            <a href="/user/bab.cartwright/"><img src="/uploads/profile_photos/150-bab.cartwright.JPG" alt="Babeth Étiève-Cartwright"></a>
+                                            <div class="tm-info">
+                                                <span class="tm-name">Chiro Brigante</span>
+                                                <span class="tm-position">Head of Translation</span>
+                                                <p class="tm-studies">Degree in English and French as a Foreign Language, University of Orléans <br>P.G.C.E in French and Spanish, University of Bristol</p>
+                                            </div>
+                                            <div class="clr"></div>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="tm-description tm-summary">
+                                            <p>Brigante a enseigné l'anglais au British Council de Milan. Elle parle couramment le français, l'anglais et l'italien et a 25 ans d'expérience dans le domaine de l'éducation. Elle aime voyager et découvrir l'histoire et le patrimoine d'autres cultures.</p>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+                                <div class="tm-member tm-grid-item">
+                                    <div class="item-wrapper equal-height-directors">
+                                        <div class="tm-header">
+                                            <a href="/user/carlosdelahuert/"><img src="/uploads/profile_photos/150-carlosdelahuert.jpg" alt="Carlos de la Huerta"></a>
+                                            <div class="tm-info">
+                                                <span class="tm-name">Dido Majorka</span>
+                                                <span class="tm-position">Revenue Manager</span>
+                                                <p class="tm-studies">BA Hons German and Business Studies- Hull University <br>BA Hons History - The Open University <br>Masters by Research- History- Leeds University <br>PhD in History- Kingston University</p>
+                                            </div>
+                                            <div class="clr"></div>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="tm-description tm-summary">
+                                            <p>Born and raised in London but living in Nice, Carlos has fifteen years sales experience in both scholarly and commercial publishing. He is also a researcher and is currently writing a follow up to his non-fiction history book that was released in 2016.</p>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+
+                                <div class="tm-member tm-grid-item">
+                                    <div class="item-wrapper equal-height-directors">
+                                        <div class="tm-header">
+                                            <a href="/user/kelly.mac144/"><img src="/uploads/profile_photos/150-kelly.mac144.jpg" alt="Kelly Macquire"></a>
+                                            <div class="tm-info">
+                                                <span class="tm-name">Kelly Macquire</span>
+                                                <span class="tm-position">Multimedia Producer</span>
+                                                <p class="tm-studies">MA in Archaeology (current) <br>Bachelor of Arts (Honours) in Ancient History and Archaeology / Theatre / Literature <br>Diploma of Theatre Studies</p>
+                                            </div>
+                                            <div class="clr"></div>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="tm-description tm-summary">
+                                            <p>Kelly is a graduate from Monash University who has completed her BA (Honours) in Ancient History and Archaeology, focussing on iconography and status in Pylos burials. She has a passion for mythology and the Aegean Bronze Age.</p>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+
+                                <div class="tm-member tm-grid-item">
+                                    <div class="item-wrapper equal-height-directors">
+                                        <div class="tm-header">
+                                            <a href="/user/lianamiate/"><img src="/uploads/profile_photos/150-lianamiate.jpg" alt="Liana Miate"></a>
+                                            <div class="tm-info">
+                                                <span class="tm-name">Vanio Vero</span>
+                                                <span class="tm-position">Social Media Editor</span>
+                                                <p class="tm-studies">BA Ancient History, Macquarie University, Sydney</p>
+                                            </div>
+                                            <div class="clr"></div>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="tm-description tm-summary">
+                                            <p>Vero is the Social Media Editor for Ancient History Encyclopedia. She holds a Bachelor of Arts Degree with a major in ancient Greece, Rome &amp; Late Antiquity. She is particularly passionate about Rome and Greece, and anything to do with mythology or women.</p>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+                                <div class="tm-member tm-grid-item">
+                                    <div class="item-wrapper equal-height-directors">
+                                        <div class="tm-header">
+                                            <a href="/user/liannewalker/"><img src="/uploads/profile_photos/150-liannewalker.jpg" alt="Lianne Walker"></a>
+                                            <div class="tm-info">
+                                                <span class="tm-name">Lili Mikova</span>
+                                                <span class="tm-position">Narrator</span>
+                                                <p class="tm-studies">BSc Biological Science</p>
+                                            </div>
+                                            <div class="clr"></div>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="tm-description tm-summary">
+                                            <p>Lili is a Bulgarian Audio Storyteller from Vratca working in audiobooks,
+                                                podcasting, and long-form narration. A self-confessed history and science nerd,
+                                                Lili has an insatiable curiosity and loves giving voice to stories where truth
+                                                and story combine</p>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+
+
+
+                                <div class="tm-member tm-grid-item">
+                                    <div class="item-wrapper equal-height-directors">
+                                        <div class="tm-header">
+                                            <a href="/user/simeonnetchev/"><img src="/uploads/profile_photos/150-simeonnetchev.jpg" alt="Simeon Netchev"></a>
+                                            <div class="tm-info">
+                                                <span class="tm-name">Simeon Netchev</span>
+                                                <span class="tm-position">Graphic Designer</span>
+                                                <p class="tm-studies">KU Leuven, Centre for Historic Restoration and Conservation <br>Cornell University, BSc in Design and Environmental Analysis <br>Sofia State University, Centre for Oriental Studies and Linguistics</p>
+                                            </div>
+                                            <div class="clr"></div>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="tm-description tm-summary">
+                                            <p>Simeon is a freelance visual designer with a deep interest in the human side of history.
+                                                He believes that every image should be an interaction, a commentary, and a narrative, and every map should lead on an exciting journey of exploration and discovery.</p>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+
+                            </div>
+                            <div class="clr"></div>
+                        </div>
+
+                        <div class="section-team" id="section-advisors">
+                            <h3>Board of Advisors</h3>
+                            <div class="grid four_col">
+                                <div class="tm-member tm-grid-item">
+                                    <div class="item-wrapper equal-height-directors">
+                                        <div class="tm-header">
+                                            <a href="/user/carolynpperry/"><img src="/uploads/profile_photos/150-carolynpperry.jpg" alt="Carolyn Perry"></a>
+                                            <div class="tm-info">
+                                                <span class="tm-name"Pako Kamika</span>
+                                                <span class="tm-position">Head of Philanthropy</span>
+                                                <p class="tm-studies">BA Classical Studies, Queen Mary, University of London <br>PGCE Education, London South Bank University</p>
+                                            </div>
+                                            <div class="clr"></div>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="tm-description tm-summary">
+                                            <p>Mr. Kamika is Head of Philanthropy at the MBI Al Jaber Foundation,
+                                                a UK based charity which aims to promote better understanding between the peoples of the Middle East and the wider world.</p>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+
+                                <div class="tm-member tm-grid-item">
+                                    <div class="item-wrapper equal-height-directors">
+                                        <div class="tm-header">
+                                            <a href="/user/gimenadelrioria/"><img src="/uploads/profile_photos/150-gimenadelrioria.jpg" alt="Gimena del Rio Riande"></a>
+                                            <div class="tm-info">
+                                                <span class="tm-name">Hari Proktur</span>
+                                                <span class="tm-position">Professor, University of Veliko Tarnovo</span>
+                                                <p class="tm-studies">Phd In Romance Philology (UCM, Spain) <br>
+                                                    Master in Literary Heritage (UAM, Spain) <br>
+                                                    Master in Hispanic Literary Studies (UCM, Spain) <br>Bachelor of Arts (UBA, Argentina) <br>Proffesor of Literature (UBA, Argentina)</p>
+                                            </div>
+                                            <div class="clr"></div>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="tm-description tm-summary">
+                                            <p>Gimena is an advocate for medieval and text edition studies across Latin America and for the digital humanities as an open field of research. She is an Associate Researcher at IIBICRIT (CONICET, Argentina) and the director of HD CAICYT lab.</p>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+                                <div class="tm-member tm-grid-item">
+                                    <div class="item-wrapper equal-height-directors">
+                                        <div class="tm-header">
+                                            <a href="/user/jbw288/"><img src="/uploads/profile_photos/150-jbw288.jpg" alt="James Blake Wiener"></a>
+                                            <div class="tm-info">
+                                                <span class="tm-name">James Blake Wiener</span>
+                                                <span class="tm-position">Cultural Heritage PR Specialist</span>
+                                                <p class="tm-studies">MA World History, New York University <br>BA History (Magna cum Laude), New York University</p>
+                                            </div>
+                                            <div class="clr"></div>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="tm-description tm-summary">
+                                            <p>James is a writer and former Professor of History. He holds an MA in World History with a particular interest in cross-cultural exchange and world history. He is a co-founder of World History Encyclopedia and formerly was its Communications Director.</p>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+                                <div class="tm-member tm-grid-item">
+                                    <div class="item-wrapper equal-height-directors">
+                                        <div class="tm-header">
+                                            <a href="/user/jeremy.seeff/"><img src="/uploads/profile_photos/150-jeremy.seeff.jpg" alt="Jeremy Seeff"></a>
+                                            <div class="tm-info">
+                                                <span class="tm-name">Groko Mituv</span>
+                                                <span class="tm-position">Corporate &amp; Finance Lawyer</span>
+                                                <p class="tm-studies">MA Law Studies in Europe, Christ Church, Oxford University</p>
+                                            </div>
+                                            <div class="clr"></div>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="tm-description tm-summary">
+                                            <p>Mr.MItuv is a partner at Epstein Rosenblum Maoz's corporate, M&amp;A,
+                                                finance and banking practices. He has experience advising companies from their
+                                                earliest stages all the way through to exit, on diversified corporate and commercial matters.</p>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+                                <div class="tm-member tm-grid-item">
+                                    <div class="item-wrapper equal-height-directors">
+                                        <div class="tm-header">
+                                            <a href="/user/mark.tousey/"><img src="/uploads/profile_photos/150-mark.tousey.jpg" alt="Mark J Tousey"></a>
+                                            <div class="tm-info">
+                                                <span class="tm-name">Simona Kamenova</span>
+                                                <span class="tm-position">Venture Capitalist</span>
+                                                <p class="tm-studies">MBA International Finance, Wharton School, University of Pennsylvania <br>BSBA Finance, Olin School, Washington University</p>
+                                            </div>
+                                            <div class="clr"></div>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="tm-description tm-summary">
+                                            <p>Kamenova is a venture capitalist with a background in finance.
+                                                He also spends time as a director on the boards of a number of charities and
+                                                philanthropic organizations in the UK and the US,
+                                                with a particular focus on classical music and opera.</p>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+                                <div class="tm-member tm-grid-item">
+                                    <div class="item-wrapper equal-height-directors">
+                                        <div class="tm-header">
+                                            <a href="/user/thomasjenen/"><img src="/uploads/profile_photos/150-thomasjenen.jpg" alt="Tom Jenen"></a>
+                                            <div class="tm-info">
+                                                <span class="tm-name">Kalin Kamenov</span>
+                                                <span class="tm-position">Strategic Advisor</span>
+                                                <p class="tm-studies">MBA, Columbia Business School, New York, USA <br>BA,
+                                                    English and American Literature, Brandeis University, Massachusetts USA</p>
+                                            </div>
+                                            <div class="clr"></div>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="tm-description tm-summary">
+                                            <p>Based in London, Kalin is an advisor and nonexecutive director working with
+                                                startup and established advertising, media and tech companies in the U.S. and Europe,
+                                                focusing on global expansion, revenue and product strategies, funding and M+A</p>
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-team" id="section-contributors">
+                            <h3>Contributors</h3>
+                            <p>
+                                Below is the list of the <strong>938</strong> people who have contributed articles, media or translations to our publication, in alphabetical order.
+                                Contributors are not part of our team; they have contributed their knowledge independently.</p>
+                            <ul>
+                                <li><a href="/user/adnanutkuutku">Adnan Utku</a></li>
+                                <li><a href="/user/denaxas">Art Denaxas</a></li>
+                                <li><a href="/user/awolfson0">Aaron Wolfson</a></li>
+                                <li><a href="/user/k8zott5v2">Abdenacer Saidi</a></li>
+                                <li><a href="/user/abdulkadirsrer">Abdulkadir Sürer</a></li>
+                                <li><a href="/user/abet">Abet Narváez Ortiz</a></li>
+                                <li><a href="/user/achilliadaskalo">Achillia D. Auer</a></li>
+                                <li><a href="/user/adammanuel">Adam Manuel</a></li>
+                                <li><a href="/user/ariarathes">Adrian Dumitru</a></li>
+                                <li><a href="/user/a.dunn92">Adriana Dunn</a></li>
+                                <li><a href="/user/nickavila12">Aelius Hadrianus</a></li>
+                                <li><a href="/user/agustinacardozo">Agustina Cardozo</a></li>
+                                <li><a href="/user/ahaanmalhotra">Ahaan Malhotra</a></li>
+                                <li><a href="/user/bargnevi">Ahmet Barış Günevi</a></li>
+                                <li><a href="/user/al_hussain1989">Al-Hussain Al-Tahir</a></li>
+                                <li><a href="/user/albanbak_b6vpa">Alban Bakalli</a></li>
+                                <li><a href="/user/elchesemueve">Alberto Díaz Calatayud</a></li>
+                                <li><a href="/user/sejdiualbnor">Albnor Sejdiu</a></li>
+                                <li><a href="/user/aldocopetti">Aldo Copetti</a></li>
+                                <li><a href="/user/orozcodesancha.alejandro390">Alejandro Orozco De Sancha</a></li>
+                                <li><a href="/user/abaliel">Alessandra Balielo</a></li>
+                                <li><a href="/user/alessandromosco">Alessandro Moscone</a></li>
+                                <li><a href="/user/alex.criddle">Alex Criddle</a></li>
+                                <li><a href="/user/alexhagler">Alex Hagler</a></li>
+                                <li><a href="/user/alexrevzan">Alex Revzan</a></li>
+                                <li><a href="/user/alexsong">Alex Song</a></li>
+                                <li><a href="/user/alexagalue">Alexa Galue</a></li>
+                                <li><a href="/user/olivieri.alexandra">Alexandra Olivieri</a></li>
+                                <li><a href="/user/alexisga_seh3g">Alexis Gagliardi</a></li>
+                                <li><a href="/user/aleynaelkran">Aleyna Elkıran</a></li>
+                                <li><a href="/user/aleynauyanik">Aleyna Uyanık</a></li>
+                                <li><a href="/user/alfonsovincenzomauro2">Alfonso Vincenzo Mauro</a></li>
+                                <li><a href="/user/alikcherny">Alik Cherny</a></li>
+                                <li><a href="/user/Alco1992">Alonso Constenla Cervantes</a></li>
+                                <li><a href="/user/alpergedik">Alper Gedik</a></li>
+                                <li><a href="/user/mandy.iliadis">Amanda Iliadis</a></li>
+                                <li><a href="/user/amandarundle">Amanda Rundle</a></li>
+                                <li><a href="/user/harshana.pussepitiya">Amanthee Pussepitiya</a></li>
+                                <li><a href="/user/amin-nasr">Amin Nasr</a></li>
+                                <li><a href="/user/amirzayyanid">Amir Zayyanid</a></li>
+                                <li><a href="/user/anacarolinadeso">Ana Carolina de Sousa</a></li>
+                                <li><a href="/user/analarissasilva">Ana Larissa Silva</a></li>
+                                <li><a href="/user/anookay26">Anantha Krishnan</a></li>
+                                <li><a href="/user/anasgtalvs">Anas Khan</a></li>
+                                <li><a href="/user/anas.layachi">Anas Layachi</a></li>
+                                <li><a href="/user/anastasiakarava">Anastasia Karavasileiou</a></li>
+                                <li><a href="/user/a.m.rudkovsk">Anastasiia Rudkovska</a></li>
+                                <li><a href="/user/halaburda.anastasiya">Anastasiya Halaburda</a></li>
+                                <li><a href="/user/andreagarza11">Andrea Garza-Dí­az</a></li>
+                                <li><a href="/user/a.lozano72">Andrea Lozano Vásquez</a></li>
+                                <li><a href="/user/andrea.nardo.pd">Andrea Nardo</a></li>
+                                <li><a href="/user/stoellnerandrea">Andrea Stoellner</a></li>
+                                <li><a href="/user/jzsabx11">Andreas Chamilakis</a></li>
+                                <li><a href="/user/andrejzivojin">Andrej Zivojin</a></li>
+                                <li><a href="/user/andrew.nw4">Andrew Eubanks</a></li>
+                                <li><a href="/user/agmontiveo">Andrew Montiveo</a></li>
+                                <li><a href="/user/wessels.a">Angela King</a></li>
+                                <li><a href="/user/anilshende">Anil Shende</a></li>
+                                <li><a href="/user/ab.techwriter">Anindita Basu</a></li>
+                                <li><a href="/user/xdkm6kbre">Anita Sinkovicz</a></li>
+                                <li><a href="/user/ferraria_fmotr">Anna Ferrari</a></li>
+                                <li><a href="/user/annagredecka">Anna Gredecka</a></li>
+                                <li><a href="/user/annasimms">Anna Simms</a></li>
+                                <li><a href="/user/annesophiehardy">Anne-Sophie Hardy</a></li>
+                                <li><a href="/user/Deathfinger">Antoine Simonin</a></li>
+                                <li><a href="/user/antonioalfarode">Antonio Alfaro de Prado</a></li>
+                                <li><a href="/user/antonioelduque">Antonio Elduque</a></li>
+                                <li><a href="/user/61in2uys">Antonios Gavriilidis</a></li>
+                                <li><a href="/user/Antonios_Loizides">Antonios Loizides</a></li>
+                                <li><a href="/user/Antonis_Mistriotis">Antonis Mistriotis</a></li>
+                                <li><a href="/user/aapaganellip">Antônio Augusto Paganelli Pinto</a></li>
+                                <li><a href="/user/andela.sormaz">Anđela Šormaz</a></li>
+                                <li><a href="/user/april.lynn.downey">April Lynn Downey</a></li>
+                                <li><a href="/user/arashtaheri">Arash Taheri</a></li>
+                                <li><a href="/user/arda">Arda Gökgündüz</a></li>
+                                <li><a href="/user/arhamfarooq">Arham Farooq</a></li>
+                                <li><a href="/user/ava.spartan.117">Arienne King</a></li>
+                                <li><a href="/user/aritraghosh">Aritra Ghosh</a></li>
+                                <li><a href="/user/ory1omydd">Armin Alijaj</a></li>
+                                <li><a href="/user/firstlensman">Art Ramos</a></li>
+                                <li><a href="/user/artemvynohradov">Artem Vynohradov</a></li>
+                                <li><a href="/user/arturo.bte">Arturo Santiago Rossi</a></li>
+                                <li><a href="/user/ashleighconfroy">Ashleigh C. Onfroy</a></li>
+                                <li><a href="/user/aslkule">Aslı Kule</a></li>
+                                <li><a href="/user/asma_alromaithi">Asma ALRemeithi</a></li>
+                                <li><a href="/user/asmaayunes">Asmaa Yunes</a></li>
+                                <li><a href="/user/foufoufou">Athanasios Fountoukis</a></li>
+                                <li><a href="/user/kioufe">Athanasios Kioufentzoglou</a></li>
+                                <li><a href="/user/auroraalario">Aurora Alario</a></li>
+                                <li><a href="/user/avichai_kapach">Avi Kapach</a></li>
+                                <li><a href="/user/avivan.ar99">Avivan Badal</a></li>
+                                <li><a href="/user/ayberkmustafaol">Ayberk Mustafaoğlu</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="join_message greystripe">
+                            <h3>Volunteer</h3>
+                            <p>Are you passionate about history and feel strongly about our non-profit mission? Have a look at our <a href="https://www.worldhistory.foundation/volunteer" class="no_external">volunteering options</a> to join our team!</p>
+                        </div>
+                    </div>
+                    <style>
+                        .join_message {
+                            margin: 80px 0px;
+                            text-align: center;
+                            font-family: Karla, Arial, Helvetica, sans-serif;
+                            color: #666;
+                            clear: both;
+                            line-height: 130%;
+                            padding: 1px 0px 10px 0px;
+                        }
+                        #section-contributors, #section-advisors {
+                            display: none;
+                        }
+                        @media (min-width: 992px) {
+                            #section-contributors ul {
+                                column-count: 3;
+                            }
+                        }
+                        @media (max-width: 991px) {
+                            #section-contributors ul {
+                                column-count: 2;
+                            }
+                        }
+                    </style>
+                    <script>
+                        jsQueue(function(){
+                            var equalheight = function(container){
+                                var maxHeight = 0;
+                                var elementos = $(container).children('div.tm-grid-item');
+                                elementos.each(function(){
+                                    var itemwrapper = $(this).find('.item-wrapper');
+
+                                    if ($(this).find('.item-wrapper').height() +30 > maxHeight) { maxHeight = $(this).find('.item-wrapper').height() + 30; }
+
+                                });
+                                elementos.height(maxHeight);
+                            };
+
+                            $(".section-team:not('.initial-on')").slideUp();
+
+                            $('.tab-links li a').on('click', function(e)  {
+                                e.preventDefault();
+                                var target = $(this).attr('href');
+
+                                $('.tab-links a').removeClass('active');
+                                $(this).addClass('active');
+
+
+                                $('.section-team:not(target)').hide();
+
+                                $(target).show();
+                                equalheight(target);
+                            });
+                            $(window).on('load',function(){
+                                equalheight('#section-directors');
+                            });
+
+                            $(window).resize(function(){
+                                equalheight('#section-directors');
+                                equalheight('#section-members');
+                                equalheight('#section-contributors');
+                                equalheight('#section-other');
+                            });
+                        });
+                    </script> <p id="footer_spacer">&nbsp;</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>
+
+<!-- Wrapper Ends -->
+</body>
+<footer th:replace="fragments/commons::footer">
+
+</footer>
+</html>

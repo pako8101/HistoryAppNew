@@ -1,0 +1,469 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/commons::head">
+
+</head>
+<link rel="stylesheet" href="/css/teaching.css">
+<link rel="stylesheet" href="/css/reset-css.css">
+<body>
+<header th:replace="fragments/commons::nav">
+</header>
+
+<div  class="info">
+    <h1 id="page_title_text" class="trans">Teaching Materials</h1>
+    <div id="page">
+        <div id="content_wrapper">
+            <div id="content" class="edu_page">
+
+                <script>
+                    function darkMode() {
+                        let css = document.createElement("link");
+                        css.id  = 'darkCSS';
+                        css.setAttribute("rel", "stylesheet")
+                        css.setAttribute("type", "text/css")
+                        css.setAttribute("media","screen");
+                        css.setAttribute("href", "/template/css/exclude/dark.css?v=1721223765");
+                        document.getElementsByTagName("head")[0].appendChild(css)
+                        document.querySelector('#header_ahe_logo').innerHTML = '<img src="/template/images/header/whe-logo-white-r.svg">';
+                    }
+                    function lightMode() {
+                        document.getElementById('darkCSS').remove();
+                        document.querySelector('#header_ahe_logo').innerHTML = '<img src="/template/images/header/whe-logo-r.svg">';
+                    }
+                    if (localStorage.getItem('darkMode') == 'dark') {
+                        darkMode();
+                    }
+                </script>
+                <main class="left_3_column" id="main_content">
+                    <div class="education_materials_wrapper">
+                        <h2>Free Lessons, Activities &amp; More</h2>
+                        <p>Our lessons come with a collection of supplementary materials and useful links on the subject, as well as downloadable handouts, assessments, keys and much more.</p>
+                        <p>All our teaching materials are downloadable <strong>entirely for free.</strong></p>
+                        <div class="latest_content_items">
+                            <div id="ci_type_wrapper">
+                                <div class="ci_related_content_outer_wrapper" id="ci_related_content_outer_wrapper">
+                                    <div class="ci_subtype_selectors">
+                                        <span class="filter_label">Subtypes:</span>
+                                        <div class="outline_button selector selected" data-subtype-id="0">All</div>
+                                        <div class="outline_button selector " data-subtype-id="1">Worksheet/Activity</div>
+                                        <div class="outline_button selector " data-subtype-id="2">Lesson</div>
+                                        <div class="outline_button selector " data-subtype-id="3">Lesson Pack</div>
+                                        <div class="outline_button selector " data-subtype-id="4">Teaching Bundle</div>
+                                    </div>
+                                    <div id="ci_related_content">
+                                        <div class="ci_related_content_wrapper ci_two_cols three_cols">
+                                            <div class="columns">
+                                                <a href="/lessonplan/73/the-scientific-revolution/" class="content_item  ci_related_item ci_type_10 " id="10-73">
+                                                    <picture>
+                                                        <source srcset="https://www.worldhistory.org/img/c/p/360x202/13007.jpg.webp?v=1717594628 360w, https://www.worldhistory.org/img/c/p/720x404/13007.jpg.webp?v=1717594628 720w" type="image/webp">
+                                                        <source srcset="https://www.worldhistory.org/img/c/p/360x202/13007.jpg?v=1717594628 360w, https://www.worldhistory.org/img/c/p/720x404/13007.jpg?v=1717594628 720w" type="image/jpg">
+                                                        <img loading="lazy" src="https://www.worldhistory.org/img/c/p/360x202/13007.jpg?v=1717594628" width="360" height="202" alt="The Scientific Revolution" class="ci_image ">
+                                                    </picture>
+                                                    <div class="ci_preview_content">
+                                                        <div class="ci_header type__10">
+                                                            <div class="ci_type_name">
+                                                                Lesson </div>
+                                                            <h3>The Scientific Revolution</h3>
+                                                        </div>
+                                                        <div class="ci_preview">
+                                                            Before class, students will be asked to read two Ancient History... </div>
+                                                    </div>
+                                                </a>
+                                                <a href="/lessonplan/72/hittite-diplomacy--the-treaty-of-kadesh/" class="content_item  ci_related_item ci_type_10 " id="10-72">
+                                                    <picture>
+                                                        <source srcset="https://www.worldhistory.org/img/c/p/360x202/11159.jpg.webp?v=1713311706 360w, https://www.worldhistory.org/img/c/p/720x404/11159.jpg.webp?v=1713311706 720w" type="image/webp">
+                                                        <source srcset="https://www.worldhistory.org/img/c/p/360x202/11159.jpg?v=1713311706 360w, https://www.worldhistory.org/img/c/p/720x404/11159.jpg?v=1713311706 720w" type="image/jpg">
+                                                        <img loading="lazy" src="https://www.worldhistory.org/img/c/p/360x202/11159.jpg?v=1713311706" width="360" height="202" alt="Hittite Diplomacy &amp; the Treaty of Kadesh" class="ci_image ">
+                                                    </picture>
+                                                    <div class="ci_preview_content">
+                                                        <div class="ci_header type__10">
+                                                            <div class="ci_type_name">
+                                                                Teaching Material </div>
+                                                            <h3>Hittite Diplomacy &amp; the Treaty of Kadesh</h3>
+                                                        </div>
+                                                        <div class="ci_preview">
+                                                            This lesson plan will allow students to answer the following questions... </div>
+                                                    </div>
+                                                </a>
+                                                <a href="/lessonplan/71/phoenician-maritime-trade-and-cultural-exchange/" class="content_item  ci_related_item ci_type_10 " id="10-71">
+                                                    <picture>
+                                                        <source srcset="https://www.worldhistory.org/img/c/p/360x202/14796.png.webp?v=1717067583 360w, https://www.worldhistory.org/img/c/p/720x404/14796.png.webp?v=1717067583 720w" type="image/webp">
+                                                        <source srcset="https://www.worldhistory.org/img/c/p/360x202/14796.png?v=1717067583 360w, https://www.worldhistory.org/img/c/p/720x404/14796.png?v=1717067583 720w" type="image/png">
+                                                        <img loading="lazy" src="https://www.worldhistory.org/img/c/p/360x202/14796.png?v=1717067583" width="360" height="202" alt="Phoenician Maritime Trade and Cultural Exchange" class="ci_image ">
+                                                    </picture>
+                                                    <div class="ci_preview_content">
+                                                        <div class="ci_header type__10">
+                                                            <div class="ci_type_name">
+                                                                Teaching Material </div>
+                                                            <h3>Phoenician Maritime Trade and Cultural Exchange</h3>
+                                                        </div>
+                                                        <div class="ci_preview">
+                                                            This lesson plan has two parts. During the first part, students... </div>
+                                                    </div>
+                                                </a>
+                                                <a href="/lessonplan/68/mesopotamia-innovations--agriculture/" class="content_item  ci_related_item ci_type_10 " id="10-68">
+                                                    <picture>
+                                                        <source srcset="https://www.worldhistory.org/img/c/p/360x202/16860.png.webp?v=1720549323 360w, https://www.worldhistory.org/img/c/p/720x404/16860.png.webp?v=1720549323 720w" type="image/webp">
+                                                        <source srcset="https://www.worldhistory.org/img/c/p/360x202/16860.png?v=1720549323 360w, https://www.worldhistory.org/img/c/p/720x404/16860.png?v=1720549323 720w" type="image/png">
+                                                        <img loading="lazy" src="https://www.worldhistory.org/img/c/p/360x202/16860.png?v=1720549323" width="360" height="202" alt="Mesopotamia: Innovations &amp; Agriculture" class="ci_image ">
+                                                    </picture>
+                                                    <div class="ci_preview_content">
+                                                        <div class="ci_header type__10">
+                                                            <div class="ci_type_name">
+                                                                Lesson Pack </div>
+                                                            <h3>Mesopotamia: Innovations &amp; Agriculture</h3>
+                                                        </div>
+                                                        <div class="ci_preview">
+                                                            This lesson pack on innovations and agriculture in ancient Mesopotamia... </div>
+                                                    </div>
+                                                </a>
+                                                <a href="/lessonplan/67/mesopotamia-empires--warfare/" class="content_item  ci_related_item ci_type_10 " id="10-67">
+                                                    <picture>
+                                                        <source srcset="https://www.worldhistory.org/img/c/p/360x202/15147.png.webp?v=1718701865 360w, https://www.worldhistory.org/img/c/p/720x404/15147.png.webp?v=1718701865 720w" type="image/webp">
+                                                        <source srcset="https://www.worldhistory.org/img/c/p/360x202/15147.png?v=1718701865 360w, https://www.worldhistory.org/img/c/p/720x404/15147.png?v=1718701865 720w" type="image/png">
+                                                        <img loading="lazy" src="https://www.worldhistory.org/img/c/p/360x202/15147.png?v=1718701865" width="360" height="202" alt="Mesopotamia: Empires &amp; Warfare" class="ci_image ">
+                                                    </picture>
+                                                    <div class="ci_preview_content">
+                                                        <div class="ci_header type__10">
+                                                            <div class="ci_type_name">
+                                                                Lesson Pack </div>
+                                                            <h3>Mesopotamia: Empires &amp; Warfare</h3>
+                                                        </div>
+                                                        <div class="ci_preview">
+                                                            This lesson pack on empires and warfare in ancient Mesopotamia... </div>
+                                                    </div>
+                                                </a>
+                                                <a href="/lessonplan/66/mesopotamia-daily-life/" class="content_item  ci_related_item ci_type_10 " id="10-66">
+                                                    <picture>
+                                                        <source srcset="https://www.worldhistory.org/img/c/p/360x202/10768.jpg.webp?v=1712741763 360w, https://www.worldhistory.org/img/c/p/720x404/10768.jpg.webp?v=1712741763 720w" type="image/webp">
+                                                        <source srcset="https://www.worldhistory.org/img/c/p/360x202/10768.jpg?v=1712741763 360w, https://www.worldhistory.org/img/c/p/720x404/10768.jpg?v=1712741763 720w" type="image/jpg">
+                                                        <img loading="lazy" src="https://www.worldhistory.org/img/c/p/360x202/10768.jpg?v=1712741763" width="360" height="202" alt="Mesopotamia: Daily Life" class="ci_image ">
+                                                    </picture>
+                                                    <div class="ci_preview_content">
+                                                        <div class="ci_header type__10">
+                                                            <div class="ci_type_name">
+                                                                Lesson Pack </div>
+                                                            <h3>Mesopotamia: Daily Life</h3>
+                                                        </div>
+                                                        <div class="ci_preview">
+                                                            This lesson pack on daily life in ancient Mesopotamia includes... </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <nav class="pagination">
+                                                <strong class="pagination_page">1</strong> <a href="/type/10/1/" class="pagination_page" data-page="2" rel="next ">2</a>
+                                                <a href="/type/10/1/" class="pagination_page" data-page="3" rel="">3</a>
+                                                <a href="/type/10/1/" class="pagination_page" data-page="4" rel="">4</a>
+                                                <a href="/type/10/1/" class="pagination_page" data-page="5" rel="">5</a>
+                                                <a href="/type/10/1/" class="pagination_page" data-page="6" rel="">6</a>
+                                                <a href="/type/10/1/" class="pagination_page" data-page="7" rel="">7</a>
+                                                <a href="/type/10/1/" class="pagination_page" data-page="8" rel="">8</a>
+                                                <a href="/type/10/1/" class="pagination_page" data-page="9" rel="">9</a>
+                                                <a href="/type/10/1/" class="pagination_page" data-page="10" rel="">10</a>
+                                                <a href="/type/10/1/" data-page="2" rel="next">Next ›</a>
+                                                <a href="/type/10/1/" data-page="10" rel="">Last »</a>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                                var wrapper_selector_prefix = '#ci_type_wrapper ';
+                                var pag = 1;
+                                var cit = "10";
+                                var cist = "";
+
+                                function handle_related_pagination_click() {
+                                    $(wrapper_selector_prefix + ".ci_related_content_wrapper .pagination a").off().one("click",function(e) {
+                                        e.preventDefault();
+                                        var newpage = $(this).attr("data-page");
+                                        $(wrapper_selector_prefix + ".ci_related_content_wrapper").fadeTo(400,0.1,function() {
+                                            $(wrapper_selector_prefix + ".ci_related_content_wrapper").load("/ajax/ajax_type_cis.php?&cit=" + cit + "&lim=6&pag=" + newpage + "&ci_subtype_ids=" + cist,function() {
+                                                $(wrapper_selector_prefix + ".ci_related_content_wrapper").fadeTo(400,1);
+                                                if (document.getElementById('ci_related_type_list')) {
+                                                    var eTop = $(wrapper_selector_prefix + '#ci_related_type_list').offset().top;
+                                                } else if (document.getElementById('ci_related_content_outer_wrapper')) {
+                                                    var eTop = $(wrapper_selector_prefix + '#ci_related_content_outer_wrapper').offset().top;
+                                                }
+                                                if (eTop > 0) {
+                                                    $(window).scrollTop(eTop);
+                                                }
+                                                updateBrowserURL(cit,newpage,cist);
+                                                handle_related_pagination_click();
+                                            });
+                                        });
+                                    });
+                                }
+
+                                function updateBrowserURL(cit,page,cist) {
+                                    let urlComponents   = [];
+                                    let url             = '';
+                                    if (cit) {
+                                        urlComponents.push('type:'+cit);
+                                    }
+                                    if (page) {
+                                        urlComponents.push('page:'+page);
+                                    }
+                                    if (cist) {
+                                        urlComponents.push('subtype:'+cist);
+                                    }
+                                    url = '#ci_related_filters=' + urlComponents.join('&');
+                                    window.location = url;
+                                }
+
+                                function applyBrowserURLFilters() {
+                                    if (window.location.hash) {
+                                        let filters = window.location.hash.match(/ci_related_filters=type:([0-9]+)&page:([0-9]+)(&subtype:([0-9]+))?/);
+                                        if (filters) {
+                                            let type    = filters[1] ?? 0;
+                                            let page    = filters[2] ?? 0;
+                                            let subtype = filters[4] ?? 0;
+                                            if (type || page || subtype) {
+                                                console.log('Applying filters!');
+                                                $(wrapper_selector_prefix + ".ci_related_content_wrapper").load("/ajax/ajax_type_cis.php?&cit=" + type + "&lim=6&pag=" + page + "&ci_subtype_ids=" + subtype,function() {
+                                                    jsQueue(()=>{
+                                                        // Change UI selection
+                                                        $(wrapper_selector_prefix + ".ci_rel_type").removeClass("selected");
+                                                        $(wrapper_selector_prefix + '.ci_type_'+type).addClass("selected");
+                                                        $(wrapper_selector_prefix + ".ci_subtype_selectors .outline_button.selector").removeClass("selected");
+                                                        $(wrapper_selector_prefix + ".ci_subtype_selectors .outline_button.selector[data-subtype-id=2]").addClass("selected");
+                                                    });
+                                                    jsQueue(()=>{
+                                                        handle_related_pagination_click();
+                                                    });
+                                                });
+                                            }
+                                        }
+                                    }
+                                }
+
+                                jsQueue(()=>{
+                                    applyBrowserURLFilters();
+                                });
+
+                                jsQueue(()=>{
+                                    handle_related_pagination_click();
+                                    $(wrapper_selector_prefix + ".ci_rel_type").click(function() {
+                                        cit = $(this).attr('rel');
+                                        $(wrapper_selector_prefix + "#ci_related_type_current_selection").html(null);
+                                        $(this).clone().appendTo("#ci_related_type_current_selection");
+                                        $(wrapper_selector_prefix + ".ci_rel_type").removeClass("selected");
+                                        $(this).addClass("selected");
+                                        $(wrapper_selector_prefix + ".ci_related_content_wrapper").fadeTo(400,0.1,function() {
+                                            $(wrapper_selector_prefix + ".ci_related_content_wrapper").load("/ajax/ajax_type_cis.php?&cit=" + cit + "&lim=6&pag=" + pag + "&ci_subtype_ids=" + cist,function() {
+                                                $(wrapper_selector_prefix + ".ci_related_content_wrapper").fadeTo(400,1);
+                                                updateBrowserURL(cit,pag,cist);
+                                                handle_related_pagination_click();
+                                            });
+                                        });
+                                    });
+                                    $(wrapper_selector_prefix + '.ci_subtype_selectors .outline_button.selector').click(function() {
+                                        cist = $(this).attr('data-subtype-id');
+                                        $(wrapper_selector_prefix + ".ci_subtype_selectors .outline_button.selector").removeClass("selected");
+                                        $(this).addClass("selected");
+                                        $(wrapper_selector_prefix + ".ci_related_content_wrapper").fadeTo(400,0.1,function() {
+                                            $(wrapper_selector_prefix + ".ci_related_content_wrapper").load("/ajax/ajax_type_cis.php?&cit=" + cit + "&lim=6&pag=" + pag + "&ci_subtype_ids=" + cist,function() {
+                                                $(wrapper_selector_prefix + ".ci_related_content_wrapper").fadeTo(400,1);
+                                                updateBrowserURL(cit,pag,cist);
+                                                handle_related_pagination_click();
+                                            });
+                                        });
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="collections_wrapper">
+                        <h2>Curated Collections</h2>
+                        <p>
+                            Collections are a great way to start finding supporting materials for your teaching.
+                            They are organized around different themes for which our editorial team
+                            selects the most appropriate content from our encyclopedia.
+                        </p>
+                        <div class="ci_related_content_wrapper">
+                            <a href="/collection/251/a-gallery-of-ancient-egyptian-temples/" class="content_item   ci_type_9 " id="9-251">
+                                <picture>
+                                    <source srcset="https://www.worldhistory.org/img/c/p/360x202/12797.jpg.webp?v=1721373817 360w, https://www.worldhistory.org/img/c/p/720x404/12797.jpg.webp?v=1721373817 720w" type="image/webp">
+                                    <source srcset="https://www.worldhistory.org/img/c/p/360x202/12797.jpg?v=1721373817 360w, https://www.worldhistory.org/img/c/p/720x404/12797.jpg?v=1721373817 720w" type="image/jpg">
+                                    <img loading="lazy" src="https://www.worldhistory.org/img/c/p/360x202/12797.jpg?v=1721373817" width="360" height="202" alt="A Gallery of Ancient Egyptian Temples" class="ci_image ">
+                                </picture>
+                                <div class="ci_preview_content">
+                                    <div class="ci_header type__9">
+                                        <div class="ci_type_name">
+                                            Image Gallery </div>
+                                        <h3>A Gallery of Ancient Egyptian Temples</h3>
+                                    </div>
+                                    <div class="ci_preview">
+                                        The temple in ancient Egypt was the home of the deity it was built for... </div>
+                                </div>
+                            </a>
+                            <a href="/collection/250/ancient-egypt-government--religion/" class="content_item   ci_type_9 " id="9-250">
+                                <picture>
+                                    <source srcset="https://www.worldhistory.org/img/c/p/360x202/775.jpg.webp?v=1721295303 360w, https://www.worldhistory.org/img/c/p/720x404/775.jpg.webp?v=1721295303 720w" type="image/webp">
+                                    <source srcset="https://www.worldhistory.org/img/c/p/360x202/775.jpg?v=1721295303 360w, https://www.worldhistory.org/img/c/p/720x404/775.jpg?v=1721295303 720w" type="image/jpg">
+                                    <img loading="lazy" src="https://www.worldhistory.org/img/c/p/360x202/775.jpg?v=1721295303" width="360" height="202" alt="Ancient Egypt: Government &amp; Religion" class="ci_image ">
+                                </picture>
+                                <div class="ci_preview_content">
+                                    <div class="ci_header type__9">
+                                        <div class="ci_type_name">
+                                            Collection </div>
+                                        <h3>Ancient Egypt: Government &amp; Religion</h3>
+                                    </div>
+                                    <div class="ci_preview">
+                                        Government and religion in ancient Egypt were fully integrated beginning... </div>
+                                </div>
+                            </a>
+                            <a href="/collection/249/everyday-life-in-ancient-egypt/" class="content_item   ci_type_9 " id="9-249">
+                                <picture>
+                                    <source srcset="https://www.worldhistory.org/img/c/p/360x202/6580.jpg.webp?v=1721390585 360w, https://www.worldhistory.org/img/c/p/720x404/6580.jpg.webp?v=1721390585 720w" type="image/webp">
+                                    <source srcset="https://www.worldhistory.org/img/c/p/360x202/6580.jpg?v=1721390585 360w, https://www.worldhistory.org/img/c/p/720x404/6580.jpg?v=1721390585 720w" type="image/jpg">
+                                    <img loading="lazy" src="https://www.worldhistory.org/img/c/p/360x202/6580.jpg?v=1721390585" width="360" height="202" alt="Everyday Life in Ancient Egypt" class="ci_image ">
+                                </picture>
+                                <div class="ci_preview_content">
+                                    <div class="ci_header type__9">
+                                        <div class="ci_type_name">
+                                            Collection </div>
+                                        <h3>Everyday Life in Ancient Egypt</h3>
+                                    </div>
+                                    <div class="ci_preview">
+                                        Daily life in ancient Egypt was lived with an awareness of the gods... </div>
+                                </div>
+                            </a>
+                            <a href="/collection/248/a-gallery-of-ziggurats-of-ancient-mesopotamia/" class="content_item   ci_type_9 " id="9-248">
+                                <picture>
+                                    <source srcset="https://www.worldhistory.org/img/c/p/360x202/12890.png.webp?v=1720552205 360w, https://www.worldhistory.org/img/c/p/720x404/12890.png.webp?v=1720552205 720w" type="image/webp">
+                                    <source srcset="https://www.worldhistory.org/img/c/p/360x202/12890.png?v=1720552205 360w, https://www.worldhistory.org/img/c/p/720x404/12890.png?v=1720552205 720w" type="image/png">
+                                    <img loading="lazy" src="https://www.worldhistory.org/img/c/p/360x202/12890.png?v=1720552205" width="360" height="202" alt="A Gallery of Ziggurats of Ancient Mesopotamia" class="ci_image ">
+                                </picture>
+                                <div class="ci_preview_content">
+                                    <div class="ci_header type__9">
+                                        <div class="ci_type_name">
+                                            Image Gallery </div>
+                                        <h3>A Gallery of Ziggurats of Ancient Mesopotamia</h3>
+                                    </div>
+                                    <div class="ci_preview">
+                                        A ziggurat is an artificial mountain built by the ancient Mesopotamians... </div>
+                                </div>
+                            </a>
+
+                            <a href="/collection/244/magic--medicine-in-ancient-egypt/" class="content_item   ci_type_9 " id="9-244">
+                                <picture>
+                                    <source srcset="https://www.worldhistory.org/img/c/p/360x202/5988.jpg.webp?v=1720954569 360w, https://www.worldhistory.org/img/c/p/720x404/5988.jpg.webp?v=1720954569 720w" type="image/webp">
+                                    <source srcset="https://www.worldhistory.org/img/c/p/360x202/5988.jpg?v=1720954569 360w, https://www.worldhistory.org/img/c/p/720x404/5988.jpg?v=1720954569 720w" type="image/jpg">
+                                    <img loading="lazy" src="https://www.worldhistory.org/img/c/p/360x202/5988.jpg?v=1720954569" width="360" height="202" alt="Magic &amp; Medicine in Ancient Egypt" class="ci_image ">
+                                </picture>
+                                <div class="ci_preview_content">
+                                    <div class="ci_header type__9">
+                                        <div class="ci_type_name">
+                                            Collection </div>
+                                        <h3>Magic &amp; Medicine in Ancient Egypt</h3>
+                                    </div>
+                                    <div class="ci_preview">
+                                        Magic and medicine in ancient Egypt were understood as gifts from the... </div>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="/type/9/1/" class="content_button inline">More Collections</a>
+                    </div>
+                </main>
+                <aside class="right_1_column">
+                    <div class="institutional_sub_promo">
+                        <h2>Institutional Subscriptions</h2>
+                        <p>Get Ancient History Encyclopedia absolutely <strong class="yellow_highlight">ad-free</strong> for your entire school, library or university!</p>
+                        <a href="/edu/subscription/?utm_source=whe&amp;utm_medium=sidebar&amp;utm_campaign=institutional_subscription" class="content_button institutional-more-button">Learn More</a>
+                    </div>
+                    <style>
+                        .institutional_sub_promo p {
+                            margin: 0.5em 0 1em 0;
+                            font-family: Karla;
+                            line-height: 140%;
+                        }
+                        .institutional_sub_promo {
+                            background-color: #f3f3f3;
+                            padding: 20px;
+                            margin: 40px 0px 80px 0px;
+                        }
+                        .institutional_sub_promo h2 {
+                            padding: 0;
+                            margin: 0 !important;
+                            line-height: 120% !important;
+                        }
+                        a.content_button.institutional-more-button {
+                            display: inline-block;
+                            width: inherit;
+                            border: none;
+                            background-color: #b52600;
+                            color: #fff;
+                            line-height: 22px;
+                            width: 130px;
+                        }
+                        a.content_button.institutional-more-button:hover {
+                            background-color: #222;
+                            transition-duration: .25s;
+                        }
+                    </style> <div class="media_library">
+                    <h2>Media Library</h2>
+                    <a href="/medialibrary/">
+                        <div class="ci_mosaic">
+                            <div href="/image/19247/the-scramble-for-africa-after-the-berlin-conferenc/" class="ci_mosaic_item tooltip tooltipstered" style="background-image: url(&quot;/img/c/p/360x202/19247.png?v=1721289089&quot;); width: 73px; height: 73px;"></div><div href="/image/19250/the-vision-of-saint-bruno/" class="ci_mosaic_item tooltip tooltipstered" style="background-image: url(&quot;/img/c/p/360x202/19250.jpg?v=1721316706&quot;); width: 73px; height: 73px;"></div><div href="/image/19251/saint-bruno-the-carthusian/" class="ci_mosaic_item tooltip tooltipstered" style="background-image: url(&quot;/img/c/p/360x202/19251.jpg?v=1721316521&quot;); width: 73px; height: 73px;"></div><div href="/image/19249/grave-of-michel-foucault/" class="ci_mosaic_item tooltip tooltipstered" style="background-image: url(&quot;/img/c/p/360x202/19249.jpg?v=1721302786&quot;); width: 73px; height: 73px;"></div><div href="/video/3190/chomsky-foucault-debate-on-power-vs-justice-1971/" class="ci_mosaic_item tooltip tooltipstered" style="background-image: url(&quot;/uploads/kraked/6/6-3190_ci_preview.jpg&quot;); width: 73px; height: 73px;"></div><div href="/image/19248/michel-foucault/" class="ci_mosaic_item tooltip tooltipstered" style="background-image: url(&quot;/img/c/p/360x202/19248.jpg?v=1721297395&quot;); width: 73px; height: 73px;"></div><div href="/image/19245/early-x-ray/" class="ci_mosaic_item tooltip tooltipstered" style="background-image: url(&quot;/img/c/p/360x202/19245.jpg?v=1721282071&quot;); width: 73px; height: 73px;"></div><div href="/image/19246/an-x-ray-with-an-early-crookes-tube-apparatus/" class="ci_mosaic_item tooltip tooltipstered" style="background-image: url(&quot;/img/c/p/360x202/19246.jpg?v=1721282693&quot;); width: 73px; height: 73px;"></div></div>
+
+                        <script type="text/javascript">
+                            jsQueue(()=>{
+                                var width = $(".ci_mosaic").width();
+                                var size = Math.floor((width - 8) / 4);
+                                $(".ci_mosaic .ci_mosaic_item").css("width",size + "px");
+                                $(".ci_mosaic .ci_mosaic_item").css("height",size + "px");
+                            });
+                        </script>
+                    </a>
+                    <p style="font-family: Karla, Arial, Helvetica, sans-serif; line-height: 130%; margin-bottom: 11px;">Explore our Media Library with <strong>19,907</strong> images, videos, and 3D models.</p>
+                    <a href="/medialibrary/" class="content_button red inline">View Media Library</a>
+                </div>
+                    <div id="mc_embed_signup">
+                        <img src="/template/images/newsletter_edu_banner.jpg" class="newsletter_banner" width="300" height="163" alt="Education Newsletter">
+                        <form action="//ancient.us8.list-manage.com/subscribe/post?u=c3168e59d8bfba7986977db46&amp;id=ac74a77c22" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate">
+                            <div id="mc_embed_signup_scroll">
+                                <h3>Newsletter</h3>
+                                <p>Receive our latest educational materials and teaching ideas:</p>
+                                <div class="mc-field-group">
+                                    <input type="email" placeholder="Email address..." name="EMAIL" class="required email" id="mce-EMAIL" style="width:80%;" required="" autocomplete="off">
+                                </div>
+                                <div class="mc-field-group input-group" style="display:none;">
+                                    <input type="radio" value="2" name="group[5]" id="mce-group[5]-5-1" checked="" autocomplete="off"><label for="mce-group[5]-5-1">Teacher</label><br>
+                                </div>
+                                <p>Where do you teach?</p>
+                                <div class="mc-field-group input-group" style="margin-top: -10px;">
+                                    <input type="radio" value="512" name="group[29]" id="mce-group[29]-29-0" required="" autocomplete="off"><label for="mce-group[29]-29-0">University</label><br>
+                                    <input type="radio" value="1024" name="group[29]" id="mce-group[29]-29-1" required="" autocomplete="off"><label for="mce-group[29]-29-1">High School</label><br>
+                                    <input type="radio" value="2048" name="group[29]" id="mce-group[29]-29-2" required="" autocomplete="off"><label for="mce-group[29]-29-2">Middle School</label><br>
+                                    <input type="radio" value="4096" name="group[29]" id="mce-group[29]-29-3" required="" autocomplete="off"><label for="mce-group[29]-29-3">Primary School</label><br>
+                                    <input type="radio" value="16" name="group[29]" id="mce-group[29]-29-4" required="" autocomplete="off"><label for="mce-group[29]-29-4">Homeschooling</label><br>
+                                    <input type="radio" value="8192" name="group[29]" id="mce-group[29]-29-5" required="" autocomplete="off"><label for="mce-group[29]-29-5">Other</label>
+                                </div>
+                                <input type="hidden" name="tags" value="40509" autocomplete="off">
+                                <div id="mce-responses" class="clear">
+                                    <div class="response" id="mce-error-response" style="display:none"></div>
+                                    <div class="response" id="mce-success-response" style="display:none"></div>
+                                </div>
+                                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button content_button red" style="margin-top: 10px;" autocomplete="off">
+                                <div style="position: absolute; left: -5000px;"><input type="text" name="b_c3168e59d8bfba7986977db46_ac74a77c22" tabindex="-1" value="" autocomplete="off"></div>
+                                <div class="clear"></div>
+                            </div>
+                        </form>
+                    </div>
+
+                </aside>
+                <p id="footer_spacer">&nbsp;</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Wrapper Ends -->
+</body>
+<footer th:replace="fragments/commons::footer">
+
+</footer>
+</html>

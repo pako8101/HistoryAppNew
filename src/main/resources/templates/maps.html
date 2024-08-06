@@ -1,0 +1,326 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/commons::head">
+
+</head>
+<link rel="stylesheet" href="/css/maps.css">
+<link rel="stylesheet" href="/css/reset-css.css">
+<!--<link rel="stylesheet" href="/css/responsive.css">-->
+<body>
+<header th:replace="fragments/commons::nav">
+</header>
+
+<div class="info">
+    <div class="wrapper">
+        <h1 class="title">Ancient History Maps</h1>
+        <div class="section-container column">
+            <div class="max-width-container">
+                <div class="section-heading-section-heading">
+
+                    <form class="searchMaps" method="get">
+                        <label class="titleSearch"> Search this category</label><br>
+                        <input type="search"
+                               id="search-input" placeholder="Enter map title or author name"
+                               aria-label="Search"
+                               class="home-input"/>
+                        <input type="submit" class="content_button inline"
+                               name="submit" value="Search"
+                               style="margin-top: 1px; background-color: #b0825c;
+border-radius: 4px"
+                               autocomplete="off">
+                    </form>
+                    <br><br>
+                    <span class="section-heading-text1">
+                <span>
+                  Start read over based on the categories you are interested in
+                </span>
+              </span>
+                </div>
+                <div class="home-cards-container">
+                    <div class="category-card-category-card">
+                        <img alt="image" th:src="@{/images/balkansRomeRule.png}"
+                             id="image"
+                             onclick="enlargeImg()"
+                             class="category-card-image"/>
+                        <div class="category-card-text"><a>Roman Rule in the Balkans,c.200 CE</a></div> <br>
+
+                        <div class="mybox">
+                            <div>
+                                A map illustrating Roman rule in the Balkans around 200 CE,  <br>
+                                characterized by significant administrative,   <br>
+                                military, and cultural integration into the Empire. <br>
+                                <span id="span1">...</span>
+                                <span  class="mybox1" id="mybox1id">
+                                     Economically, <br>
+                                    the region benefited from extensive trade networks. <br>
+                                    The spread of Roman law, language,<br>
+                                    and culture led to a significant degree of Romanization,<br>
+                                    though local customs and traditions persisted. <br>
+                                    Despite occasional internal strife and external threats, <br>
+                                    the Balkans experienced relative stability and prosperity under Roman rule.
+            </span>
+                            </div>
+                            <button style="margin-bottom: 1rem" id="mybuttonid"
+                                    class="buttonReadMore"
+                                    onclick="changeReadMore()">
+                                Read More
+                            </button>
+                            <script>
+                                function changeReadMore() {
+                                    const mycontent =
+                                        document.getElementById('mybox1id');
+                                    const mybutton =
+                                        document.getElementById('mybuttonid');
+                                    // document.getElementsByClassName('buttonReadMore');
+                                    const span1 = document.getElementById("span1")
+
+                                    if (span1.style.display === 'none'
+                                        || span1.style.display === '') {
+                                        span1.style.display = 'inline';
+                                        mycontent.style.display = "none";
+                                        mybutton.innerHTML = 'Read More';
+                                    } else {
+                                        mycontent.style.display = 'inline';
+                                        mybutton.innerHTML = 'Read Less';
+                                        span1.style.display = "none";
+                                    }
+                                }
+                            </script>
+                        </div>
+
+
+                        <br /><br />
+                        <!-- Button to reset the Image size -->
+                        <button  class="resetButton" onclick="resetImg()">Reset Image</button>
+                    </div>
+                    <div class="category-card-category-card">
+                        <img alt="image"
+                             th:src="@{/images/sumerianCivilization.png}"
+                             id="image1"
+                             onclick="enlargeImg1()"
+                             class="category-card-image"/>
+                        <span class="category-card-text"><span>Sumerian Civilization, c.4300 - 2335 BCE</span></span>
+                        <div class="mybox">
+                            <div>
+                                A map illustrating the emergence of the Sumerian civilization <br>
+                                around 6000 BCE from a collection of city-states on the <br>
+                                floodplains of southern Mesopotamia, <br>
+                                along the Tigris and Euphrates Rivers in the area that was <br>
+                                to later become the Akkadian Empire and then Babylonia. <br>
+                                <span id="span2">...</span>
+                                <span  class="mybox2" id="mybox2id">
+                                    Sumer was first settled between 4500 and 4000 BCE by a non-Semitic people <br>
+                                    who did not speak the Sumerian language. <br>
+                                    These people now are called proto-Euphrateans or Ubaidians, <br>
+                                    for the village Al-ʿUbayd, where their remains were first discovered. <br>
+                                    The Ubaidians were the first civilizing force in Sumer, <br>
+                                    draining the marshes for agriculture, <br>
+                                    developing trade, and establishing industries, including weaving, <br>
+                                    leatherwork, metalwork, masonry, and pottery. <br>
+                                    After the Ubaidian immigration to Mesopotamia, <br>
+                                    various Semitic peoples infiltrated their territory, <br>
+                                    adding their cultures to the Ubaidian culture and creating <br>
+                                    a high pre-Sumerian civilization.<br>
+            </span>
+                            </div>
+                            <button style="margin-bottom: 1rem" id="mybutton2id"
+                                    class="buttonReadMore"
+                                    onclick="changeReadMore()">
+                                Read More
+                            </button>
+                            <script>
+                                function changeReadMore() {
+                                    const mycontent =
+                                        document.getElementById('mybox2id');
+                                    const mybutton =
+                                        document.getElementById('mybutton2id');
+                                    // document.getElementsByClassName('buttonReadMore');
+                                    const span1 = document.getElementById("span2")
+
+                                    if (span1.style.display === 'none'
+                                        || span1.style.display === '') {
+                                        span1.style.display = 'inline';
+                                        mycontent.style.display = "none";
+                                        mybutton.innerHTML = 'Read More';
+                                    } else {
+                                        mycontent.style.display = 'inline';
+                                        mybutton.innerHTML = 'Read Less';
+                                        span1.style.display = "none";
+                                    }
+                                }
+                            </script>
+                        </div>
+
+                        <br /><br /><br />
+                        <!-- Button to reset the Image size -->
+                        <button  class="resetButton" onclick="resetImg1()">Reset Image</button>
+                    </div>
+
+                    <div style="margin-top: 3rem" class="category-card-category-card">
+                        <img alt="image"
+                             th:src="@{/images/romeFall480ce.png}"
+                             id="image2"
+                             onclick="enlargeImg2()"
+                             class="category-card-image"/>
+                        <span class="category-card-text"><span>The Fall of the Western Roman Empire, c.480 CE</span></span>
+                        <div class="mybox">
+                            <div>
+                                A map illustrating Roman rule in the Balkans around 200 CE,  <br>
+                                characterized by significant administrative,   <br>
+                                military, and cultural integration into the Empire. <br>
+                                <span id="span3">...</span>
+                                <span  class="mybox3" id="mybox3id">
+                                     Economically, <br>
+                                    the region benefited from extensive trade networks. <br>
+                                    The spread of Roman law, language,<br>
+                                    and culture led to a significant degree of Romanization,<br>
+                                    though local customs and traditions persisted. <br>
+                                    Despite occasional internal strife and external threats, <br>
+                                    the Balkans experienced relative stability and prosperity under Roman rule.
+            </span>
+                            </div>
+                            <button style="margin-bottom: 1rem" id="mybutton3id"
+                                    class="buttonReadMore"
+                                    onclick="changeReadMore()">
+                                Read More
+                            </button>
+                            <script>
+                                function changeReadMore() {
+                                    const mycontent =
+                                        document.getElementById('mybox3id');
+                                    const mybutton =
+                                        document.getElementById('mybutton3id');
+                                    // document.getElementsByClassName('buttonReadMore');
+                                    const span1 = document.getElementById("span3")
+
+                                    if (span1.style.display === 'none'
+                                        || span1.style.display === '') {
+                                        span1.style.display = 'inline';
+                                        mycontent.style.display = "none";
+                                        mybutton.innerHTML = 'Read More';
+                                    } else {
+                                        mycontent.style.display = 'inline';
+                                        mybutton.innerHTML = 'Read Less';
+                                        span1.style.display = "none";
+                                    }
+                                }
+                            </script>
+                        </div>
+                        <br /><br /><br />
+                        <!-- Button to reset the Image size -->
+                        <button  class="resetButton" onclick="resetImg2()">Reset Image</button>
+                    </div>
+
+                    <div style="margin-top: 3rem" class="category-card-category-card">
+                        <img alt="image"
+                             th:src="@{/images/herackleLabours.png}"
+                             id="image3"
+                             onclick="enlargeImg3()"
+                             class="category-card-image"/>
+                        <span class="category-card-text"><span>The Twelve Labours of Herakles</span></span>
+                        <div class="mybox" style="font-size: medium">
+                            <div>
+                                A map illustrating the Twelve Labours of Herakles (Heracles, romanized as Hercules),<br>
+                                probably the most famous of the ancient heroes in Greek mythology.<br>
+                                Born as a demi-god (son of Zeus and the mortal Alcmene,) <br>
+                                Herakles was tricked out of his kingdom and constantly pursued by Hera,<br>
+                                which culminated in a fit of madness that drove him to murder his wife and children.<br>
+                                <span id="span4">...</span>
+                                <span  class="mybox4" id="mybox4id">
+                                      As a penance,<br>
+                                    he was urged by the Oracle of Delphi to enter into service of Eurystheus, <br>
+                                    the king of Tiryns and Mycenae, <br>
+                                    for twelve years and perform a sequence of Twelve Labours that seemed impossible,<br>
+                                    (the fixed narrative of Twelve Labours, <br>
+                                    as well as Herakles' signature lion's skin attire and a club is attributed,<br>
+                                    to the ancient poet Peisander, from c. 600 BCE).<br>
+            </span>
+                            </div>
+                            <button style="margin-bottom: 1rem" id="mybutton4id"
+                                    class="buttonReadMore"
+                                    onclick="changeReadMore4()">
+                                Read More
+                            </button>
+                        <br /><br /><br />
+                        <!-- Button to reset the Image size -->
+                        <button  class="resetButton" onclick="resetImg3()">Reset Image</button>
+                            <script>
+                                function changeReadMore4() {
+                                    const mycontent =
+                                        document.getElementById('mybox4id');
+                                    const mybutton =
+                                        document.getElementById('mybutton4id');
+                                    // document.getElementsByClassName('buttonReadMore');
+                                    const span1 = document.getElementById("span4")
+
+                                    if (span1.style.display === 'none'
+                                        || span1.style.display === '') {
+                                        span1.style.display = 'inline';
+                                        mycontent.style.display = "none";
+                                        mybutton.innerHTML = 'Read More';
+                                    } else {
+                                        mycontent.style.display = 'inline';
+                                        mybutton.innerHTML = 'Read Less';
+                                        span1.style.display = "none";
+                                    }
+                                }
+                            </script>
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+
+                </div>
+            </div>
+            <script>
+                // Get the img object using its Id
+                img = document.querySelector("#image");
+                img1 = document.querySelector("#image1");
+                img2 = document.querySelector("#image2");
+                img3 = document.querySelector("#image3");
+
+                        function enlargeImg() {
+                            img.style.transform = "scale(3.5)";
+                            img.style.transition = "transform 0.25s ease";
+                        }
+                    function resetImg() {
+                        img.style.transform = "scale(1)";
+                        img.style.transition = "transform 0.25s ease";
+                }
+                function enlargeImg1() {
+                            img1.style.transform = "scale(3.5)";
+                            img1.style.transition = "transform 0.25s ease";
+                        }
+                    function resetImg1() {
+                        img1.style.transform = "scale(1)";
+                        img1.style.transition = "transform 0.25s ease";
+                }
+                function enlargeImg2() {
+                            img2.style.transform = "scale(3.5)";
+                            img2.style.transition = "transform 0.25s ease";
+                        }
+                    function resetImg2() {
+                        img2.style.transform = "scale(1)";
+                        img2.style.transition = "transform 0.25s ease";
+                }
+                function enlargeImg3() {
+                            img3.style.transform = "scale(3.5)";
+                            img3.style.transition = "transform 0.25s ease";
+                        }
+                    function resetImg3() {
+                        img3.style.transform = "scale(1)";
+                        img3.style.transition = "transform 0.25s ease";
+                }
+            </script>
+
+
+            <!-- Wrapper Ends -->
+</body>
+<div style="background-color: #0a7eb3">
+<footer  th:replace="fragments/commons::footer">
+
+</footer></div>
+<script src="/js/script.js"></script>
+</html>

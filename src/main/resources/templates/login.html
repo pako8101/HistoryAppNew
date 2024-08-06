@@ -1,0 +1,93 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/commons::head">
+</head>
+<link rel="stylesheet" href="/css/log-in.css">
+<link rel="stylesheet" href="/css/reset-css.css">
+<body>
+<header th:replace="fragments/commons::nav"></header><br>
+<div class="main">
+    <!--    <th:block sec:authorize="!isAuthenticated()" >-->
+    <h1>ANCIENT HISTORY PORTAL</h1><br>
+    <h3>Enter your login credentials</h3><br>
+    <div th:if="${bad_credentials}" class="alert alert-danger" role="alert">
+        This username and password combination does not exist.
+    </div>
+
+    <form
+            th:object="${userLoginBindingModel}"
+            th:action="@{/users/login}"
+            th:method="post">
+
+        <h5 th:if="${isFound==false}" class="bg-danger">Incorrect username or password !</h5>
+        <label for="username"
+               th:text="#{nav_bar_login_username}">Username:
+        </label>
+        <input th:field="*{username}"
+                th:errorclass="'is-invalid bg-danger'"
+               required
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Enter your Username">
+        <small th:each="error :${#fields.errors('username')}"
+               th:text="${error}"
+               th:class="'invalid-feedback text-danger'"
+        >
+            <span class="bg-danger">Username is not correct!</span>
+        </small>
+        <small th:if="${userExistsError}" id="usernameUniqueError"
+               class="text-light form-text bg-danger rounded">Username is already occupied</small>
+        <label for="password"
+               th:text="#{nav_bar_login_password}">
+            Password:
+        </label>
+
+        <input
+                th:field="*{password}"
+                th:errorclass="'is-invalid bg-danger'"
+                required
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your Password">
+        <small th:each="error :${#fields.errors('password')}"
+               th:text="${error}"
+               th:class="'invalid-feedback text-danger'"
+        >
+            <span class="bg-danger">Password is not correct!</span>
+        </small>
+        <div style=" width: 350px;
+  clear: both;" class="form-group">
+            <input style="width: 100%;
+  clear: both;"
+                   type="checkbox" value="lsRememberMe"
+                   id="rememberMe">
+            <label style="display: flex !important;
+            justify-content: center;color: darkmagenta" for="rememberMe">Remember me</label>
+
+        </div>
+
+        <div class="wrap">
+            <button type="submit"
+                    onclick="solve()">
+                Submit
+            </button>
+        </div>
+    </form>
+    <!--    </th:block>-->
+    <p>Not registered?
+        <a th:href="@{/users/subscribe}"
+           style="text-decoration: none;">
+            Create an account
+        </a>
+    </p>
+</div>
+
+<footer th:replace="fragments/commons::footer">
+
+</footer>
+</body>
+</html>

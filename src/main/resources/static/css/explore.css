@@ -1,0 +1,19 @@
+.explore-title{
+    font-size: 24px;
+    font-family: Jost;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 0.6rem;
+}
+
+.explore{
+    color: #000000cc;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 1px
+}

@@ -1,0 +1,60 @@
+.left_3_column{
+    font-family: "Libre Baskerville","Palatino Linotype","Book Antiqua",Palatino,serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 170%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    float: left;
+    padding: 15px;
+
+    width: 100%;
+    margin-left: 45px;
+
+}
+
+.box_wrapper{
+    font-family: "Libre Baskerville","Palatino Linotype","Book Antiqua",Palatino,serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+
+    width: 708px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.trans{
+    font-family: "Libre Baskerville","Palatino Linotype","Book Antiqua",Palatino,serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 120%;
+    color: #000;
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 10px;
+    margin-top: 2rem;
+}
+a {
+    color: #b52600;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.right_1_column {
+    width: 100%;
+    padding: 0;
+    font-family: "Libre Baskerville","Palatino Linotype","Book Antiqua",Palatino,serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 170%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    float: left;
+    margin: 0;
+
+}

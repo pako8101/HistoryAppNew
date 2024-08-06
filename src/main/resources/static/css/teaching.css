@@ -1,0 +1,223 @@
+#page{
+    font-family: "Libre Baskerville","Palatino Linotype","Book Antiqua",Palatino,serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-color: #FFF;
+    margin: 0 auto;
+    border: 0 solid #FFF;
+    width: 768px;
+}
+.about-intro {
+    display: none;
+}
+.media_library {
+    margin-bottom: 80px;
+}
+#mc_embed_signup {
+    margin: 80px 0px;
+}
+.audio_articles_promo img {
+    box-shadow: 0 7px 10px -9px #222;
+}
+.ci_mosaic {
+    line-height: 0px;
+}
+.ci_mosaic .ci_mosaic_item {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    background-size: auto 100%;
+    background-position: center;
+    margin: 1px;
+    padding: 0px;
+}
+.ci_mosaic .ci_mosaic_item:hover {
+    outline: #b52600 1px solid;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+.education_materials_wrapper{
+    font-family: "Libre Baskerville","Palatino Linotype","Book Antiqua",Palatino,serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 170%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+p{
+    font-family: "Libre Baskerville","Palatino Linotype","Book Antiqua",Palatino,serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 170%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+.filter_label{
+    color: #333;
+    line-height: 170%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: Karla,Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    display: block;
+    margin: 2px;
+    margin-top: 1em;
+}
+.ci_subtype_selectors{
+    font-family: "Libre Baskerville","Palatino Linotype","Book Antiqua",Palatino,serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 170%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+.outline_button{
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-family: Karla;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: normal !important;
+    white-space: nowrap;
+    margin: 5px 5px 0 0;
+    display: inline-block;
+    line-height: 15px;
+    text-transform: none;
+    border: 1px solid #999;
+    color: #999;
+}
+#page_title_text{
+    font-family: "Libre Baskerville","Palatino Linotype","Book Antiqua",Palatino,serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 120%;
+    color: #000;
+    border-bottom: 1px solid #e3e3e3;
+    margin: 5rem auto auto auto;
+    padding-bottom: 10px;
+    text-align: center;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .ci_related_content_wrapper .content_item .ci_image {
+        width: 215px;
+        height: 121px;
+    }
+}
+.ci_type_name{
+    line-height: 170%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: Karla,Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    margin-bottom: -10px;
+    color: #999;
+    position: relative;
+    top: -2px;
+}
+.content_item .ci_header h3 {
+    font-family: Karla, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold !important;
+    text-transform: none;
+    color: #b52600;
+    margin-bottom: 4px;
+    line-height: 120%;
+    margin-top: 6px;
+}
+.content_item .ci_preview {
+    color: #444;
+    font-weight: normal;
+    font-family: Karla, Arial, Helvetica, sans-serif;
+    line-height: 130%;
+    padding-left: 30px;
+    margin-top: -1px;
+}
+.pagination {
+     margin: 10px auto;
+     display: block;
+     text-align: center;
+     font-size: 10px;
+     font-family: Karla, Arial, Helvetica, sans-serif;
+ }
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+.institutional_sub_promo {
+    background-color: #f3f3f3;
+    padding: 20px;
+    margin: 40px 0px 80px 0px;
+}
+a.content_button.institutional-more-button {
+    display: inline-block;
+    width: inherit;
+    border: none;
+    background-color: #b52600;
+    color: #fff;
+    line-height: 22px;
+    width: 130px;
+}
+#content h2 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 120%;
+    color: #000;
+    padding-bottom: 10px;
+    border-bottom: 0;
+    margin-bottom: 10px;
+    margin-top: 60px;
+    min-height: 36px;
+}
+#mc_embed_signup h3 {
+    background-color: #222;
+    display: inline-block;
+    font-size: 14px;
+    color: white;
+    border-radius: 3px;
+    padding: 3px 10px;
+    margin: 10px 0 0 0;
+    font-weight: bold;
+}
+#mce-EMAIL {
+    width: 200px;
+    margin-right: 5px;
+}
+input[type=submit].content_button, input[type=button].content_button {
+    height: 33px;
+    top: -1px;
+}
+.content_button.red, .content_button.dark {
+    display: inline-block;
+    border: 0;
+    background-color: #b52600;
+    color: #fff;
+    line-height: 22px;
+    width: auto;
+    padding: 6px 14px !important;
+}
