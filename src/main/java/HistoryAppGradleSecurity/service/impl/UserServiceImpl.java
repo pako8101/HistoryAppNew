@@ -102,29 +102,6 @@ public class UserServiceImpl implements UserService {
         return userRepository.findUserEntByUsername(username).isPresent();
     }
 
-//    @Override
-//    public void registerAndLoginUser(UserServiceModel userServiceModel) {
-//        UserEnt newUser = modelMapper.map(userServiceModel, UserEnt.class);
-//        newUser.setPassword(passwordEncoder.encode(userServiceModel.getPassword()));
-//
-//        UserRoleEnt userRole = userRoleRepository.
-//                findUserRoleEntityByRole(UserRoleEnum.USER).orElseThrow(
-//                        () -> new IllegalStateException("USER role not found. Please seed the roles."));
-//
-//        newUser.addRole(userRole);
-//
-//        newUser = userRepository.save(newUser);
-//
-//        UserDetails principal = userDetailsService.loadUserByUsername(newUser.getUsername());
-//
-//        Authentication authentication = new UsernamePasswordAuthenticationToken(
-//                principal,
-//                newUser.getPassword(),
-//                principal.getAuthorities()
-//        );
-//
-//        SecurityContextHolder.getContext().setAuthentication(authentication);
-//    }
 
     @Override
     public UserEnt findByName(String username) {

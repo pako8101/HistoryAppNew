@@ -2,10 +2,14 @@ package HistoryAppGradleSecurity.model.entity;
 
 import HistoryAppGradleSecurity.model.enums.PeriodEnum;
 import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -13,6 +17,7 @@ import java.util.Set;
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private long id;
     @Column(name = "title",nullable = false,unique = true)
     private String title;
@@ -36,6 +41,9 @@ public class Article {
     @ManyToMany
     private Set<Category>categories;
 
+    @OneToMany(mappedBy = "article", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<LogEntity> logs;
+
     public Article() {
         this.pictures = new HashSet<>();
         this.categories = new HashSet<>();
@@ -58,6 +66,15 @@ public class Article {
 //        this.established = established;
 //        return this;
 //    }
+
+    public List<LogEntity> getLogs() {
+        return logs;
+    }
+
+    public Article setLogs(List<LogEntity> logs) {
+        this.logs = logs;
+        return this;
+    }
 
     public String getTitle() {
         return title;

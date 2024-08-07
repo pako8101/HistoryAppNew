@@ -34,12 +34,21 @@
                         <h3 style="color: #0c5460" >Period: <span th:text="${article.period}"  ></span></h3><br>
                         <h2 style="color: #16a085" > <span >Category:</span>  <span th:text="${article.category}"></span></h2>
                         <p  style="color: #856404" >Author name: <span th:text="${article.author}" ></span></p><br>
-                        <a style="margin-bottom: 1rem" class="button"
-                              th:action="@{/articles/{id}(id=${article.getId()})}"
-                              th:method="DELETE"
-                        >Remove
-<!--                            <button type="submit" class="ml-3 text-danger" >Remove</button>-->
-                        </a>
+
+                        <form class="button" style="margin-top: 1rem" th:method="delete"
+                              th:action="@{/articles/{id}(id=${article.getId()})}">
+                            <input style="background-color: #0a7eb3;
+                            color: darkorange;
+                            font-size: medium"
+                                   type="submit" value="Remove"/>
+                        </form>
+
+<!--                        <a style="margin-bottom: 1rem" class="button" type="submit"-->
+<!--                              th:action="@{/articles/{id}(id=${article.getId()})}"-->
+<!--                              th:method="DELETE"-->
+<!--                        >Remove-->
+<!--&lt;!&ndash;                            <button type="submit" class="ml-3 text-danger" >Remove</button>&ndash;&gt;-->
+<!--                        </a>-->
                     </div>
                 </article>
             </div>
@@ -112,5 +121,9 @@
         </div>
     </div>
 </div>
-<footer th:replace="fragments/commons::footer"></footer>
+<div style="background-color: #0a7eb3">
+    <footer
+            th:replace="fragments/commons::footer"></footer>
+</div>
+
 </html>

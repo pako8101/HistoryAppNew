@@ -96,3 +96,7 @@ h3,h2,p,h1{
 .entry-content{
     margin-bottom: 1rem;
 }
+.button{
+    color: darkred;
+    background-color: #9fcdff;
+}

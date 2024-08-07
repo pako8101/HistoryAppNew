@@ -84,14 +84,6 @@ public class SubscribeController {
                 return "redirect:/";
             }
 
-//        String captchaResponse = request.getParameter("g-recaptcha-response");
-//        System.out.println("Captcha Response: " + captchaResponse);
-//        if (!captchaService.verifyCaptcha(captchaResponse)) {
-//            model.addAttribute("message",
-//                    "Captcha verification failed");
-//            return "subscribe";
-//
-//        }
 
 
         if (bindingResult.hasErrors() || !userSubscribeBindingModel.getPassword()

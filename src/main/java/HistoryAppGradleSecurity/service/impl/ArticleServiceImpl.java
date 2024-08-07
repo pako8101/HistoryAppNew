@@ -21,6 +21,7 @@ import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -121,10 +122,12 @@ public class ArticleServiceImpl implements ArticleService {
     }
     @Override
     @Transactional
+    @PreAuthorize("hasRole('ADMIN')")
     public void delete(Long id) {
        if (loggedUser.isAdmin()){
            articleRepository.deleteById(id);
        }
+
 
     }
 

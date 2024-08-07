@@ -14,6 +14,7 @@ import HistoryAppGradleSecurity.service.ArticleService;
 import HistoryAppGradleSecurity.session.LoggedUser;
 import jakarta.validation.Valid;
 import org.modelmapper.ModelMapper;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -123,6 +124,16 @@ articleServiceModel.setCategories(articleAddBindingModel.getCategories());
         return "redirect:/articles/all";
 
     }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<ArticleAddBindingModel> deleteById(@PathVariable("id") Long id,
+//                                                             @AuthenticationPrincipal UserDetails userDetails) {
+//        articleService.delete(id);
+//        return ResponseEntity
+//                .noContent()
+//                .build();
+//    }
+
+
     @GetMapping("/{categoryName}")
     public ModelAndView getByCategory(@PathVariable("categoryName") CategoryNameEnum categoryName) {
         List<ArticleCategoryViewModel> articles = articleService.getAllByCategory(categoryName);
