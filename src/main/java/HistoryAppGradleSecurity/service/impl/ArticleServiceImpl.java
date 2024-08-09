@@ -22,6 +22,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -99,6 +101,27 @@ public class ArticleServiceImpl implements ArticleService {
 
         articleRepository.save(article);
     }
+
+//    @Override
+//    public Article updateArticle(Long id, Article updatedArticle) {
+//        Optional<Article> optionalArticle = articleRepository.findById(id);
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        String currentUsername = authentication.getName();
+//
+//        if (optionalArticle.isPresent()) {
+//            Article existingArticle = optionalArticle.get();
+//
+//            if (!existingArticle.getUser().getUsername().equals(currentUsername)) {
+//                throw new RuntimeException("You are not authorized to edit this article.");
+//            }
+//
+//            existingArticle.setTitle(updatedArticle.getTitle());
+//            existingArticle.setContent(updatedArticle.getContent());
+//            return articleRepository.save(existingArticle);
+//        } else {
+//            throw new RuntimeException("Article not found with id " + id);
+//        }
+//    }
 
     @Override
     public ArticleDetailsViewModel findArticleBId(Long id) {

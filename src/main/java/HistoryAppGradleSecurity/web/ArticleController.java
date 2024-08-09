@@ -3,6 +3,7 @@ package HistoryAppGradleSecurity.web;
 
 import HistoryAppGradleSecurity.model.binding.ArticleAddBindingModel;
 import HistoryAppGradleSecurity.model.binding.UploadPictureArticleBindingModel;
+import HistoryAppGradleSecurity.model.entity.Article;
 import HistoryAppGradleSecurity.model.enums.CategoryNameEnum;
 import HistoryAppGradleSecurity.model.service.ArticleServiceModel;
 import HistoryAppGradleSecurity.model.view.ArticleCategoryViewModel;
@@ -15,7 +16,9 @@ import HistoryAppGradleSecurity.session.LoggedUser;
 import jakarta.validation.Valid;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -94,7 +97,7 @@ private final ArticleRepository articleRepository;
                              BindingResult bindingResult,
                              RedirectAttributes redirectAttributes,
     @AuthenticationPrincipal UserDetails principal){
-        if (loggedUser.getUsername() == null) {
+        if (principal.getUsername() == null) {
             throw  new IllegalArgumentException();
 
         }
@@ -154,7 +157,25 @@ articleServiceModel.setCreated(articleAddBindingModel.getCreated());
         return modelAndView;
     }
 
-
+//    @GetMapping("/edit/{id}")
+//    public String showEditForm(@PathVariable Long id, Model model) {
+//        Article article = articleService.findArticleById(id);
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        String currentUsername = authentication.getName();
+//
+//        if (!article.getUser().getUsername().equals(currentUsername)) {
+//            throw new RuntimeException("You are not authorized to edit this article.");
+//        }
+//
+//        model.addAttribute("article", article);
+//        return "edit-article";
+//    }
+//
+//    @PostMapping("/{id}")
+//    public String updateArticle(@PathVariable Long id, @ModelAttribute Article article) {
+//        articleService.updateArticle(id, article);
+//        return "redirect:/articles";
+//    }
 
 
 

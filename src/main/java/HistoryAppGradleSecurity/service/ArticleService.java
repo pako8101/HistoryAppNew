@@ -17,6 +17,8 @@ public interface ArticleService {
 
     void addNewArticle(ArticleServiceModel articleServiceModel);
 
+//    public Article updateArticle(Long id, Article updatedArticle);
+
     ArticleDetailsViewModel findArticleBId(Long id);
 
     Article findArticleById(Long id);

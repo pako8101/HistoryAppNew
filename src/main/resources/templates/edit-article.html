@@ -1,0 +1,151 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/commons::head">
+
+</head>
+<link rel="stylesheet" href="/css/add-article.css">
+<link rel="stylesheet" href="/css/reset-css.css">
+<body>
+<div class="wrapper">
+    <!-- Navigation -->
+    <header th:replace="fragments/commons::nav">
+    </header>
+<h1 style="color: #4CAF50;font-family: 'Bookman Old Style' ">Edit Article</h1>
+    <!-- Top Container -->
+    <div class="form-style-5 ">
+        <form
+                id="add-route-form" class="w-50 rounded text-white mt-5"
+                th:action="@{/articles/add}"
+                th:method="post"
+                th:object="${articleAddBindingModel}"
+                enctype="multipart/form-data"
+        >
+            <fieldset>
+                <legend th:text="#{nav_bar_login_author_info}"><span class="number">1</span> Author Info</legend>
+                <label th:text="#{nav_bar_login_author_name}"> </label>
+                <input th:field="*{author}"
+                       th:errorclass="'is-invalid bg-danger'"
+                       type="text"
+                       required
+                       name="author"
+                       placeholder="Your Name *">
+
+                <small th:each="error :${#fields.errors('author')}"
+                       th:text="${error}"
+                       th:class="'invalid-feedback text-danger'"
+                       id="author"> Error message!</small>
+
+                <div class="form-row m-5">
+                    <div class="col">
+                        <label for="created" th:text="#{nav_bar_login_art_date}"
+                               th:min="2010-01-01"
+                        >Date of creation</label>
+                        <input th:field="*{created}"
+                               th:errorclass="is-invalid"
+                               required min="2010-01-01 "
+                               id="created" name="created" type="date"
+                               class="form-control" placeholder="Date of creation">
+                        <small id="createdError"
+                               th:each="error :${#fields.errors('created')}"
+                               th:text="${error}"
+                               th:class="'invalid-feedback text-danger'">
+                            Date of creation cannot be in the future</small>
+                    </div>
+                    <div class="form-row ">
+                        <div class="col">
+                            <label for="imageUrl" th:text="#{nav_bar_login_art_img}">Image Url</label>
+                            <input th:field="*{imageUrl}"
+                                   th:errorclass="'is-invalid bg-danger'"
+                                   name="imageUrl"
+                                   required
+                                   id="imageUrl" type="text"
+                                   class="form-control"
+                                   placeholder="Image Url">
+                            <small id="imageUrlError"
+                                   th:each="error :${#fields.errors('imageUrl')}"
+                                   th:text="${error}"
+                                   th:class="'invalid-feedback text-danger'" >Image url must be more than 5
+                                characters</small>
+                        </div>
+                    </div>
+                    <!--                            <textarea name="field3" placeholder="About yourself"></textarea>-->
+                    <fieldset>
+
+                        <legend th:text="#{nav_bar_login_art_text}"><span class="number">2</span> Article Text</legend>
+                        <label for="period" th:text="#{nav_bar_articles_period}">Period:</label>
+                        <select th:field="*{period}"
+                                th:errorclass="'is-invalid bg-danger'"
+                                required
+                                id="period" name="period">
+                            <optgroup label="">
+                                <option th:text="#{nav_bar_login_art_select_period}" value="period">Select period</option>
+                                <option th:each="p:${T(HistoryAppGradleSecurity.model.enums.PeriodEnum).values()}"
+                                        th:value="${p}" th:text="${p}"
+                                        value="egypt"></option>
+                            </optgroup>
+                        </select>
+                        <small th:each="error: ${#fields.errors('period')}"
+                               th:text="${error}"
+                               th:class="'invalid-feedback text-danger'"> error message</small>
+
+                        <!--                            <select id="category" name="field4">-->
+                        <!--                                <optgroup label="category">-->
+                        <!--                                    <option th:each="c:${T(HistoryAppGradleSecurity.model.enums.CategoryNameEnum).values()}"-->
+                        <!--                                            th:value="${c}" th:text="${c}"-->
+                        <!--                                            value="egypt">Egypt</option>-->
+                        <!--                                </optgroup>-->
+                        <!--                            </select>-->
+                        <div class="form-group p-3" style="margin-bottom: 1rem">
+                            <label class="p-2" for="categories" th:text="#{nav_bar_login_art_category}">Categories:</label>
+                            <input th:each="category: ${T(HistoryAppGradleSecurity.model.enums.CategoryNameEnum).values()}" class="m-3"
+                                   th:field="*{categories}"
+                                   type="checkbox" name="categories" id="categories"
+                                   th:text="${#strings.toLowerCase(category)}"
+                                   th:value="${category}">
+                            <br>
+                            <!--                            <small th:each="error: ${#fields.errors('category')}"-->
+                            <!--                                   th:text="${error}"-->
+                            <!--                                   th:class="'invalid-feedback text-danger'"> error message</small>-->
+                        </div>
+                    </fieldset>
+
+                    <fieldset> <label th:text="#{nav_bar_login_art_title}"></label>
+                        <input th:field="*{title}"
+                               th:errorclass="'is-invalid bg-danger'"
+                               minlength="5"
+                               required
+                               type="text" name="title"
+                               placeholder="Article Title">
+                        <small th:each="error :${#fields.errors('title')}"
+                               th:text="${error}"
+                               th:class="'invalid-feedback text-danger'"  id="inputTitleError"> Title must be more then 5 letters!</small>
+
+
+                        <label >
+                            <label th:text="#{nav_bar_login_art_content}" ></label>
+                            <textarea th:field="*{content}"
+                                      th:errorclass="'is-invalid bg-danger'"
+                                      required
+                                      class="article" name="article"
+                                      placeholder=" Your Article Content"></textarea>
+                        </label>
+                        <small th:each="error :${#fields.errors('content')}"
+                               th:text="${error}"
+                               th:class="'invalid-feedback text-danger'"
+                               id="inputContentError"> Content must be more then 10 letters!</small>
+                    </fieldset>
+                    <input type="submit" value="Save" />
+
+        </form>
+
+    </div>
+
+
+</div>
+<div  style="background-color: burlywood;">
+    <footer th:replace="fragments/commons::footer">
+
+    </footer></div>
+</body>
+</html>

@@ -41,6 +41,10 @@ public class Article {
     @ManyToMany
     private Set<Category>categories;
 
+//    @ManyToOne
+//    @JoinColumn(name = "user_id", nullable = false,foreignKey = @ForeignKey(name = "FKlc3sm3utetrj1sx4v9ahwopnr"))
+//    private UserEnt user;
+
     @OneToMany(mappedBy = "article", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<LogEntity> logs;
 
@@ -48,6 +52,15 @@ public class Article {
         this.pictures = new HashSet<>();
         this.categories = new HashSet<>();
     }
+
+//    public UserEnt getUser() {
+//        return user;
+//    }
+//
+//    public Article setUser(UserEnt user) {
+//        this.user = user;
+//        return this;
+//    }
 
     public String getImageUrl() {
         return imageUrl;

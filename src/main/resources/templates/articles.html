@@ -54,8 +54,12 @@
                 </header><br>
                 <section class="post-content">
                     <p><span th:text="${a.content}"></span></p><br><br>
-                    <a th:href="@{/articles/details/{id}(id=${a.id})}" class="button">Learn More</a><br>
+                    <a th:href="@{/articles/details/{id}(id=${a.id})}" class="button">
+                        Learn More</a><br><br><br>
+
+                    <a th:href="@{/articles/edit/{id}(id=${a.id})}" class="button">Edit Article</a>
                 </section> <br>
+
                 <footer class="post-footer">
                     <p>Published by, <span th:text="${a.author}"></span></p><br><br>
                 </footer>

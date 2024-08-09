@@ -50,6 +50,7 @@ public class SecurityConfiguration {
                                                 "/users/login", "/users/subscribe"
                                                 ,"/articles/details","/articles", "/users/profile"
 //                                                ,"/articles/api"
+                                                ,"/articles/edit/**"
                                         )
                                         .permitAll()
 //                                        .anyRequest().authenticated().
