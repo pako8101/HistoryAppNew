@@ -109,6 +109,7 @@ private final ArticleRepository articleRepository;
         ArticleServiceModel articleServiceModel = modelMapper.map(articleAddBindingModel, ArticleServiceModel.class);
 articleServiceModel.setCategories(articleAddBindingModel.getCategories());
         articleServiceModel.setAuthor(principal.getUsername());
+articleServiceModel.setCreated(articleAddBindingModel.getCreated());
 
         articleService.addNewArticle(articleServiceModel);
 

@@ -91,4 +91,9 @@ public class HomeController {
         return "membership";
     }
 
+    @GetMapping("/annual-reports")
+    public String annualReports(){
+        return "annual-reports";
+    }
+
 }

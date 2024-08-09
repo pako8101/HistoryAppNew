@@ -13,7 +13,7 @@ import java.util.Set;
 public class ArticleAddBindingModel {
 
     private long id;
-    @Size(min = 3,max = 30, message = "Article title must be between 3 and 30 characters")
+    @Size(min = 3,max = 100, message = "Article title must be between 3 and 100 characters")
     @NotNull
     private String title;
     @NotNull(message = "You have to write author name!")

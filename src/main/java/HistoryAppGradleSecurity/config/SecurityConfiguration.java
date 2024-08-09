@@ -49,6 +49,7 @@ public class SecurityConfiguration {
                                                 "/explore",
                                                 "/users/login", "/users/subscribe"
                                                 ,"/articles/details","/articles", "/users/profile"
+//                                                ,"/articles/api"
                                         )
                                         .permitAll()
 //                                        .anyRequest().authenticated().

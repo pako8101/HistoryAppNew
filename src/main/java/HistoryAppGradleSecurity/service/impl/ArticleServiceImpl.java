@@ -122,7 +122,7 @@ public class ArticleServiceImpl implements ArticleService {
     }
     @Override
     @Transactional
-    @PreAuthorize("hasRole('ADMIN')")
+//    @PreAuthorize("hasRole('ADMIN')")
     public void delete(Long id) {
        if (loggedUser.isAdmin()){
            articleRepository.deleteById(id);

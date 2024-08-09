@@ -284,3 +284,49 @@ h3 {
     flex: 1;
     flex-basis: 50%;
 }
+.searchfield {
+    margin: auto 5rem auto 35rem;
+    border: black solid 2px;
+
+
+}
+.element.style {
+    margin-left: 5px;
+    padding: 12px;
+    padding-bottom: 13px;
+}
+.searchfield {
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+    cursor: text;
+    font: bold 12px / 1em HelveticaNeue, Arial, sans-serif;
+    padding: 5px 11px;
+    color: #555;
+    text-shadow: 0 1px 0 #fff;
+    background: #f5f5f5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f0f0f0));
+    background: -moz-linear-gradient(top, #f9f9f9, #f0f0f0);
+    border: 1px solid #dedede;
+    border-color: #dedede #d8d8d8 #d3d3d3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 2px #eaeaea, inset 0 1px 0 #fbfbfb;
+    -moz-box-shadow: 0 1px 2px #eaeaea, inset 0 1px 0 #fbfbfb;
+    box-shadow: 0 1px 2px #eaeaea, inset 0 1px 0 #fbfbfb;
+    padding-left: 24px;
+    background: #fff url(../pic/search_24.png) 5px center no-repeat;
+    background-size: 17px;
+    width: 250px;
+}
+
+.fixcolor {
+    border: 1px solid #e0e0e0 !important;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px #e0e0e0, inset 0 1px 0 #e0e0e0 !important;
+    -moz-box-shadow: 0 1px 1px #e0e0e0, inset 0 1px 0 #e0e0e0 !important;
+    box-shadow: 0 1px 1px #e0e0e0, inset 0 1px 0 #e0e0e0 !important;
+}
