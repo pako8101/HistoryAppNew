@@ -1,5 +1,6 @@
 package HistoryAppGradleSecurity.model.service;
 
+import HistoryAppGradleSecurity.model.entity.UserEnt;
 import HistoryAppGradleSecurity.model.enums.CategoryNameEnum;
 import HistoryAppGradleSecurity.model.enums.PeriodEnum;
 import HistoryAppGradleSecurity.model.view.PictureViewModel;
@@ -17,6 +18,7 @@ public class ArticleServiceModel {
     private String imageUrl;
     private LocalDate created;
     private Set<PictureViewModel> pictures;
+    private UserEnt user;
     private PeriodEnum period;
     private Set<CategoryNameEnum>categories;
 
@@ -29,6 +31,15 @@ public class ArticleServiceModel {
 
     public ArticleServiceModel setPeriod(PeriodEnum period) {
         this.period = period;
+        return this;
+    }
+
+    public UserEnt getUser() {
+        return user;
+    }
+
+    public ArticleServiceModel setUser(UserEnt user) {
+        this.user = user;
         return this;
     }
 

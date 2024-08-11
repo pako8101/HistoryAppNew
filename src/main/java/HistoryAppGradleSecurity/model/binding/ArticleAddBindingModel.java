@@ -1,10 +1,13 @@
 package HistoryAppGradleSecurity.model.binding;
 
+import HistoryAppGradleSecurity.model.entity.UserEnt;
 import HistoryAppGradleSecurity.model.enums.CategoryNameEnum;
 import HistoryAppGradleSecurity.model.enums.PeriodEnum;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -26,9 +29,12 @@ public class ArticleAddBindingModel {
     private PeriodEnum period;
     @NotNull(message = "Date of article creation cannot be empty!")
     @PastOrPresent(message = "Article creation cannot be in future!")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate created;
     @NotNull
     private String imageUrl;
+
+//    private UserEnt user;
 
     @NotNull
     private Set<CategoryNameEnum> categories;
@@ -45,6 +51,15 @@ public class ArticleAddBindingModel {
         this.id = id;
         return this;
     }
+
+//    public @NotNull UserEnt getUser() {
+//        return user;
+//    }
+//
+//    public ArticleAddBindingModel setUser(@NotNull UserEnt user) {
+//        this.user = user;
+//        return this;
+//    }
 
     public @NotNull LocalDate getCreated() {
         return created;

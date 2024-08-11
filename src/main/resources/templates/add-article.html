@@ -22,19 +22,20 @@
                           enctype="multipart/form-data"
                     >
                         <fieldset>
-                            <legend th:text="#{nav_bar_login_author_info}"><span class="number">1</span> Author Info</legend>
-                            <label th:text="#{nav_bar_login_author_name}"> </label>
+                            <legend  th:text="#{nav_bar_login_author_info}"><span class="number">1</span> Author Info</legend>
+                            <label th:for="author1" th:text="#{nav_bar_login_author_name}"> </label>
                                 <input th:field="*{author}"
                                        th:errorclass="'is-invalid bg-danger'"
                                         type="text"
                                        required
                                        name="author"
+                                       id="author1"
                                         placeholder="Your Name *">
 
                             <small th:each="error :${#fields.errors('author')}"
                                    th:text="${error}"
                                    th:class="'invalid-feedback text-danger'"
-                                   id="author"> Error message!</small>
+                                   id="authorError"> Error message!</small>
 
                             <div class="form-row m-5">
                                 <div class="col">
@@ -43,7 +44,7 @@
                                     >Date of creation</label>
                                     <input th:field="*{created}"
                                            th:errorclass="is-invalid"
-                                           required min="2010-01-01 "
+                                           required min="2010-01-01"
                                            id="created" name="created" type="date"
                                            class="form-control" placeholder="Date of creation">
                                     <small id="createdError"
@@ -69,6 +70,8 @@
                                         characters</small>
                                 </div>
                             </div>
+                            </div>
+                            </fieldset>
 <!--                            <textarea name="field3" placeholder="About yourself"></textarea>-->
                                 <fieldset>
 
@@ -110,12 +113,13 @@
                             </div>
                         </fieldset>
 
-            <fieldset> <label th:text="#{nav_bar_login_art_title}"></label>
+            <fieldset> <label for="title" th:text="#{nav_bar_login_art_title}"></label>
                 <input th:field="*{title}"
                        th:errorclass="'is-invalid bg-danger'"
                        minlength="5"
                        required
                        type="text" name="title"
+                       id="title"
                        placeholder="Article Title">
                 <small th:each="error :${#fields.errors('title')}"
                        th:text="${error}"
@@ -123,11 +127,12 @@
 
 
                 <label >
-                    <label th:text="#{nav_bar_login_art_content}" ></label>
+                    <label for="content" th:text="#{nav_bar_login_art_content}" ></label>
 <textarea th:field="*{content}"
                       th:errorclass="'is-invalid bg-danger'"
           required
                     class="article" name="article"
+          id="content"
                       placeholder=" Your Article Content"></textarea>
                 </label>
                 <small th:each="error :${#fields.errors('content')}"

@@ -93,7 +93,9 @@ public class ArticleServiceImpl implements ArticleService {
         Article article = modelMapper.map(articleServiceModel,Article.class);
 
         //article.setAuthor(userService.findCurrentUserLoginEntity());
-
+        if (article.getUser() == null) {
+            throw new IllegalArgumentException("User ID cannot be null");
+        }
         article.setCategories(articleServiceModel.getCategories()
                 .stream()
                 .map(categoryService::findCategoryByName)
@@ -102,26 +104,26 @@ public class ArticleServiceImpl implements ArticleService {
         articleRepository.save(article);
     }
 
-//    @Override
-//    public Article updateArticle(Long id, Article updatedArticle) {
-//        Optional<Article> optionalArticle = articleRepository.findById(id);
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        String currentUsername = authentication.getName();
-//
-//        if (optionalArticle.isPresent()) {
-//            Article existingArticle = optionalArticle.get();
-//
-//            if (!existingArticle.getUser().getUsername().equals(currentUsername)) {
-//                throw new RuntimeException("You are not authorized to edit this article.");
-//            }
-//
-//            existingArticle.setTitle(updatedArticle.getTitle());
-//            existingArticle.setContent(updatedArticle.getContent());
-//            return articleRepository.save(existingArticle);
-//        } else {
-//            throw new RuntimeException("Article not found with id " + id);
-//        }
-//    }
+    @Override
+    public Article updateArticle(Long id, Article updatedArticle) {
+        Optional<Article> optionalArticle = articleRepository.findById(id);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUsername = authentication.getName();
+
+        if (optionalArticle.isPresent()) {
+            Article existingArticle = optionalArticle.get();
+
+            if (!existingArticle.getUser().getUsername().equals(currentUsername)) {
+                throw new RuntimeException("You are not authorized to edit this article.");
+            }
+
+            existingArticle.setTitle(updatedArticle.getTitle());
+            existingArticle.setContent(updatedArticle.getContent());
+            return articleRepository.save(existingArticle);
+        } else {
+            throw new RuntimeException("Article not found with id " + id);
+        }
+    }
 
     @Override
     public ArticleDetailsViewModel findArticleBId(Long id) {

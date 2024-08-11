@@ -23,8 +23,8 @@ public class UserEnt {
     @Column(unique = true,nullable = false)
     private String username;
 
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private List<Article> articles;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Article> articles;
 
     @Column(nullable = false)
     private String password;
@@ -36,14 +36,14 @@ public class UserEnt {
 
     }
 
-//    public List<Article> getArticles() {
-//        return articles;
-//    }
-//
-//    public UserEnt setArticles(List<Article> articles) {
-//        this.articles = articles;
-//        return this;
-//    }
+    public List<Article> getArticles() {
+        return articles;
+    }
+
+    public UserEnt setArticles(List<Article> articles) {
+        this.articles = articles;
+        return this;
+    }
 
     public UserEnt setRoles(List<UserRoleEnt> roles) {
         this.roles = roles;
