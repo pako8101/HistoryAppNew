@@ -1,12 +1,12 @@
 package HistoryAppGradleSecurity.web;
 
+import HistoryAppGradleSecurity.exception.ObjectNotFoundException;
 import HistoryAppGradleSecurity.model.view.ArticleViewModel;
 import HistoryAppGradleSecurity.repository.ArticleRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -39,6 +39,17 @@ public class ArticleRestController {
 
         return  ResponseEntity.ok()
                 .body(articleViewModels);
+
+    }
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(ObjectNotFoundException.class)
+    @ResponseBody
+    public NotFoundErrorInfo handleApiObjectNotFoundException(ObjectNotFoundException apiObjectNotFoundException) {
+        return new NotFoundErrorInfo("NOT FOUND", apiObjectNotFoundException.getId());
+    }
+
+
+    public record NotFoundErrorInfo(String code, Object id) {
 
     }
 }

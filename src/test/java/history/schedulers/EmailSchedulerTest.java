@@ -20,13 +20,22 @@ public class EmailSchedulerTest {
     private EmailScheduler emailScheduler;
 
     @Test
-    public void  testScheduledEmail(){
+    public void  testScheduledSubscriptionEmail(){
 //        Mockito.verify(emailScheduler,Mockito.timeout(60000)
 //                .atLeastOnce()).sendSubscriptionEmails();
 
         emailScheduler.sendSubscriptionEmails();
 
         verify(emailScheduler).sendSubscriptionEmails();
+
+    }    @Test
+    public void  testScheduledEmail(){
+//        Mockito.verify(emailScheduler,Mockito.timeout(60000)
+//                .atLeastOnce()).sendSubscriptionEmails();
+
+        emailScheduler.sendScheduledEmails();
+
+        verify(emailScheduler).sendScheduledEmails();
 
     }
 }

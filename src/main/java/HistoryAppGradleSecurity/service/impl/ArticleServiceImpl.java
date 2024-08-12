@@ -1,5 +1,6 @@
 package HistoryAppGradleSecurity.service.impl;
 
+import HistoryAppGradleSecurity.exception.ArticleNotAuthorisedToEditException;
 import HistoryAppGradleSecurity.exception.ArticleNotFoundException;
 import HistoryAppGradleSecurity.exception.ObjectNotFoundException;
 import HistoryAppGradleSecurity.model.binding.UploadPictureArticleBindingModel;
@@ -36,6 +37,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 @Service
@@ -114,14 +116,14 @@ public class ArticleServiceImpl implements ArticleService {
             Article existingArticle = optionalArticle.get();
 
             if (!existingArticle.getUser().getUsername().equals(currentUsername)) {
-                throw new RuntimeException("You are not authorized to edit this article.");
+                throw new ArticleNotAuthorisedToEditException("You are not authorized to edit this article.");
             }
 
             existingArticle.setTitle(updatedArticle.getTitle());
             existingArticle.setContent(updatedArticle.getContent());
             return articleRepository.save(existingArticle);
         } else {
-            throw new RuntimeException("Article not found with id " + id);
+            throw new ArticleNotFoundException("Article not found with id " + id);
         }
     }
 
@@ -142,8 +144,10 @@ public class ArticleServiceImpl implements ArticleService {
         Article article = articleRepository.findById(id)
                 .orElseThrow(() ->
                         new ArticleNotFoundException("Article with id: " + id + " not found!"));
-
-        return modelMapper.map(article, ArticleDetailsViewModel.class);
+ArticleDetailsViewModel dto = modelMapper.map(article, ArticleDetailsViewModel.class);
+dto.setPictures(Set.of("resources/static/images/aswan.jpg",
+        "resources/static/images/balkansRomeRule.png"));
+        return dto;
     }
     @Override
     @Transactional

@@ -17,7 +17,7 @@ private CategoryNameEnum category;
     private String created;
     private String content;
 
-    private Set<PictureViewModel> pictures;
+    private Set<String> pictures;
 
     public ArticleDetailsViewModel() {
     }
@@ -85,11 +85,20 @@ private CategoryNameEnum category;
         return this;
     }
 
-    public Set<PictureViewModel> getPictures() {
+//    public Set<PictureViewModel> getPictures() {
+//        return pictures;
+//    }
+//
+//    public ArticleDetailsViewModel setPictures(Set<PictureViewModel> pictures) {
+//        this.pictures = pictures;
+//        return this;
+//    }
+
+    public Set<String> getPictures() {
         return pictures;
     }
 
-    public ArticleDetailsViewModel setPictures(Set<PictureViewModel> pictures) {
+    public ArticleDetailsViewModel setPictures(Set<String> pictures) {
         this.pictures = pictures;
         return this;
     }

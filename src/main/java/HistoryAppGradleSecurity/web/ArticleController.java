@@ -1,6 +1,8 @@
 package HistoryAppGradleSecurity.web;
 
 
+import HistoryAppGradleSecurity.exception.ArticleNotAuthorisedToEditException;
+import HistoryAppGradleSecurity.exception.ArticleNotFoundException;
 import HistoryAppGradleSecurity.exception.ObjectNotFoundException;
 import HistoryAppGradleSecurity.model.binding.ArticleAddBindingModel;
 import HistoryAppGradleSecurity.model.binding.UploadPictureArticleBindingModel;
@@ -78,7 +80,7 @@ private final ArticleRepository articleRepository;
         ArticleDetailsViewModel article =
                 articleService.getDetails(id);
 
-        if (article== null) throw  new NoSuchElementException();
+        if (article== null) throw  new ArticleNotFoundException();
 
         model.addAttribute("article",
                 articleService.findArticleBId(id));
@@ -173,7 +175,8 @@ articleServiceModel.setCreated(articleAddBindingModel.getCreated());
         String currentUsername = authentication.getName();
 
         if (!article.getUser().getUsername().equals(currentUsername)) {
-            throw new RuntimeException("You are not authorized to edit this article.");
+            throw new ArticleNotAuthorisedToEditException(
+                    "You are not authorized to edit this article.");
         }
 
         model.addAttribute("article", article);
