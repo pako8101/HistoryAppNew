@@ -32,8 +32,18 @@ public class UserEnt {
     @ManyToMany(fetch = FetchType.EAGER)
     private List<UserRoleEnt> roles ;
 
+    private boolean RegistrationEmailSend;
     public UserEnt() {
 
+    }
+
+    public boolean isRegistrationEmailSend() {
+        return RegistrationEmailSend;
+    }
+
+    public UserEnt setRegistrationEmailSend(boolean registrationEmailSend) {
+        RegistrationEmailSend = registrationEmailSend;
+        return this;
     }
 
     public List<Article> getArticles() {
