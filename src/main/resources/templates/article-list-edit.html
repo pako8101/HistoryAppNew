@@ -1,0 +1,95 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/commons::head">
+
+</head>
+<link rel="stylesheet" href="/css/art-edit-json.css">
+<link rel="stylesheet" href="/css/reset-css.css">
+<body>
+<header th:replace="fragments/commons::nav">
+</header>
+<div class="wrapper">
+<h1 >Articles</h1>
+
+<!-- Бутон за зареждане на статиите -->
+<button id="load-articles-btn">Load Articles</button>
+
+<!-- Списък, където ще се визуализират статиите -->
+<ul id="articles-list"></ul>
+
+<!-- Форма за редактиране на статия -->
+<h2>Edit Article</h2>
+<form id="edit-article-form" style="display: none;">
+    <input type="hidden" id="article-id">
+    <label for="article-content">Content:</label>
+    <textarea id="article-content"></textarea>
+    <br>
+    <button type="button" id="save-article-btn">Save Article</button>
+</form>
+
+<script>
+    // Функция за зареждане на статиите
+    function loadArticles() {
+        fetch('https://localhost:1032/articles/api')  // Пътят трябва да съвпада с този, който е настроен в RestController-а.
+            .then(response => response.json())
+            .then(data => {
+                const articlesList = document.getElementById('articles-list');
+                articlesList.innerHTML = ''; // Изчистваме предишното съдържание
+                data.forEach(article => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = article.content;
+                    listItem.setAttribute('data-id', article.id);
+
+                    // Добавяне на бутон за редактиране
+                    const editButton = document.createElement('button');
+                    editButton.textContent = 'Edit';
+                    editButton.addEventListener('click', () => editArticle(article));
+
+                    listItem.appendChild(editButton);
+                    articlesList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error fetching articles:', error));
+    }
+
+    // Функция за иницииране на редакция на статия
+    function editArticle(article) {
+        document.getElementById('article-id').value = article.id;
+        document.getElementById('article-content').value = article.content;
+        document.getElementById('edit-article-form').style.display = 'block';
+    }
+
+    // Функция за запазване на редактирана статия
+    function saveArticle() {
+        const articleId = document.getElementById('article-id').value;
+        const articleContent = document.getElementById('article-content').value;
+
+        fetch(`/articles/api/${articleId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ content: articleContent })
+        })
+            .then(response => {
+                if (response.ok) {
+                    loadArticles();  // Презареждаме списъка със статии след успешна редакция
+                } else {
+                    console.error('Error saving article');
+                }
+            })
+            .catch(error => console.error('Error saving article:', error));
+    }
+
+    // Слушатели на събития
+    document.getElementById('load-articles-btn').addEventListener('click', loadArticles);
+    document.getElementById('save-article-btn').addEventListener('click', saveArticle);
+</script>
+<!-- Wrapper Ends -->
+</div>
+</body>
+<footer th:replace="fragments/commons::footer">
+
+</footer>
+</html>

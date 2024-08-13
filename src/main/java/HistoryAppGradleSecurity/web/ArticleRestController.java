@@ -41,6 +41,20 @@ public class ArticleRestController {
                 .body(articleViewModels);
 
     }
+
+    @PutMapping("/api/{id}")
+    public ResponseEntity<ArticleViewModel> updateArticle(@PathVariable Long id, @RequestBody ArticleViewModel articleViewModel) {
+        return articleRepository.findById(id)
+                .map(article -> {
+                    article.setContent(articleViewModel.getContent());
+                    articleRepository.save(article);
+                    ArticleViewModel updatedViewModel = modelMapper.map(article, ArticleViewModel.class);
+                    return ResponseEntity.ok(updatedViewModel);
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(ObjectNotFoundException.class)
     @ResponseBody

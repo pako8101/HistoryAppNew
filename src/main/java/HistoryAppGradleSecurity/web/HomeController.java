@@ -95,5 +95,9 @@ public class HomeController {
     public String annualReports(){
         return "annual-reports";
     }
+    @GetMapping("/article-list-edit")
+    public String listArts(Model model) {
 
+        return "article-list-edit";
+    }
 }

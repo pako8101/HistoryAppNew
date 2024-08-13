@@ -125,7 +125,21 @@
                             </div>
                         </div>
                     </th:block>
+
+
                     <div class="home-right">
+                        <div class="dropdown about">
+                            <nav class="main-nav">
+                                <ul>
+                                    <li><button id="load-articles-btn" >
+<!--                                        th:href="@{/articles/api}"-->
+                                        <a th:text="#{nav_bar_articles_json}" ></a>
+                                    </button>
+                                        <ul id="articles-list"></ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                         <div class="dropdown about">
                             <nav class="main-nav">
                                 <ul>
@@ -137,6 +151,9 @@
                                             <li><a th:text="#{nav_bar_ourTeam}" th:href="@{/our-team}">Our Team</a></li>
                                             <li><a th:text="#{nav_bar_annualReports}" th:href="@{/annual-reports}">Annual Reports</a></li>
                                             <li><a th:text="#{nav_bar_memberships}" th:href="@{/membership}">Memberships</a></li>
+                                            <li><a th:text="#{nav_bar_all_articles}" th:href="@{/article-list-edit}"></a></li>
+
+
                                         </ul>
                                     </li>
                                 </ul>
@@ -270,12 +287,59 @@
                 <a style="margin-top: 20%;margin-bottom:-5rem;position: relative;bottom: 18px;left: -60rem"> &copy;Kamenov
                     Spring Team 2024. All rights reserved.</a>
             </footer>
-            <script th:src="@{resources/static/js/search-bar.js}"></script>
+
         </div>
     </div>
 </div>
+<script th:src="@{js/search-bar.js}"></script>
+
 
 
 </body>
+<script>
+    function loadArticles() {
+        fetch('http://localhost:1032/articles/api')  // Пътят трябва да съвпада с този, който е настроен в RestController-а.
+            .then(response => response.json())
+            .then(data => {
+                const articlesList = document.getElementById('articles-list');
+                articlesList.innerHTML = ''; // Изчистваме предишното съдържание
+                data.forEach(article => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = article.content;  // Използва се полето 'content' от ArticleViewModel
+                    articlesList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error fetching articles:', error));
+    }
+
+    // Добавяме слушател на събитие за бутона
+    document.getElementById('load-articles-btn').addEventListener('click', loadArticles);
+
+</script>
+
+
+<!--<script>-->
+
+<!--    const artBtn = document.getElementById('load-articles-btn');-->
+<!--    artBtn.addEventListener('click', () => {-->
+
+<!--        fetch('http://localhost:1032/articles/api', {-->
+<!--            method: 'GET',-->
+<!--            headers:-->
+<!--                {-->
+<!--                    "Content-Type": "application/json"-->
+<!--                }-->
+<!--        })-->
+<!--            .then(res => res.json())-->
+<!--            .then(data => {-->
+<!--                const articlesList = document.getElementById('articles-list');-->
+<!--                articlesList.innerHTML = ''; // Изчистваме предишното съдържание&ndash;&gt;-->
+<!--                data.forEach(article => {-->
+<!--                    const listItem = document.createElement('li');-->
+<!--                    listItem.textContent = article.content;  // Използва се полето 'content' от ArticleViewModel&ndash;&gt;-->
+<!--                    articlesList.appendChild(listItem);-->
+<!--                });-->
+<!--            })})-->
+<!--</script>-->
 
 </html>
