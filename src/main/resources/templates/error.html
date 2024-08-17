@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/commons :: head"></head>
+<body>
+
+<header th:replace="fragments/commons :: nav"></header>
+
+<!-- TODO: fix css-->
+
+<main class="p-5 align-content-center bg-blur">
+
+  Ups... something went wrong! <br/>
+  Please excuse us, we are working on it...
+  <img style="width: 50%;height: auto" th:src="@{/images/pyramid.jpg}" alt="Broken castle">
+
+</main>
+<footer th:replace="fragments/commons :: footer"></footer>
+</body>
+</html>

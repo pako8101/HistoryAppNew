@@ -4,6 +4,7 @@ package HistoryAppGradleSecurity.web;
 import HistoryAppGradleSecurity.model.AppUserDetails;
 import HistoryAppGradleSecurity.service.PictureService;
 import HistoryAppGradleSecurity.service.ShiftImageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +16,7 @@ public class HomeController {
 
     private final PictureService pictureService;
     private final ShiftImageService shiftImageService;
-
+@Autowired
     public HomeController(PictureService pictureService, ShiftImageService shiftImageService) {
         this.pictureService = pictureService;
         this.shiftImageService = shiftImageService;

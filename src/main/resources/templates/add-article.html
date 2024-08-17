@@ -62,7 +62,8 @@
                                            required
                                            id="imageUrl" type="text"
                                            class="form-control"
-                                           placeholder="Image Url">
+                                           placeholder="Image Url"
+                                           accept="image/png, image/jpeg">
                                     <small id="imageUrlError"
                                            th:each="error :${#fields.errors('imageUrl')}"
                                            th:text="${error}"

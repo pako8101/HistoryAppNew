@@ -5,6 +5,7 @@ import HistoryAppGradleSecurity.model.view.ArticleViewModel;
 import HistoryAppGradleSecurity.repository.ArticleRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +25,7 @@ public class ArticleRestController {
         this.articleRepository = articleRepository;
     }
 
-    @GetMapping("/api")
+    @GetMapping(value = "/api",produces = MediaType.APPLICATION_JSON_VALUE)
 
     public ResponseEntity<List<ArticleViewModel>> findAll(){
         List<ArticleViewModel> articleViewModels = articleRepository
