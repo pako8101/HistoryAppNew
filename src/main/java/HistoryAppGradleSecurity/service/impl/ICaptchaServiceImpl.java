@@ -39,7 +39,7 @@ public class ICaptchaServiceImpl implements ICaptchaService {
                         .with("response", token))
                 .retrieve()
                 .bodyToMono(ReCaptchaResponseDTO.class)
-                .doOnError(t -> LOGGER.error("Error fetching google reponse...", t))
+                .doOnError(t -> LOGGER.error("Error fetching google response...", t))
                 .onErrorComplete()
                 .block();
 

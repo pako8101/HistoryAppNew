@@ -88,6 +88,7 @@
         <small th:each="e :${#fields.errors('password')}" th:text="${e}"
                 id="passwordError" class="invalid-feedback  form-text bg-danger rounded">
             Password length must be between 3 and 20 characters and passwords should match.</small>
+
         <label for="confirmPassword"
                th:text="#{nav_bar_confirmPass}">Re-type Password:</label>
         <input th:field="*{confirmPassword}"
@@ -102,6 +103,7 @@
         <small th:each="e :${#fields.errors('password')}" th:text="${e}"
                 id="confirmPasswordError" class="invalid-feedback  form-text bg-danger rounded">
             Password length must be between 3 and 20 characters and passwords should match.</small>
+
         <label for="age"
                th:text="#{nav_bar_age}">Age:</label>
         <input th:field="*{age}"

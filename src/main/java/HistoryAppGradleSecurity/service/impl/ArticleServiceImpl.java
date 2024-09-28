@@ -132,6 +132,7 @@ public class ArticleServiceImpl implements ArticleService {
         return articleRepository.findById(id)
                 .map(article -> modelMapper.map(article, ArticleDetailsViewModel.class))
                 .orElseThrow(()-> new ObjectNotFoundException("No such article with id " + id,id));
+
     }
 
     @Override

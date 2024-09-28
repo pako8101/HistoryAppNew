@@ -7,6 +7,7 @@ import HistoryAppGradleSecurity.repository.UserRepository;
 import HistoryAppGradleSecurity.repository.UserRoleRepository;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +32,9 @@ public class InitService {
 
         this.defaultPassword = defaultPassword;
     }
+
+
+
 
     @PostConstruct
     public void init() {
@@ -94,4 +98,6 @@ public class InitService {
 
         userRepository.save(normalUser);
     }
+
 }
+
