@@ -34,6 +34,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/articles")
@@ -66,6 +67,21 @@ private final ArticleRepository articleRepository;
                 articleService.findAllArticlesView();
         model.addAttribute("articles", articleViewModelList);
 
+        return "articles";
+    }
+
+    @GetMapping("/articles-search")
+    public String showSearchPage(Model model) {
+        model.addAttribute("articles", null); // Празен списък при първоначално зареждане
+        return "articles-search"; // Thymeleaf шаблон за търсене
+    }
+    @GetMapping("/search")
+    public String searchArticles(@RequestParam("q") String query, Model model) {
+        List<ArticleViewModel> filteredArticles = articleService.findAllArticlesView().stream()
+                .filter(article -> article.getTitle().toLowerCase().contains(query.toLowerCase()))
+                .collect(Collectors.toList());
+        model.addAttribute("articles", filteredArticles);
+        model.addAttribute("query", query); // Запази търсения текст
         return "articles";
     }
     @PostMapping("/upload-picture")

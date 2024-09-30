@@ -173,18 +173,23 @@
         <div class="home-container05">
             <h3 class="home-text19 Heading-3">Ancient World</h3><br>
             <h4 class="home-text20"><a class="article"
-                                       id="articlesList" th:href="@{/articles/all}"
+                                       id="articlesList" th:href="@{/articles/articles-search}"
+                                       th:text="#{nav_bar_all_articles_search}">Articles</a></h4>
+            <br>
+            <h4 class="home-text20"><a class="article"
+                                       id="articles" th:href="@{/articles/all}"
                                        th:text="#{nav_bar_all_articles}">Articles</a></h4>
             <br>
-
         </div>
     </div><br><br>
 
     <div style="border-radius: 4px;border: solid #040505;"
          class="mt-5 col-sm-12 my-auto align-self-center">
         <input id="searchInput" class="form-control mr-sm-2 w-50" type="search"
-               placeholder="Enter article name" aria-label="Search">
+               placeholder="Enter article name" value=""
+               aria-label="Search" onclick="" >
     </div>
+
     <div class="home-container06 max-width-container">
         <div class="home-container07">
               <span class="home-text23">

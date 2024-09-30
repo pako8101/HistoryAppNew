@@ -21,16 +21,40 @@
                      alt="Article image">
             </div><br>
 
-            <h3 style="color: #0c5460;border-bottom: #491217;font-size: x-large">Search articles</h3><br>
-            <div
-                 class="mt-5 col-sm-12 my-auto align-self-center">
-                <input id="searchInput art" class="searchfield" type="search"
-                       placeholder="Enter article name" aria-label="Search">
-                <input type="submit" class="button" style="margin-left: -25px;
-                padding: 12px;padding-bottom: 13px; color: #6f42c1;
-                background-color: #81ecec;border-radius: 8px" value="Search" id="searchInput">
-            </div>
-        </div>
+<!--            <h3 style="color: #0c5460;border-bottom: #491217;font-size: x-large">Search articles</h3><br>-->
+<!--        <div  style="margin: auto 5rem auto 5rem;-->
+<!--        padding: 12px;padding-bottom: 13px; color: #6f42c1;-->
+<!--        background-color: lightgreen;border-radius: 8px">-->
+<!--&lt;!&ndash;            <div&ndash;&gt;-->
+<!--&lt;!&ndash;                 class="mt-5 col-sm-12 my-auto align-self-center">&ndash;&gt;-->
+<!--                <form-->
+<!--                      th:action="@{/articles/search}" method="get">-->
+<!--                    <input  type="text" name="q" placeholder="Enter article name" th:value="${query}" /><br><br>-->
+
+<!--                    <button style="padding-left: 3rem" class="button"-->
+<!--                            type="submit">Search</button><br><br>-->
+
+<!--                </form>-->
+
+<!--                <h2>Result:</h2><br><br>-->
+<!--                <ul th:if="${articles != null}">-->
+<!--                    <li th:if="${articles.size() == 0}">Няма намерени статии</li>-->
+<!--                    <li th:each="article : ${articles}">-->
+
+<!--                        <span th:text="${article.title}">Заглавие на статията</span><br><br>-->
+<!--                        <span th:text="${article.content}">Заглавие на статията</span><br>-->
+<!--                        <span th:text="${article.period}">Заглавие на статията</span>-->
+
+<!--                    </li>-->
+<!--                </ul>-->
+<!--&lt;!&ndash;                <input id="searchInput art" class="searchfield" type="search"&ndash;&gt;-->
+<!--&lt;!&ndash;                       placeholder="Enter article name" aria-label="Search">&ndash;&gt;-->
+<!--&lt;!&ndash;                <input type="submit" class="button" style="margin-left: -25px;&ndash;&gt;-->
+<!--&lt;!&ndash;                padding: 12px;padding-bottom: 13px; color: #6f42c1;&ndash;&gt;-->
+<!--&lt;!&ndash;                background-color: #81ecec;border-radius: 8px" value="Search" id="searchInput">&ndash;&gt;-->
+<!--            </div><br><br>-->
+
+
         <!--        article main-->
         <div class="wrapper">
         <h3 class="mySticky bg-gray text-dark rounded">
@@ -73,12 +97,12 @@
        </th:block>
 
     </div>
-
+    </div>
     </div>
 </body>
 <div style="background-color: #0a7eb3">
     <footer
             th:replace="fragments/commons::footer"></footer>
 </div>
-<script th:src="@{resources/static/js/search-bar.js}"></script>
+<!--<script th:src="@{resources/static/js/search-bar.js}"></script>-->
 </html>

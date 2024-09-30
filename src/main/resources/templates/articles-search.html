@@ -1,0 +1,73 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/commons::head">
+</head>
+<link rel="stylesheet" href="/css/articles.css">
+<link rel="stylesheet" href="/css/reset-css.css">
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/navbar.css">
+
+<!-- Navigation -->
+<body>
+
+
+<header th:replace="fragments/commons::nav"></header><br>
+<div class="wrap">
+    <div class="content bordered" id="articlesList">
+        <!--        picture-->
+
+
+        <div class="ar-16x9">
+            <img src="https://images.unsplash.com/photo-1670352689935-54e6e34135fa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                 alt="Article image">
+        </div><br>
+
+        <h3 style="color: #0c5460;border-bottom: #491217;font-size: x-large">Search articles</h3><br>
+        <div  style="margin: auto 5rem auto 5rem;
+        padding: 12px;padding-bottom: 13px; color: #6f42c1;
+        background-color: lightgreen;border-radius: 8px">
+            <!--            <div-->
+            <!--                 class="mt-5 col-sm-12 my-auto align-self-center">-->
+            <form
+                    th:action="@{/articles/search}" method="get">
+                <input  type="text" name="q" placeholder="Enter article name" th:value="${query}" /><br><br>
+
+                <button style="padding-left: 3rem" class="button"
+                        type="submit">Search</button><br><br>
+
+            </form>
+
+            <h2>Result:</h2><br><br>
+            <ul th:if="${articles != null}">
+                <li th:if="${articles.size() == 0}">Няма намерени статии</li>
+                <li th:each="article : ${articles}">
+
+                    <span th:text="${article.title}">Заглавие на статията</span><br><br>
+                    <span th:text="${article.content}">Заглавие на статията</span><br>
+                    <span th:text="${article.period}">Заглавие на статията</span>
+
+                </li>
+            </ul>
+            <!--                <input id="searchInput art" class="searchfield" type="search"-->
+            <!--                       placeholder="Enter article name" aria-label="Search">-->
+            <!--                <input type="submit" class="button" style="margin-left: -25px;-->
+            <!--                padding: 12px;padding-bottom: 13px; color: #6f42c1;-->
+            <!--                background-color: #81ecec;border-radius: 8px" value="Search" id="searchInput">-->
+        </div><br><br>
+
+
+        <!--        article main-->
+        <h4 class="home-text20"><a class="article"
+                                   id="articles" th:href="@{/articles/all}"
+                                   th:text="#{nav_bar_all_articles}">All Articles </a></h4>
+        <br>
+    </div>
+</div>
+</body>
+<div style="background-color: #0a7eb3">
+    <footer
+            th:replace="fragments/commons::footer"></footer>
+</div>
+<!--<script th:src="@{resources/static/js/search-bar.js}"></script>-->
+</html>

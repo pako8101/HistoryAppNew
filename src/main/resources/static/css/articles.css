@@ -226,6 +226,10 @@ h3 {
     margin: -0.5rem auto 0 auto;
 
 }
+input{
+    border: solid 3px #b0825c;
+    border-radius: 5px;
+}
 /*.button {*/
 /*    display: block;*/
 /*    text-decoration: none;*/
@@ -293,7 +297,7 @@ h3 {
 .element.style {
     margin-left: 5px;
     padding: 12px;
-    padding-bottom: 13px;
+
 }
 .searchfield {
     display: inline-block;
