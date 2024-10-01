@@ -87,6 +87,14 @@
                 <footer class="post-footer">
                     <p>Published by, <span th:text="${a.author}"></span></p><br><br>
                 </footer>
+                <h4 style="margin: 0 auto" class="home-text20"><a class="button"
+                                                                  id="articles" th:href="@{/articles/all}"
+                                                                  th:text="#{nav_bar_all_articles}">All Articles </a></h4>
+                <br>
+                <h4 class="home-text20"><a class="button"
+                                           id="article" th:href="@{/articles/articles-search}"
+                                           th:text="#{nav_bar_all_articles_search}">Articles</a></h4>
+                <br>
             </article>
 
         </main>

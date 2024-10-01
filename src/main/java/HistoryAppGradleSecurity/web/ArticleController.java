@@ -81,7 +81,7 @@ private final ArticleRepository articleRepository;
                 .filter(article -> article.getTitle().toLowerCase().contains(query.toLowerCase()))
                 .collect(Collectors.toList());
         model.addAttribute("articles", filteredArticles);
-        model.addAttribute("query", query); // Запази търсения текст
+        model.addAttribute("query", query);
         return "articles";
     }
     @PostMapping("/upload-picture")
