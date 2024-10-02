@@ -120,26 +120,34 @@
                                       <a th:href="@{/articles/add}"
                                               th:text="#{nav_bar_add_articles}">ADD ARTICLE</a>
                                     </button>
+
+                                </form>
+                                <form class="navbar-link">
+                                    <button class="navbar-link" id="load-articles-btn" >
+                                        <!--                                        th:href="@{/articles/api}"-->
+                                        <a  th:text="#{nav_bar_articles_json}"  th:href="@{/articles/api}"></a>
+                                    </button>
                                 </form>
                                 <br>
+
                             </div>
                         </div>
                     </th:block>
 
 
                     <div class="home-right">
-                        <div class="dropdown about">
-                            <nav class="main-nav">
-                                <ul>
-                                    <li><button id="load-articles-btn" >
-<!--                                        th:href="@{/articles/api}"-->
-                                        <a th:text="#{nav_bar_articles_json}" ></a>
-                                    </button>
-                                        <ul id="articles-list"></ul>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
+<!--                        <div class="dropdown about">-->
+<!--                            <nav class="main-nav">-->
+<!--                                <ul>-->
+<!--                                    <li><button class="navbar-link" id="load-articles-btn1" >-->
+<!--&lt;!&ndash;                                        th:href="@{/articles/api}"&ndash;&gt;-->
+<!--                                        <a th:text="#{nav_bar_articles_json}" onclick="loadArticles()"></a>-->
+<!--                                    </button>-->
+<!--                                        <ul id="articles-list"></ul>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </nav>-->
+<!--                        </div>-->
                         <div class="dropdown about">
                             <nav class="main-nav">
                                 <ul>
@@ -211,7 +219,7 @@
                                     <li><a th:text="#{nav_bar_add_articles}"
                                            th:href="@{/articles/add}">Add article</a></li>
                                     <li><a th:text="#{nav_bar_all_articles}"
-                                           th:href="@{/articles/all}">All Articles</a></li>
+                                           th:href="@{/articles/all}" id="articles-list">All Articles</a></li>
 
 
                                 </ul>
@@ -267,7 +275,7 @@
                     <div class="home-container10">
                         <span class="home-text38">Categories</span>
                         <a href="#" class="home-text39">Collections</a>
-                        <a th:href="@{/articles/all}" class="home-text41">Articles</a>
+                        <a th:href="@{/articles/all}" class="home-text41" >Articles</a>
 
 
                     </div>
