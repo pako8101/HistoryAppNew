@@ -6,6 +6,7 @@
 </head>
 <link rel="stylesheet" href="/css/reset-css.css">
 <link rel="stylesheet" href="/css/explore.css">
+<link rel="stylesheet" href="/css/accordion.css">
 <body>
 <header th:replace="fragments/commons::nav">
 </header>
@@ -133,20 +134,23 @@
                   user-made,
                 </span>
                 <br/>
-                <span>history articles, since 1999.</span>
+                <span id="accordion">history articles, since 1999.</span>
                 <br/>
-                <span>
+                <span class="head">
                     Studying history helps us gain a more nuanced understanding of the world we live in today.
                     Our knowledge and interpretation of history shape how we define ourselves as nations and as cultures,
-                    and it influences how we see and interact with other cultures. We help people across the globe gain a deeper,
-                    fundamental knowledge of our interconnected human past in order to create curious,
-                    open-minded, and tolerant societies in the future.
-                  Our legacy guarantees exceptional article quality, unique
-                  content and special topics for all of our article line-up.
+                    and it influences how we see and interact with other cultures.
 
                 </span>
               </span>
-                <button class="button">Read more</button>
+                <span class="button" onclick="toggle()">Read More</span>
+                <div id="extra">
+                    <p><span>We help people across the globe gain a deeper,
+                        fundamental knowledge of our interconnected human past in order to create curious,
+                        open-minded, and tolerant societies in the future.
+                        Our legacy guarantees exceptional article quality, unique
+                        content and special topics for all of our article line-up.  </span></p>
+                </div>
             </div>
         </div>
     </div>
@@ -381,6 +385,7 @@ As the Republic of Rome grew in power and prestige, the city of Rome began to su
         <footer th:replace="fragments/commons::footer"></footer>
     </div>
 </div>
+<script src="js/accordion.js"></script>
 </body>
 
 </html>
