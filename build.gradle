@@ -34,7 +34,13 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
 	testImplementation 'org.testcontainers:mysql'
 
+	testImplementation 'org.mockito:mockito-core:5.5.0'
 
+	// Mockito-inline dependency (ако ще моквате финални класове или статични методи)
+	testImplementation 'org.mockito:mockito-inline:5.5.0'
+
+	// JUnit (ако използвате JUnit за тестовете)
+	testImplementation 'junit:junit:4.13.2'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
 	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'

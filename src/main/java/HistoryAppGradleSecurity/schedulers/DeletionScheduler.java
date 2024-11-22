@@ -11,7 +11,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DeletionScheduler {
-    private final Logger LOGGER = LoggerFactory.getLogger(DeletionScheduler.class);
+    private final Logger LOGGER = LoggerFactory.
+            getLogger(DeletionScheduler.class);
 
     private final ArticleService articleService;
     private final LogService logService;
