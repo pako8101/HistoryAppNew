@@ -63,11 +63,11 @@ border-radius: 4px"
                             </div>
                             <button style="margin-bottom: 1rem" id="mybuttonid"
                                     class="buttonReadMore"
-                                    onclick="changeReadMore()">
+                                    onclick="changeReadMore1()">
                                 Read More
                             </button>
                             <script>
-                                function changeReadMore() {
+                                function changeReadMore1() {
                                     const mycontent =
                                         document.getElementById('mybox1id');
                                     const mybutton =
@@ -82,6 +82,7 @@ border-radius: 4px"
                                         mybutton.innerHTML = 'Read More';
                                     } else {
                                         mycontent.style.display = 'inline';
+
                                         mybutton.innerHTML = 'Read Less';
                                         span1.style.display = "none";
                                     }
