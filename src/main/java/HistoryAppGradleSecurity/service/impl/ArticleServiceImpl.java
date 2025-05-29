@@ -44,7 +44,7 @@ import java.util.stream.Collectors;
 public class ArticleServiceImpl implements ArticleService {
     private final ArticleRepository articleRepository;
     private final ModelMapper modelMapper;
-    private final Logger LOGGER = LoggerFactory.getLogger(ArticleService.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(ArticleServiceImpl.class);
     private final UserService userService;
     private final PictureAssistService pictureAssistService;
     private final CategoryService categoryService;

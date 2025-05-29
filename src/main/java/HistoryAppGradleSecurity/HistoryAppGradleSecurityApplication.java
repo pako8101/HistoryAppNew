@@ -10,6 +10,7 @@ public class HistoryAppGradleSecurityApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HistoryAppGradleSecurityApplication.class, args);
+
 	}
 
 }

@@ -28,13 +28,13 @@ public class SubscribeController {
 
     private final UserService userService;
     private final SecurityContextRepository securityContextRepository;
-    @Autowired
+
     private ICaptchaService captchaService;
     private final ModelMapper modelMapper;
     @Value("${site_key}")
     private String recaptchaSiteKey;
 
-
+    @Autowired
     public SubscribeController(UserService userService,
                                SecurityContextRepository securityContextRepository,
                                ModelMapper modelMapper) {
